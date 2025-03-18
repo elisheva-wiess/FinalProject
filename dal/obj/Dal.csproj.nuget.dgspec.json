@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\FullStackProject\\WebProject\\dal\\Dal.csproj": {}
+    "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj": {}
   },
   "projects": {
-    "H:\\FullStackProject\\WebProject\\dal\\Dal.csproj": {
+    "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\FullStackProject\\WebProject\\dal\\Dal.csproj",
+        "projectUniqueName": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj",
         "projectName": "Dal",
-        "projectPath": "H:\\FullStackProject\\WebProject\\dal\\Dal.csproj",
-        "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
-        "outputPath": "H:\\FullStackProject\\WebProject\\dal\\obj\\",
+        "projectPath": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj",
+        "packagesPath": "C:\\Users\\מנדלבאום נחמה רינה\\.nuget\\packages\\",
+        "outputPath": "H:\\EndToEndProject\\FinalProject\\dal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\מנדלבאום נחמה רינה\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

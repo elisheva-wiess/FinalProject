@@ -428,23 +428,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ויס אלישבע\\.nuget\\packages\\": {},
+    "C:\\Users\\מנדלבאום נחמה רינה\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\FullStackProject\\WebProject\\WebProject\\Server.csproj",
+      "projectUniqueName": "H:\\EndToEndProject\\FinalProject\\WebProject\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "H:\\FullStackProject\\WebProject\\WebProject\\Server.csproj",
-      "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
-      "outputPath": "H:\\FullStackProject\\WebProject\\WebProject\\obj\\",
+      "projectPath": "H:\\EndToEndProject\\FinalProject\\WebProject\\Server.csproj",
+      "packagesPath": "C:\\Users\\מנדלבאום נחמה רינה\\.nuget\\packages\\",
+      "outputPath": "H:\\EndToEndProject\\FinalProject\\WebProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\מנדלבאום נחמה רינה\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
