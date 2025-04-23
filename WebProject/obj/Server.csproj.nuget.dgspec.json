@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\FinalProject\\WebProject\\Server.csproj": {}
+    "H:\\פרוייקט\\project\\FinalProject\\WebProject\\Server.csproj": {}
   },
   "projects": {
-    "H:\\FinalProject\\bl\\Bl.csproj": {
+    "H:\\פרוייקט\\project\\FinalProject\\bl\\Bl.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\FinalProject\\bl\\Bl.csproj",
+        "projectUniqueName": "H:\\פרוייקט\\project\\FinalProject\\bl\\Bl.csproj",
         "projectName": "Bl",
-        "projectPath": "H:\\FinalProject\\bl\\Bl.csproj",
-        "packagesPath": "C:\\Users\\ברקוביץ דבורה\\.nuget\\packages\\",
-        "outputPath": "H:\\FinalProject\\bl\\obj\\",
+        "projectPath": "H:\\פרוייקט\\project\\FinalProject\\bl\\Bl.csproj",
+        "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
+        "outputPath": "H:\\פרוייקט\\project\\FinalProject\\bl\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ברקוביץ דבורה\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "H:\\FinalProject\\dal\\Dal.csproj": {
-                "projectPath": "H:\\FinalProject\\dal\\Dal.csproj"
+              "H:\\פרוייקט\\project\\FinalProject\\dal\\Dal.csproj": {
+                "projectPath": "H:\\פרוייקט\\project\\FinalProject\\dal\\Dal.csproj"
               }
             }
           }
@@ -79,20 +79,20 @@
         }
       }
     },
-    "H:\\FinalProject\\dal\\Dal.csproj": {
+    "H:\\פרוייקט\\project\\FinalProject\\dal\\Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\FinalProject\\dal\\Dal.csproj",
+        "projectUniqueName": "H:\\פרוייקט\\project\\FinalProject\\dal\\Dal.csproj",
         "projectName": "Dal",
-        "projectPath": "H:\\FinalProject\\dal\\Dal.csproj",
-        "packagesPath": "C:\\Users\\ברקוביץ דבורה\\.nuget\\packages\\",
-        "outputPath": "H:\\FinalProject\\dal\\obj\\",
+        "projectPath": "H:\\פרוייקט\\project\\FinalProject\\dal\\Dal.csproj",
+        "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
+        "outputPath": "H:\\פרוייקט\\project\\FinalProject\\dal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ברקוביץ דבורה\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -170,20 +170,20 @@
         }
       }
     },
-    "H:\\FinalProject\\WebProject\\Server.csproj": {
+    "H:\\פרוייקט\\project\\FinalProject\\WebProject\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\FinalProject\\WebProject\\Server.csproj",
+        "projectUniqueName": "H:\\פרוייקט\\project\\FinalProject\\WebProject\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "H:\\FinalProject\\WebProject\\Server.csproj",
-        "packagesPath": "C:\\Users\\ברקוביץ דבורה\\.nuget\\packages\\",
-        "outputPath": "H:\\FinalProject\\WebProject\\obj\\",
+        "projectPath": "H:\\פרוייקט\\project\\FinalProject\\WebProject\\Server.csproj",
+        "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
+        "outputPath": "H:\\פרוייקט\\project\\FinalProject\\WebProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ברקוביץ דבורה\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -199,8 +199,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "H:\\FinalProject\\bl\\Bl.csproj": {
-                "projectPath": "H:\\FinalProject\\bl\\Bl.csproj"
+              "H:\\פרוייקט\\project\\FinalProject\\bl\\Bl.csproj": {
+                "projectPath": "H:\\פרוייקט\\project\\FinalProject\\bl\\Bl.csproj"
               }
             }
           }

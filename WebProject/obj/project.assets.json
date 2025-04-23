@@ -3261,23 +3261,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ברקוביץ דבורה\\.nuget\\packages\\": {},
+    "C:\\Users\\ויס אלישבע\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\FinalProject\\WebProject\\Server.csproj",
+      "projectUniqueName": "H:\\פרוייקט\\project\\FinalProject\\WebProject\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "H:\\FinalProject\\WebProject\\Server.csproj",
-      "packagesPath": "C:\\Users\\ברקוביץ דבורה\\.nuget\\packages\\",
-      "outputPath": "H:\\FinalProject\\WebProject\\obj\\",
+      "projectPath": "H:\\פרוייקט\\project\\FinalProject\\WebProject\\Server.csproj",
+      "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
+      "outputPath": "H:\\פרוייקט\\project\\FinalProject\\WebProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ברקוביץ דבורה\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3293,8 +3293,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "H:\\FinalProject\\bl\\Bl.csproj": {
-              "projectPath": "H:\\FinalProject\\bl\\Bl.csproj"
+            "H:\\פרוייקט\\project\\FinalProject\\bl\\Bl.csproj": {
+              "projectPath": "H:\\פרוייקט\\project\\FinalProject\\bl\\Bl.csproj"
             }
           }
         }

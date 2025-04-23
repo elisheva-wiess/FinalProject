@@ -69,6 +69,7 @@ namespace Bl
             return therapists;
         }
 
+<<<<<<< HEAD
         public static BlAvailableAppointment ToAvailableAppointment(TherapistHour therapistHour)
         {
             if (therapistHour != null)
@@ -97,6 +98,17 @@ namespace Bl
                 availableAppointments.Add(availableAppoint);
             }
             return availableAppointments;
+=======
+        public static BlPatient ToPatient(Patient patient)
+        {
+            return new BlPatient
+            {
+                FirstName = patient.FirstName,
+                LastName = patient.LastName,
+                Gender = patient.Gender
+            };
+>>>>>>> e110df938693e04e2103196cbb861ff195d715db
         }
     }
+
 }

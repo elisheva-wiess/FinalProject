@@ -1,4 +1,10 @@
 ﻿using Bl.Api;
+<<<<<<< HEAD
+=======
+using Bl.Models;
+using Dal.Api;
+using Dal.models;
+>>>>>>> e110df938693e04e2103196cbb861ff195d715db
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +26,35 @@ namespace Server.Controllers
             if (specializationsTherapists != null)
                 return Ok(specializationsTherapists);
             return BadRequest();
+
+        }
+        public IActionResult Login(int id)
+        {
+            var patient= _patientBlServer.LogIn(id);
+            if (patient != null)
+                return Ok(patient);
+            return null;
+
+        }
+        public IActionResult signUp([FromBody] Patient patient)
+        {
+
+        }
+        public IActionResult GetAllSpecializations()
+        {
+
+        }
+        public IActionResult ViewAvailableTherapistHours(string therapistName, string specializationName)
+        {
+        }
+
+        public IActionResult MakeAnAppointment()
+        {
+
+        }
+        public IActionResult CancelAnAppointment()
+        {
+
         }
 
         [HttpGet]
