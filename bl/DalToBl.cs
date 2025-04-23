@@ -68,5 +68,38 @@ namespace Bl
             }
             return therapists;
         }
+
+        public static BlSpecializations ASpecialization(Specialization specializations)
+        {
+            if (specializations == null)
+            {
+                return new BlSpecializations
+                {
+                    SpecializationName = specializations.SpecializationName,
+
+                    Description = specializations.Description
+                };
+            }
+            else
+                return null;
+
+
+
+        }
+
+
+
+        public static List<BlSpecializations> ToListAllSpecializations(List<Specialization> specializations)
+        {
+            List<BlSpecializations> AllSpecializations = new List<BlSpecializations>();
+
+            foreach (var item in specializations)
+            {
+                var specialization = ASpecialization(item);
+                AllSpecializations.Add(specialization);
+            }
+
+            return AllSpecializations;
+        }
     }
 }

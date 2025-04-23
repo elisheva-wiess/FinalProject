@@ -9,6 +9,9 @@ namespace Dal.Api
 {
     public interface IPatientDal
     {
+      
         List<Therapist> GetSpecializationsTherapistsByName(string name);
+        List<Specialization> GetAllSpecializations();
+
     }
 }

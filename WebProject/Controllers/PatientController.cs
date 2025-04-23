@@ -3,9 +3,9 @@ using Dal.Api;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Server.Controllers 
-{       
-    [Route("api/[controller]")]                   
+namespace Server.Controllers
+{
+    [Route("api/[controller]")]
     [ApiController]
     public class PatientController : ControllerBase
     {
@@ -21,6 +21,15 @@ namespace Server.Controllers
             if (specializationsTherapists != null)
                 return Ok(specializationsTherapists);
             return BadRequest();
+        }
+        [HttpGet]
+        public IActionResult GetAllSpecializations()
+        {
+            var AllSpecializationsTherapists = _patientBlServer.GetAllSpecializations();
+            if (AllSpecializationsTherapists != null)
+                return Ok(AllSpecializationsTherapists);
+            return BadRequest();
+
         }
     }
 }

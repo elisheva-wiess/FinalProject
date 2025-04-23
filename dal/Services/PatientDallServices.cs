@@ -30,6 +30,11 @@ namespace Dal.Services
                 return new List<Therapist>();
             }
         }
+        public List<Specialization> GetAllSpecializations()
+        {
+            return _context.Specializations.ToList();
+
+        }
     }
 }
 

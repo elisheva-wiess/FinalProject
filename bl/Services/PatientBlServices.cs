@@ -18,6 +18,14 @@ namespace Bl.Services
             var specializationsTherapists = patientsDalServer.GetSpecializationsTherapistsByName(name);
             return DalToBl.ToListSpecializations(specializationsTherapists);
         }
-    }
 
+        public List<BlSpecializations> GetAllSpecializations()
+        {
+            var AllSpecializations = patientsDalServer.GetAllSpecializations();
+            return DalToBl.ToListAllSpecializations(AllSpecializations);
+
+
+        }
+
+    }
 }
