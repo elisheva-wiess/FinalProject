@@ -5149,23 +5149,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\מנדלבאום נחמה רינה\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\ויס אלישבע\\.nuget\\packages\\": {},
+>>>>>>> 4b377af2ba8d08fc82a199a2fbafff5b1c71c153
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj",
       "projectName": "Dal",
       "projectPath": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj",
       "packagesPath": "C:\\Users\\מנדלבאום נחמה רינה\\.nuget\\packages\\",
       "outputPath": "H:\\EndToEndProject\\FinalProject\\dal\\obj\\",
+=======
+      "projectUniqueName": "H:\\פרוייקט\\project\\FinalProject\\dal\\Dal.csproj",
+      "projectName": "Dal",
+      "projectPath": "H:\\פרוייקט\\project\\FinalProject\\dal\\Dal.csproj",
+      "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
+      "outputPath": "H:\\פרוייקט\\project\\FinalProject\\dal\\obj\\",
+>>>>>>> 4b377af2ba8d08fc82a199a2fbafff5b1c71c153
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\מנדלבאום נחמה רינה\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 4b377af2ba8d08fc82a199a2fbafff5b1c71c153
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

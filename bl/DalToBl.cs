@@ -69,6 +69,7 @@ namespace Bl
             return therapists;
         }
 
+<<<<<<< HEAD
         public static BlSpecializations ASpecialization(Specialization specializations)
         {
             if (specializations == null)
@@ -78,10 +79,25 @@ namespace Bl
                     SpecializationName = specializations.SpecializationName,
 
                     Description = specializations.Description
+=======
+<<<<<<< HEAD
+        public static BlAvailableAppointment ToAvailableAppointment(TherapistHour therapistHour)
+        {
+            if (therapistHour != null)
+            {
+                return new BlAvailableAppointment
+                {
+                    TherapistFirstName = therapistHour.Therapist.FirstName,
+                    TherapistLastName = therapistHour.Therapist.LastName,
+                    DayOfWeek = therapistHour.DayOfWeek,
+                    StartTime = therapistHour.StartTime,
+                    EndTime = therapistHour.EndTime,
+>>>>>>> 4b377af2ba8d08fc82a199a2fbafff5b1c71c153
                 };
             }
             else
                 return null;
+<<<<<<< HEAD
 
 
 
@@ -102,4 +118,32 @@ namespace Bl
             return AllSpecializations;
         }
     }
+=======
+        }
+
+
+        public static List<BlAvailableAppointment> ToListAvailableAppointment(List<TherapistHour> therapistHour)
+        {
+            List<BlAvailableAppointment> availableAppointments = new List<BlAvailableAppointment>();
+
+            foreach (var item in therapistHour)
+            {
+                var availableAppoint = ToAvailableAppointment(item);
+                availableAppointments.Add(availableAppoint);
+            }
+            return availableAppointments;
+=======
+        public static BlPatient ToPatient(Patient patient)
+        {
+            return new BlPatient
+            {
+                FirstName = patient.FirstName,
+                LastName = patient.LastName,
+                Gender = patient.Gender
+            };
+>>>>>>> e110df938693e04e2103196cbb861ff195d715db
+        }
+    }
+
+>>>>>>> 4b377af2ba8d08fc82a199a2fbafff5b1c71c153
 }
