@@ -1,10 +1,7 @@
 ﻿using Bl.Api;
-<<<<<<< HEAD
-=======
 using Bl.Models;
 using Dal.Api;
 using Dal.models;
->>>>>>> e110df938693e04e2103196cbb861ff195d715db
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
