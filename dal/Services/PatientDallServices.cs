@@ -30,6 +30,17 @@ namespace Dal.Services
                 return new List<Therapist>();
             }
         }
+
+        public void SignUp(Patient patient)
+        {
+            _context.Patients.Add(patient);
+            _context.SaveChanges();
+        }
+        public Patient LogIn(int id)
+        {
+            var patient = _context.Patients.FirstOrDefault(s => s.PatientsId == id);
+            return patient;
+        }
     }
 }
 

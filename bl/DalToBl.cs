@@ -68,5 +68,16 @@ namespace Bl
             }
             return therapists;
         }
+
+        public static BlPatient ToPatient(Patient patient)
+        {
+            return new BlPatient
+            {
+                FirstName = patient.FirstName,
+                LastName = patient.LastName,
+                Gender = patient.Gender
+            };
+        }
     }
+
 }
