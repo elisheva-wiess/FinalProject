@@ -30,6 +30,20 @@ namespace Dal.Services
                 return new List<Therapist>();
             }
         }
+
+        public List<TherapistHour> ViewTherapistsAvailableDays(string name, string specializationName)
+        {
+            var therapistSpecialization = _context.Specializations.FirstOrDefault(s => s.SpecializationName == specializationName);
+
+            if (therapistSpecialization != null)
+            {
+                return _context.TherapistHours.Where(t => t.Therapist.FirstName == name && t.Therapist.SpecializationId == therapistSpecialization.Id).ToList();
+            }
+            else
+            {
+                return new List<TherapistHour>();
+            }
+        }
     }
 }
 

@@ -10,5 +10,7 @@ namespace Bl.Api
     public interface IPatientBl
     {
         List<BlSpecializationsTherapists> GetSpecializationsTherapistsByName(string name);
+
+        List<BlAvailableAppointment> ViewTherapistsAvailableDays(string name, string specializationName);
     }
 }

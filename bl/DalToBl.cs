@@ -68,5 +68,35 @@ namespace Bl
             }
             return therapists;
         }
+
+        public static BlAvailableAppointment ToAvailableAppointment(TherapistHour therapistHour)
+        {
+            if (therapistHour != null)
+            {
+                return new BlAvailableAppointment
+                {
+                    TherapistFirstName = therapistHour.Therapist.FirstName,
+                    TherapistLastName = therapistHour.Therapist.LastName,
+                    DayOfWeek = therapistHour.DayOfWeek,
+                    StartTime = therapistHour.StartTime,
+                    EndTime = therapistHour.EndTime,
+                };
+            }
+            else
+                return null;
+        }
+
+
+        public static List<BlAvailableAppointment> ToListAvailableAppointment(List<TherapistHour> therapistHour)
+        {
+            List<BlAvailableAppointment> availableAppointments = new List<BlAvailableAppointment>();
+
+            foreach (var item in therapistHour)
+            {
+                var availableAppoint = ToAvailableAppointment(item);
+                availableAppointments.Add(availableAppoint);
+            }
+            return availableAppointments;
+        }
     }
 }

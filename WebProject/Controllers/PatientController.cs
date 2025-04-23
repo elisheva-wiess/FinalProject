@@ -1,5 +1,4 @@
 ﻿using Bl.Api;
-using Dal.Api;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +19,15 @@ namespace Server.Controllers
             var specializationsTherapists = _patientBlServer.GetSpecializationsTherapistsByName(name);
             if (specializationsTherapists != null)
                 return Ok(specializationsTherapists);
+            return BadRequest();
+        }
+
+        [HttpGet]
+        public IActionResult GetTherapistApointmentsById(string name, string specializationName)
+        {
+            var availableAppointment = _patientBlServer.ViewTherapistsAvailableDays(name, specializationName);
+            if (availableAppointment != null)
+                return Ok(availableAppointment);
             return BadRequest();
         }
     }

@@ -18,6 +18,12 @@ namespace Bl.Services
             var specializationsTherapists = patientsDalServer.GetSpecializationsTherapistsByName(name);
             return DalToBl.ToListSpecializations(specializationsTherapists);
         }
+
+        public List<BlAvailableAppointment> ViewTherapistsAvailableDays(string name, string specializationName)
+        {
+            var availableAppoints = patientsDalServer.ViewTherapistsAvailableDays(name, specializationName);
+            return DalToBl.ToListAvailableAppointment(availableAppoints);
+        }
     }
 
 }
