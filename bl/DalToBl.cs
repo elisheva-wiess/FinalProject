@@ -25,6 +25,7 @@ namespace Bl
             else
                 return null;
         }
+
         public static List<BlAppointment> ToListAppointment(List<Appointment> appointment)
         {
             List<BlAppointment> appointments = new List<BlAppointment>();
@@ -36,7 +37,6 @@ namespace Bl
             }
             return appointments;
         }
-
 
         public static BlSpecializationsTherapists ToSpecializations(Therapist therapist)
         {
@@ -69,18 +69,20 @@ namespace Bl
             return therapists;
         }
 
-<<<<<<< HEAD
         public static BlSpecializations ASpecialization(Specialization specializations)
         {
-            if (specializations == null)
+            if (specializations != null)
             {
                 return new BlSpecializations
                 {
                     SpecializationName = specializations.SpecializationName,
 
                     Description = specializations.Description
-=======
-<<<<<<< HEAD
+                };
+            }
+            else
+                return null;
+        }
         public static BlAvailableAppointment ToAvailableAppointment(TherapistHour therapistHour)
         {
             if (therapistHour != null)
@@ -92,18 +94,11 @@ namespace Bl
                     DayOfWeek = therapistHour.DayOfWeek,
                     StartTime = therapistHour.StartTime,
                     EndTime = therapistHour.EndTime,
->>>>>>> 4b377af2ba8d08fc82a199a2fbafff5b1c71c153
                 };
             }
             else
                 return null;
-<<<<<<< HEAD
-
-
-
         }
-
-
 
         public static List<BlSpecializations> ToListAllSpecializations(List<Specialization> specializations)
         {
@@ -117,10 +112,6 @@ namespace Bl
 
             return AllSpecializations;
         }
-    }
-=======
-        }
-
 
         public static List<BlAvailableAppointment> ToListAvailableAppointment(List<TherapistHour> therapistHour)
         {
@@ -132,7 +123,8 @@ namespace Bl
                 availableAppointments.Add(availableAppoint);
             }
             return availableAppointments;
-=======
+        }
+
         public static BlPatient ToPatient(Patient patient)
         {
             return new BlPatient
@@ -141,9 +133,12 @@ namespace Bl
                 LastName = patient.LastName,
                 Gender = patient.Gender
             };
->>>>>>> e110df938693e04e2103196cbb861ff195d715db
         }
-    }
 
->>>>>>> 4b377af2ba8d08fc82a199a2fbafff5b1c71c153
+    }
 }
+
+
+
+
+

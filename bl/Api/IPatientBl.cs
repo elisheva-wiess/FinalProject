@@ -14,10 +14,10 @@ namespace Bl.Api
 
         List<BlSpecializations> GetAllSpecializations();
 
-
         List<BlAvailableAppointment> ViewTherapistsAvailableDays(string name, string specializationName);
 
         BlPatient LogIn(int id);
+
         BlPatient SingUp(Patient patient);
 
     }

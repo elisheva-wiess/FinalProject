@@ -40,21 +40,14 @@ namespace Bl.Services
 
         public BlPatient SingUp(Patient patient)
         {
-
-            patientsDalServer.SignUp(patient); // הוספת המטופל ל-DAL
-
+            patientsDalServer.SignUp(patient);
             return DalToBl.ToPatient(patient);
         }
-
-
-    }
-
 
         public List<BlSpecializations> GetAllSpecializations()
         {
             var AllSpecializations = patientsDalServer.GetAllSpecializations();
             return DalToBl.ToListAllSpecializations(AllSpecializations);
-
 
         }
 

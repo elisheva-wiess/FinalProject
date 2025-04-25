@@ -16,45 +16,45 @@ namespace Server.Controllers
         {
             _patientBlServer = patientBlServices;
         }
-        [HttpGet]
+
+
+        [HttpGet("{id}")]
+        public IActionResult Login(int id)
+        {
+            var patient = _patientBlServer.LogIn(id);
+            if (patient != null)
+                return Ok(patient);
+            return null;
+        }
+
+        [HttpPost]
+        public IActionResult signUp([FromBody] Patient patient)
+        {
+            var pat= _patientBlServer.SingUp(patient);
+            if (pat != null)
+                return Ok(pat);
+            return null;
+        }
+
+        [HttpGet("SpecializationsTherapists")]
         public IActionResult SpecializationsTherapists(string name)
         {
             var specializationsTherapists = _patientBlServer.GetSpecializationsTherapistsByName(name);
             if (specializationsTherapists != null)
                 return Ok(specializationsTherapists);
             return BadRequest();
-
         }
-        public IActionResult Login(int id)
-        {
-            var patient= _patientBlServer.LogIn(id);
-            if (patient != null)
-                return Ok(patient);
-            return null;
 
-        }
-        public IActionResult signUp([FromBody] Patient patient)
-        {
-
-        }
+        [HttpGet("GetAllSpecializations")]
         public IActionResult GetAllSpecializations()
         {
-
-        }
-        public IActionResult ViewAvailableTherapistHours(string therapistName, string specializationName)
-        {
-        }
-
-        public IActionResult MakeAnAppointment()
-        {
-
-        }
-        public IActionResult CancelAnAppointment()
-        {
-
+            var AllSpecializationsTherapists = _patientBlServer.GetAllSpecializations();
+            if (AllSpecializationsTherapists != null)
+                return Ok(AllSpecializationsTherapists);
+            return BadRequest();
         }
 
-        [HttpGet]
+        [HttpGet("{name} {specializationName}")]
         public IActionResult GetTherapistApointmentsById(string name, string specializationName)
         {
             var availableAppointment = _patientBlServer.ViewTherapistsAvailableDays(name, specializationName);
@@ -62,14 +62,6 @@ namespace Server.Controllers
                 return Ok(availableAppointment);
             return BadRequest();
         }
-        [HttpGet]
-        public IActionResult GetAllSpecializations()
-        {
-            var AllSpecializationsTherapists = _patientBlServer.GetAllSpecializations();
-            if (AllSpecializationsTherapists != null)
-                return Ok(AllSpecializationsTherapists);
-            return BadRequest();
 
-        }
     }
 }

@@ -10,6 +10,5 @@ namespace Bl.Api
     public interface ITherapistBl
     {
         List<BlAppointment> GetTherapistApointmentsById(int id);
-
     }
 }

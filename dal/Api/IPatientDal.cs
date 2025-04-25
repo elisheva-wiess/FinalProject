@@ -8,17 +8,11 @@ using System.Threading.Tasks;
 namespace Dal.Api
 {
     public interface IPatientDal
-    {
-      
+    {     
         List<Therapist> GetSpecializationsTherapistsByName(string name);
-
         List<Specialization> GetAllSpecializations();
-
-
         List<TherapistHour> ViewTherapistsAvailableDays(string name, string specializationName);
-
         public Patient LogIn(int id);
         public void SignUp(Patient patient);
-
     }
 }

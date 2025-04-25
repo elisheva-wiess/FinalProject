@@ -18,5 +18,6 @@ namespace Bl.Services
             var appintments= therapistDalServices.GetTherapistApointmentsById(id);
             return DalToBl.ToListAppointment(appintments);
         }
+
     }
 }

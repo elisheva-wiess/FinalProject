@@ -17,7 +17,6 @@ namespace Dal.Services
             _context = context;
         }
 
-
         public List<Therapist> GetSpecializationsTherapistsByName(string name)
         {
             var specialization = _context.Specializations.FirstOrDefault(s => s.SpecializationName == name);
@@ -34,6 +33,7 @@ namespace Dal.Services
         public List<Specialization> GetAllSpecializations()
         {
             return _context.Specializations.ToList();
+        }
 
         public List<TherapistHour> ViewTherapistsAvailableDays(string name, string specializationName)
         {
@@ -47,17 +47,21 @@ namespace Dal.Services
             {
                 return new List<TherapistHour>();
             }
+        }
+
         public void SignUp(Patient patient)
         {
             _context.Patients.Add(patient);
-            _context.SaveChanges();
+            _context.SaveChanges(); 
         }
+
         public Patient LogIn(int id)
         {
             var patient = _context.Patients.FirstOrDefault(s => s.PatientsId == id);
             return patient;
 
         }
+
     }
 }
 

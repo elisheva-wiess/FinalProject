@@ -12,6 +12,7 @@ namespace Server.Controllers
         public TherapistController(ITherapistBl therapistBlServices) {
             _therapistBlServices=therapistBlServices;
         }
+
         [HttpGet]
         public IActionResult GetTherapistApointmentsById(int id)
         {
@@ -20,5 +21,6 @@ namespace Server.Controllers
                 return Ok(therapistApointments);
             return BadRequest();
         }
+
     }
 }

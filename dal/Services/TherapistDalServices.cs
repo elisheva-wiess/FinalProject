@@ -16,7 +16,6 @@ namespace Dal.Services
             _context = context;
         }
 
-
         public List<Appointment> GetTherapistApointmentsById(int id)
         {
             var therapists = _context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
@@ -29,6 +28,7 @@ namespace Dal.Services
                 return new List<Appointment>();
             }
         }
+
     }
 }
 
