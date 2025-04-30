@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Dal.models;
+namespace Dal.models { 
 
 public partial class dbClass : DbContext
 {
@@ -23,18 +23,17 @@ public partial class dbClass : DbContext
 
     public virtual DbSet<Specialization> Specializations { get; set; }
 
+    public virtual DbSet<Table> Tables { get; set; }
+
     public virtual DbSet<Therapist> Therapists { get; set; }
 
     public virtual DbSet<TherapistHour> TherapistHours { get; set; }
 
-    public object Specialization { get; internal set; }
-
-    public object TherapistHour { get; internal set; }
-
+    public virtual DbSet<TherapistToSpecialization> TherapistToSpecializations { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=H:\\FullStackProject\\FinalProject\\Dal\\Data\\database.mdf;Integrated Security=True");
+        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='H:\\הורדות פרוייקט\\FinalProject\\dal\\Data\\database.mdf';Integrated Security=True;Connect Timeout=30");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -48,21 +47,30 @@ public partial class dbClass : DbContext
             entity.Property(e => e.AppointmentDate)
                 .HasColumnType("datetime")
                 .HasColumnName("appointmentDate");
-            entity.Property(e => e.PatientId).HasColumnName("patientId");
+            entity.Property(e => e.PatientId)
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
+                .HasColumnName("patientId");
             entity.Property(e => e.Status)
                 .HasMaxLength(20)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("status");
-            entity.Property(e => e.TherapistId).HasColumnName("therapistId");
+            entity.Property(e => e.TherapistId)
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
+                .HasColumnName("therapistId");
 
             entity.HasOne(d => d.Patient).WithMany(p => p.Appointments)
                 .HasForeignKey(d => d.PatientId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Appointme__patie__5535A963");
+                .HasConstraintName("FK__Appointme__patie__628FA481");
 
             entity.HasOne(d => d.Therapist).WithMany(p => p.Appointments)
                 .HasForeignKey(d => d.TherapistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Appointme__thera__5441852A");
+                .HasConstraintName("FK__Appointme__thera__6383C8BA");
         });
 
         modelBuilder.Entity<AvailableAppointment>(entity =>
@@ -75,42 +83,59 @@ public partial class dbClass : DbContext
             entity.Property(e => e.AvailableDate)
                 .HasColumnType("datetime")
                 .HasColumnName("availableDate");
-            entity.Property(e => e.TherapistId).HasColumnName("therapistId");
+            entity.Property(e => e.TherapistId)
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
+                .HasColumnName("therapistId");
             entity.Property(e => e.TimeSlot).HasColumnName("timeSlot");
 
             entity.HasOne(d => d.Therapist).WithMany(p => p.AvailableAppointments)
                 .HasForeignKey(d => d.TherapistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Available__thera__4CA06362");
+                .HasConstraintName("FK__Available__thera__6477ECF3");
         });
 
         modelBuilder.Entity<Patient>(entity =>
         {
-            entity.HasKey(e => e.PatientsId).HasName("PK__tmp_ms_x__42574E864C852E0C");
+            entity.HasKey(e => e.PatientsId).HasName("PK__tmp_ms_x__42574E86BE6D9820");
 
             entity.Property(e => e.PatientsId)
-                .ValueGeneratedNever()
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("patientsId");
             entity.Property(e => e.Address)
                 .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("address");
             entity.Property(e => e.BirthDate).HasColumnName("birthDAte");
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("email");
             entity.Property(e => e.FirstName)
                 .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("firstName");
             entity.Property(e => e.Gender)
                 .HasMaxLength(10)
                 .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("gender");
+            entity.Property(e => e.HealthInsurance)
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
+                .HasColumnName("Health insurance");
             entity.Property(e => e.LastName)
                 .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("lastName");
             entity.Property(e => e.PhoneNumber)
                 .HasMaxLength(10)
                 .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("phoneNumber");
         });
 
@@ -123,39 +148,52 @@ public partial class dbClass : DbContext
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Description)
                 .HasMaxLength(255)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("description");
             entity.Property(e => e.SpecializationName)
                 .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("specializationName");
+        });
+
+        modelBuilder.Entity<Table>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Table__3214EC07B3B9B45F");
+
+            entity.ToTable("Table");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Therapist>(entity =>
         {
-            entity.HasKey(e => e.TherapistsId).HasName("PK__tmp_ms_x__15D8DB236274134A");
+            entity.HasKey(e => e.TherapistsId).HasName("PK__tmp_ms_x__15D8DB2311D97990");
 
             entity.Property(e => e.TherapistsId)
-                .ValueGeneratedNever()
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("therapistsId");
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("email");
             entity.Property(e => e.FirstName)
                 .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("firstName");
             entity.Property(e => e.LastName)
                 .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("lastName");
             entity.Property(e => e.PhoneNumber)
                 .HasMaxLength(10)
                 .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("phoneNumber");
+            entity.Property(e => e.Salary).HasColumnName("salary");
             entity.Property(e => e.SpecializationId).HasColumnName("specialization_id");
             entity.Property(e => e.YearsOfExperience).HasColumnName("yearsOfExperience");
-
-            entity.HasOne(d => d.Specialization).WithMany(p => p.Therapists)
-                .HasForeignKey(d => d.SpecializationId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Therapist__speci__4BAC3F29");
         });
 
         modelBuilder.Entity<TherapistHour>(entity =>
@@ -165,19 +203,51 @@ public partial class dbClass : DbContext
             entity.Property(e => e.TherapistHoursId).ValueGeneratedNever();
             entity.Property(e => e.DayOfWeek)
                 .HasMaxLength(10)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("dayOfWeek");
             entity.Property(e => e.EndTime).HasColumnName("endTime");
             entity.Property(e => e.StartTime).HasColumnName("startTime");
-            entity.Property(e => e.TherapistId).HasColumnName("therapistId");
+            entity.Property(e => e.TherapistId)
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
+                .HasColumnName("therapistId");
 
             entity.HasOne(d => d.Therapist).WithMany(p => p.TherapistHours)
                 .HasForeignKey(d => d.TherapistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Therapist__thera__4F7CD00D");
+                .HasConstraintName("FK__Therapist__thera__656C112C");
+        });
+
+        modelBuilder.Entity<TherapistToSpecialization>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Therapis__3213E83F3ADD5082");
+
+            entity.ToTable("TherapistToSpecialization");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.SpecializationId).HasColumnName("specializationId");
+            entity.Property(e => e.TherapistId)
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
+                .HasColumnName("therapistId");
+
+            entity.HasOne(d => d.Specialization).WithMany(p => p.TherapistToSpecializations)
+                .HasForeignKey(d => d.SpecializationId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Therapist__speci__6754599E");
+
+            entity.HasOne(d => d.Therapist).WithMany(p => p.TherapistToSpecializations)
+                .HasForeignKey(d => d.TherapistId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Therapist__thera__66603565");
         });
 
         OnModelCreatingPartial(modelBuilder);
     }
-
+}
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

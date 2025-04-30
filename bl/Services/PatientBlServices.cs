@@ -25,19 +25,30 @@ namespace Bl.Services
             return DalToBl.ToListAvailableAppointment(availableAppoints);
         }
 
-        public BlPatient LogIn(int id)
+
+        public PatientOrTherapist LogIn(int id)
         {
-            var patient = patientsDalServer.LogIn(id);
+            var patient = IsPatient(id);
             if (patient != null)
             {
-                return DalToBl.ToPatient(patient);
+                return DalToBl.IsPatient(patient);
             }
-            else
+            var therapist = IsTherapist(id);
+            if (therapist != null)
             {
-                return null;
+                return DalToBl.IsTherapist(therapist);
             }
+            return null;
         }
 
+        public Patient IsPatient(int id)
+        {
+            return patientsDalServer.IsPatient(id);
+        }
+        public Therapist IsTherapist(int id)
+        {
+            return patientsDalServer.IsTherapist(id);
+        }
         public BlPatient SingUp(Patient patient)
         {
             patientsDalServer.SignUp(patient);

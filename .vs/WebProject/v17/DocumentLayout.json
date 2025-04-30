@@ -1,129 +1,137 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "H:\\EndToEndProject\\FinalProject\\",
+  "WorkspaceRootPath": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\api\\ipatientbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\api\\ipatientbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\api\\itherapistbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\api\\itherapistbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\models\\blappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\blappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\models\\blavailableappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\blavailableappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\models\\blpatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\blpatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\models\\blspecializations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\blspecializations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\models\\blspecializationstherapists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\blspecializationstherapists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\services\\patientblservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\services\\patientblservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\services\\therapistblservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\services\\therapistblservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\daltobl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\daltobl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\api\\ipatientdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\api\\ipatientdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\api\\itherapistdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\api\\itherapistdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\services\\patientdallservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\services\\patientdallservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\services\\patientdallservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\services\\therapistdalservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\services\\therapistdalservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\api\\ipatientdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\api\\ipatientdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\endtoendproject\\finalproject\\webproject\\controllers\\therapistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\controllers\\therapistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\services\\patientblservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\services\\patientblservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\endtoendproject\\finalproject\\webproject\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\services\\therapistblservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\services\\therapistblservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\models\\dbclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\models\\dbclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\api\\ipatientbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\api\\ipatientbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\daltobl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\daltobl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\models\\specialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\models\\specialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\models\\bltherapist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\bltherapist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\models\\patientortherapist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\patientortherapist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\models\\blpatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\blpatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\endtoendproject\\finalproject\\webproject\\server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\models\\blspecializations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\blspecializations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\bl.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\bl.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\endtoendproject\\finalproject\\webproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\endtoendproject\\finalproject\\webproject\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\endtoendproject\\finalproject\\webproject\\server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\endtoendproject\\finalproject\\webproject\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\models\\therapist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\models\\blspecializationstherapists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\blspecializationstherapists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\models\\blavailableappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\blavailableappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\models\\blappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\models\\blappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\api\\itherapistbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\api\\itherapistbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\models\\therapist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\models\\therapist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\endtoendproject\\finalproject\\dal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\webproject\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\models\\specialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\models\\specialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\models\\dbclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\models\\dbclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\api\\itherapistdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\api\\itherapistdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\services\\therapistdalservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\services\\therapistdalservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\webproject\\controllers\\therapistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\controllers\\therapistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\webproject\\server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\bl.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\bl.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\webproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\webproject\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\webproject\\server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\webproject\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\endtoendproject\\finalproject\\bl\\bl.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\bl.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|solutionrelative:bl\\bl.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
@@ -152,355 +160,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BlAvailableAppointment.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Models\\BlAvailableAppointment.cs",
-              "RelativeDocumentMoniker": "bl\\Models\\BlAvailableAppointment.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Models\\BlAvailableAppointment.cs",
-              "RelativeToolTip": "bl\\Models\\BlAvailableAppointment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "PatientBlServices.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Services\\PatientBlServices.cs",
+              "RelativeDocumentMoniker": "bl\\Services\\PatientBlServices.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Services\\PatientBlServices.cs",
+              "RelativeToolTip": "bl\\Services\\PatientBlServices.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAUwCcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T08:14:15.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BLPatient.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Models\\BLPatient.cs",
-              "RelativeDocumentMoniker": "bl\\Models\\BLPatient.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Models\\BLPatient.cs",
-              "RelativeToolTip": "bl\\Models\\BLPatient.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T08:14:13.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DalToBl.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\DalToBl.cs",
-              "RelativeDocumentMoniker": "bl\\DalToBl.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\DalToBl.cs",
-              "RelativeToolTip": "bl\\DalToBl.cs",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAmwIIAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T09:48:58.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-21T11:03:12.669Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "TherapistBlServices.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Services\\TherapistBlServices.cs",
-              "RelativeDocumentMoniker": "bl\\Services\\TherapistBlServices.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Services\\TherapistBlServices.cs",
-              "RelativeToolTip": "bl\\Services\\TherapistBlServices.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Title": "BLPatient.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BLPatient.cs",
+              "RelativeDocumentMoniker": "bl\\Models\\BLPatient.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BLPatient.cs",
+              "RelativeToolTip": "bl\\Models\\BLPatient.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T09:50:04.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PatientBlServices.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Services\\PatientBlServices.cs",
-              "RelativeDocumentMoniker": "bl\\Services\\PatientBlServices.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Services\\PatientBlServices.cs",
-              "RelativeToolTip": "bl\\Services\\PatientBlServices.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowCkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:03:12.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BlAppointment.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Models\\BlAppointment.cs",
-              "RelativeDocumentMoniker": "bl\\Models\\BlAppointment.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Models\\BlAppointment.cs",
-              "RelativeToolTip": "bl\\Models\\BlAppointment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T09:50:00.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BlSpecializations.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Models\\BlSpecializations.cs",
-              "RelativeDocumentMoniker": "bl\\Models\\BlSpecializations.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Models\\BlSpecializations.cs",
-              "RelativeToolTip": "bl\\Models\\BlSpecializations.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:46:29.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T08:14:13.496Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "BlSpecializationsTherapists.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Models\\BlSpecializationsTherapists.cs",
-              "RelativeDocumentMoniker": "bl\\Models\\BlSpecializationsTherapists.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Models\\BlSpecializationsTherapists.cs",
-              "RelativeToolTip": "bl\\Models\\BlSpecializationsTherapists.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Title": "BlTherapist.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlTherapist.cs",
+              "RelativeDocumentMoniker": "bl\\Models\\BlTherapist.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlTherapist.cs",
+              "RelativeToolTip": "bl\\Models\\BlTherapist.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:35:05.915Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-28T12:22:59.427Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ITherapistBl.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Api\\ITherapistBl.cs",
-              "RelativeDocumentMoniker": "bl\\Api\\ITherapistBl.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Api\\ITherapistBl.cs",
-              "RelativeToolTip": "bl\\Api\\ITherapistBl.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABAAAAA",
+              "DocumentIndex": 3,
+              "Title": "TherapistBlServices.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Services\\TherapistBlServices.cs",
+              "RelativeDocumentMoniker": "bl\\Services\\TherapistBlServices.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Services\\TherapistBlServices.cs",
+              "RelativeToolTip": "bl\\Services\\TherapistBlServices.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T09:50:47.396Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IPatientBl.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Api\\IPatientBl.cs",
-              "RelativeDocumentMoniker": "bl\\Api\\IPatientBl.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Api\\IPatientBl.cs",
-              "RelativeToolTip": "bl\\Api\\IPatientBl.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:02:40.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T09:50:04.256Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "IPatientDal.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Api\\IPatientDal.cs",
-              "RelativeDocumentMoniker": "dal\\Api\\IPatientDal.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Api\\IPatientDal.cs",
-              "RelativeToolTip": "dal\\Api\\IPatientDal.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:04:07.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ITherapistDal.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Api\\ITherapistDal.cs",
-              "RelativeDocumentMoniker": "dal\\Api\\ITherapistDal.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Api\\ITherapistDal.cs",
-              "RelativeToolTip": "dal\\Api\\ITherapistDal.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T09:49:54.309Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PatientDallServices.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Services\\PatientDallServices.cs",
-              "RelativeDocumentMoniker": "dal\\Services\\PatientDallServices.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Services\\PatientDallServices.cs",
-              "RelativeToolTip": "dal\\Services\\PatientDallServices.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAIwBEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:03:53.877Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "TherapistDalServices.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Services\\TherapistDalServices.cs",
-              "RelativeDocumentMoniker": "dal\\Services\\TherapistDalServices.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Services\\TherapistDalServices.cs",
-              "RelativeToolTip": "dal\\Services\\TherapistDalServices.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T10:01:16.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TherapistController.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\WebProject\\Controllers\\TherapistController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\TherapistController.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\WebProject\\Controllers\\TherapistController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\TherapistController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T09:52:10.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "PatientController.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\WebProject\\Controllers\\PatientController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\PatientController.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\WebProject\\Controllers\\PatientController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\PatientController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAwwDUAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T10:52:13.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "dbClass.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Models\\dbClass.cs",
-              "RelativeDocumentMoniker": "dal\\Models\\dbClass.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Models\\dbClass.cs",
-              "RelativeToolTip": "dal\\Models\\dbClass.cs",
-              "ViewState": "AQIAAKQAAAAAAAAAAADwvyIAAABRAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:42:46.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Appointment.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Models\\Appointment.cs",
-              "RelativeDocumentMoniker": "dal\\Models\\Appointment.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Models\\Appointment.cs",
-              "RelativeToolTip": "dal\\Models\\Appointment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T10:05:11.193Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Specialization.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Models\\Specialization.cs",
-              "RelativeDocumentMoniker": "dal\\Models\\Specialization.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Models\\Specialization.cs",
-              "RelativeToolTip": "dal\\Models\\Specialization.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:14:53.514Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Patient.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Models\\Patient.cs",
-              "RelativeDocumentMoniker": "dal\\Models\\Patient.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Models\\Patient.cs",
-              "RelativeToolTip": "dal\\Models\\Patient.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:14:45.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Dal.csproj",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj",
-              "RelativeDocumentMoniker": "dal\\Dal.csproj",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj",
-              "RelativeToolTip": "dal\\Dal.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-24T12:59:24.105Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
               "Title": "Program.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\WebProject\\Program.cs",
-              "RelativeDocumentMoniker": "WebProject\\Program.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\WebProject\\Program.cs",
-              "RelativeToolTip": "WebProject\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T15:04:28.515Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Bl.csproj",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Bl.csproj",
-              "RelativeDocumentMoniker": "bl\\Bl.csproj",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Bl.csproj",
-              "RelativeToolTip": "bl\\Bl.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-23T15:07:37.137Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Server.csproj",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\WebProject\\Server.csproj",
-              "RelativeDocumentMoniker": "WebProject\\Server.csproj",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\WebProject\\Server.csproj",
-              "RelativeToolTip": "WebProject\\Server.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-23T15:07:44.811Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Server",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\WebProject\\Server.csproj",
-              "RelativeDocumentMoniker": "WebProject\\Server.csproj",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\WebProject\\Server.csproj",
-              "RelativeToolTip": "WebProject\\Server.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-23T14:58:29.74Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\WebProject\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "WebProject\\Properties\\launchSettings.json",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\WebProject\\Properties\\launchSettings.json",
-              "RelativeToolTip": "WebProject\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAA8AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-23T14:58:30.476Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\WebProject\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "WebProject\\appsettings.Development.json",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\WebProject\\appsettings.Development.json",
-              "RelativeToolTip": "WebProject\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-23T14:49:38.772Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Program.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Program.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Program.cs",
               "RelativeDocumentMoniker": "bl\\Program.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Program.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Program.cs",
               "RelativeToolTip": "bl\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -508,19 +224,323 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 5,
+              "Title": "DalToBl.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\DalToBl.cs",
+              "RelativeDocumentMoniker": "bl\\DalToBl.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\DalToBl.cs",
+              "RelativeToolTip": "bl\\DalToBl.cs",
+              "ViewState": "AQIAAIgAAAAAAAAAAAAAAJ4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T09:48:58.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PatientOrTherapist.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\PatientOrTherapist.cs",
+              "RelativeDocumentMoniker": "bl\\Models\\PatientOrTherapist.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\PatientOrTherapist.cs",
+              "RelativeToolTip": "bl\\Models\\PatientOrTherapist.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T12:22:07.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BlSpecializations.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlSpecializations.cs",
+              "RelativeDocumentMoniker": "bl\\Models\\BlSpecializations.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlSpecializations.cs",
+              "RelativeToolTip": "bl\\Models\\BlSpecializations.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T11:46:29.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IPatientBl.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Api\\IPatientBl.cs",
+              "RelativeDocumentMoniker": "bl\\Api\\IPatientBl.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Api\\IPatientBl.cs",
+              "RelativeToolTip": "bl\\Api\\IPatientBl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:02:40.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IPatientDal.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Api\\IPatientDal.cs",
+              "RelativeDocumentMoniker": "dal\\Api\\IPatientDal.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Api\\IPatientDal.cs",
+              "RelativeToolTip": "dal\\Api\\IPatientDal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:04:07.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PatientDallServices.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Services\\PatientDallServices.cs",
+              "RelativeDocumentMoniker": "dal\\Services\\PatientDallServices.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Services\\PatientDallServices.cs",
+              "RelativeToolTip": "dal\\Services\\PatientDallServices.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAIwFEAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:03:53.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BlSpecializationsTherapists.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlSpecializationsTherapists.cs",
+              "RelativeDocumentMoniker": "bl\\Models\\BlSpecializationsTherapists.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlSpecializationsTherapists.cs",
+              "RelativeToolTip": "bl\\Models\\BlSpecializationsTherapists.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:35:05.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BlAvailableAppointment.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlAvailableAppointment.cs",
+              "RelativeDocumentMoniker": "bl\\Models\\BlAvailableAppointment.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlAvailableAppointment.cs",
+              "RelativeToolTip": "bl\\Models\\BlAvailableAppointment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T08:14:15.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BlAppointment.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlAppointment.cs",
+              "RelativeDocumentMoniker": "bl\\Models\\BlAppointment.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlAppointment.cs",
+              "RelativeToolTip": "bl\\Models\\BlAppointment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T09:50:00.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ITherapistBl.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Api\\ITherapistBl.cs",
+              "RelativeDocumentMoniker": "bl\\Api\\ITherapistBl.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Api\\ITherapistBl.cs",
+              "RelativeToolTip": "bl\\Api\\ITherapistBl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T09:50:47.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Therapist.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Models\\Therapist.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\Therapist.cs",
               "RelativeDocumentMoniker": "dal\\Models\\Therapist.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Models\\Therapist.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\Therapist.cs",
               "RelativeToolTip": "dal\\Models\\Therapist.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA0AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAiwAUAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T10:22:16.513Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 16,
+              "Title": "PatientController.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\PatientController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\PatientController.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\PatientController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\PatientController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBsAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T10:52:13.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Specialization.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\Specialization.cs",
+              "RelativeDocumentMoniker": "dal\\Models\\Specialization.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\Specialization.cs",
+              "RelativeToolTip": "dal\\Models\\Specialization.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:14:53.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\Patient.cs",
+              "RelativeDocumentMoniker": "dal\\Models\\Patient.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\Patient.cs",
+              "RelativeToolTip": "dal\\Models\\Patient.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:14:45.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "dbClass.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\dbClass.cs",
+              "RelativeDocumentMoniker": "dal\\Models\\dbClass.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\dbClass.cs",
+              "RelativeToolTip": "dal\\Models\\dbClass.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T11:42:46.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ITherapistDal.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Api\\ITherapistDal.cs",
+              "RelativeDocumentMoniker": "dal\\Api\\ITherapistDal.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Api\\ITherapistDal.cs",
+              "RelativeToolTip": "dal\\Api\\ITherapistDal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T09:49:54.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TherapistDalServices.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Services\\TherapistDalServices.cs",
+              "RelativeDocumentMoniker": "dal\\Services\\TherapistDalServices.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Services\\TherapistDalServices.cs",
+              "RelativeToolTip": "dal\\Services\\TherapistDalServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T10:01:16.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "TherapistController.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\TherapistController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\TherapistController.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\TherapistController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\TherapistController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T09:52:10.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\Appointment.cs",
+              "RelativeDocumentMoniker": "dal\\Models\\Appointment.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\Appointment.cs",
+              "RelativeToolTip": "dal\\Models\\Appointment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T10:05:11.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Dal.csproj",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Dal.csproj",
+              "RelativeDocumentMoniker": "dal\\Dal.csproj",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Dal.csproj",
+              "RelativeToolTip": "dal\\Dal.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-24T12:59:24.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Program.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Program.cs",
+              "RelativeDocumentMoniker": "WebProject\\Program.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Program.cs",
+              "RelativeToolTip": "WebProject\\Program.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T15:04:28.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Bl.csproj",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Bl.csproj",
+              "RelativeDocumentMoniker": "bl\\Bl.csproj",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Bl.csproj",
+              "RelativeToolTip": "bl\\Bl.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-23T15:07:37.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Server.csproj",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Server.csproj",
+              "RelativeDocumentMoniker": "WebProject\\Server.csproj",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Server.csproj",
+              "RelativeToolTip": "WebProject\\Server.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-23T15:07:44.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Server",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Server.csproj",
+              "RelativeDocumentMoniker": "WebProject\\Server.csproj",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Server.csproj",
+              "RelativeToolTip": "WebProject\\Server.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-23T14:58:29.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "WebProject\\Properties\\launchSettings.json",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Properties\\launchSettings.json",
+              "RelativeToolTip": "WebProject\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-23T14:58:30.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "WebProject\\appsettings.Development.json",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\appsettings.Development.json",
+              "RelativeToolTip": "WebProject\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-23T14:49:38.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "Therapist.cs",
               "DocumentMoniker": "H:\\FullStackProject\\FinalProject\\WebProject\\models\\Therapist.cs",
               "RelativeDocumentMoniker": "..\\..\\FullStackProject\\FinalProject\\WebProject\\models\\Therapist.cs",
@@ -531,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "Specialization.cs",
               "DocumentMoniker": "H:\\FullStackProject\\FinalProject\\WebProject\\models\\Specialization.cs",
               "RelativeDocumentMoniker": "..\\..\\FullStackProject\\FinalProject\\WebProject\\models\\Specialization.cs",
@@ -542,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "AvailableAppointment.cs",
               "DocumentMoniker": "H:\\FullStackProject\\FinalProject\\WebProject\\models\\AvailableAppointment.cs",
               "RelativeDocumentMoniker": "..\\..\\FullStackProject\\FinalProject\\WebProject\\models\\AvailableAppointment.cs",
@@ -553,11 +573,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Program.cs",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\dal\\Program.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Program.cs",
               "RelativeDocumentMoniker": "dal\\Program.cs",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\dal\\Program.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Program.cs",
               "RelativeToolTip": "dal\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -565,7 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "dbClass.cs",
               "DocumentMoniker": "H:\\FullStackProject\\FinalProject\\WebProject\\models\\dbClass.cs",
               "RelativeDocumentMoniker": "..\\..\\FullStackProject\\FinalProject\\WebProject\\models\\dbClass.cs",
@@ -576,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "Patient.cs",
               "DocumentMoniker": "H:\\FullStackProject\\FinalProject\\WebProject\\models\\Patient.cs",
               "RelativeDocumentMoniker": "..\\..\\FullStackProject\\FinalProject\\WebProject\\models\\Patient.cs",
@@ -587,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "Appointment.cs",
               "DocumentMoniker": "H:\\FullStackProject\\FinalProject\\WebProject\\models\\Appointment.cs",
               "RelativeDocumentMoniker": "..\\..\\FullStackProject\\FinalProject\\WebProject\\models\\Appointment.cs",
@@ -598,11 +618,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "Bl",
-              "DocumentMoniker": "H:\\EndToEndProject\\FinalProject\\bl\\Bl.csproj",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Bl.csproj",
               "RelativeDocumentMoniker": "bl\\Bl.csproj",
-              "ToolTip": "H:\\EndToEndProject\\FinalProject\\bl\\Bl.csproj",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Bl.csproj",
               "RelativeToolTip": "bl\\Bl.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-03-24T13:00:21.22Z"

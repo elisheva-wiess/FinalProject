@@ -134,7 +134,27 @@ namespace Bl
                 Gender = patient.Gender
             };
         }
-
+        public static BlTherapist ToTherapist(Therapist therapist)
+        {
+            return new BlTherapist
+            {
+                TherapistsId=therapist.TherapistsId,
+                FirstName=therapist.FirstName,
+                LastName=therapist.LastName,
+                SpecializationId=therapist.SpecializationId,
+                PhoneNumber=therapist.PhoneNumber,
+                Email=therapist.Email,
+                YearsOfExperience=therapist.YearsOfExperience
+            };
+        }
+        public static PatientOrTherapist IsPatient(Patient patient)
+        {
+            return new PatientOrTherapist { BlPatient = ToPatient(patient), BlTherapist = null };
+        }
+        public static PatientOrTherapist IsTherapist(Therapist therapist)
+        {
+            return new PatientOrTherapist { BlPatient =null , BlTherapist = ToTherapist(therapist) };
+        }
     }
 }
 

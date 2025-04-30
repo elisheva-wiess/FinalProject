@@ -35,20 +35,30 @@ namespace Dal.Services
             return _context.Specializations.ToList();
         }
 
+        //public List<TherapistHour> ViewTherapistsAvailableDays(string name, string specializationName)
+        //{
+        //    var therapistSpecialization = _context.Specializations.FirstOrDefault(s => s.SpecializationName == specializationName);
+
+        //    if (therapistSpecialization != null)
+        //    {
+        //        return _context.TherapistHours.Where(t => t.Therapist.FirstName == name && t.Therapist.SpecializationId == therapistSpecialization.Id).ToList();
+        //    }
+        //    else
+        //    {
+        //        return new List<TherapistHour>();
+        //    }
+        //}
+
         public List<TherapistHour> ViewTherapistsAvailableDays(string name, string specializationName)
         {
             var therapistSpecialization = _context.Specializations.FirstOrDefault(s => s.SpecializationName == specializationName);
 
-            if (therapistSpecialization != null)
-            {
-                return _context.TherapistHours.Where(t => t.Therapist.FirstName == name && t.Therapist.SpecializationId == therapistSpecialization.Id).ToList();
-            }
-            else
-            {
-                return new List<TherapistHour>();
-            }
+            return therapistSpecialization == null
+                ? new List<TherapistHour>()
+                : _context.TherapistHours
+                          .Where(t => t.Therapist.FirstName == name && t.Therapist.SpecializationId == therapistSpecialization.Id)
+                          .ToList();
         }
-
         public void SignUp(Patient patient)
         {
             _context.Patients.Add(patient);
@@ -60,6 +70,16 @@ namespace Dal.Services
             var patient = _context.Patients.FirstOrDefault(s => s.PatientsId == id);
             return patient;
 
+        }
+      public  Patient IsPatient(int id)
+        {
+            var patient = _context.Patients.FirstOrDefault(s => s.PatientsId == id);
+            return patient;
+        }
+     public   Therapist IsTherapist(int id)
+        {
+            var therapist = _context.Therapists.FirstOrDefault(s => s.TherapistsId == id);
+            return therapist;
         }
 
     }

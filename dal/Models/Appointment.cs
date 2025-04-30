@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dal.models;
-
-public partial class Appointment
+namespace Dal.models
 {
-    public int AppointmentId { get; set; }
 
-    public int TherapistId { get; set; }
+    public partial class Appointment
+    {
+        public int AppointmentId { get; set; }
 
-    public int PatientId { get; set; }
+        public string TherapistId { get; set; } = null!;
 
-    public DateTime AppointmentDate { get; set; }
+        public string PatientId { get; set; } = null!;
 
-    public string? Status { get; set; }
+        public DateTime AppointmentDate { get; set; }
 
-    public virtual Patient Patient { get; set; } = null!;
+        public string Status { get; set; } = null!;
 
-    public virtual Therapist Therapist { get; set; } = null!;
+        public virtual Patient Patient { get; set; } = null!;
+
+        public virtual Therapist Therapist { get; set; } = null!;
+    }
 }
