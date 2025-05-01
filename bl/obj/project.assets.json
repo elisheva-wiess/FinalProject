@@ -27,39 +27,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\ויס אלישבע\\.nuget\\packages\\": {},
-=======
     "C:\\Users\\משתמש\\.nuget\\packages\\": {},
->>>>>>> c4ea80b858b7cf7d18f2f0a75531a6106036a000
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "H:\\הורדות פרוייקט\\FinalProject\\bl\\Bl.csproj",
-      "projectName": "Bl",
-      "projectPath": "H:\\הורדות פרוייקט\\FinalProject\\bl\\Bl.csproj",
-      "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
-      "outputPath": "H:\\הורדות פרוייקט\\FinalProject\\bl\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\Bl.csproj",
       "projectName": "Bl",
       "projectPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\Bl.csproj",
       "packagesPath": "C:\\Users\\משתמש\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\obj\\",
->>>>>>> c4ea80b858b7cf7d18f2f0a75531a6106036a000
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
         "C:\\Users\\משתמש\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> c4ea80b858b7cf7d18f2f0a75531a6106036a000
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -75,13 +59,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-<<<<<<< HEAD
-            "H:\\הורדות פרוייקט\\FinalProject\\dal\\Dal.csproj": {
-              "projectPath": "H:\\הורדות פרוייקט\\FinalProject\\dal\\Dal.csproj"
-=======
             "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\Dal.csproj": {
               "projectPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\Dal.csproj"
->>>>>>> c4ea80b858b7cf7d18f2f0a75531a6106036a000
             }
           }
         }
@@ -109,5 +88,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
