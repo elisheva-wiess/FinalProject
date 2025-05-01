@@ -9,7 +9,7 @@ namespace Bl.Models
 {
     public partial class BlSpecializationsTherapists
     {
-        public int TherapistsId { get; set; }
+        public string TherapistsId { get; set; }
 
         public string FirstName { get; set; } = null!;
 

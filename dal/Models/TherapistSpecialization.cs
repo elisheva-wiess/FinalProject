@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Dal.Models;
 
-public partial class TherapistToSpecialization
+public partial class TherapistSpecialization
 {
     public int Id { get; set; }
 

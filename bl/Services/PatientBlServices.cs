@@ -26,7 +26,7 @@ namespace Bl.Services
         }
 
 
-        public PatientOrTherapist LogIn(int id)
+        public PatientOrTherapist LogIn(string id)
         {
             var patient = IsPatient(id);
             if (patient != null)
@@ -41,11 +41,11 @@ namespace Bl.Services
             return null;
         }
 
-        public Patient IsPatient(int id)
+        public Patient IsPatient(string id)
         {
             return patientsDalServer.IsPatient(id);
         }
-        public Therapist IsTherapist(int id)
+        public Therapist IsTherapist(string id)
         {
             return patientsDalServer.IsTherapist(id);
         }

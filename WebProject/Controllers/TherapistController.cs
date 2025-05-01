@@ -14,7 +14,7 @@ namespace Server.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetTherapistApointmentsById(int id)
+        public IActionResult GetTherapistApointmentsById(string id)
         {
            var therapistApointments = _therapistBlServices.GetTherapistApointmentsById(id);
             if (therapistApointments != null)

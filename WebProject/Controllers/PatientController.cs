@@ -21,7 +21,7 @@ namespace Server.Controllers
 
 
         [HttpGet("{id}")]
-        public IActionResult Login(int id)
+        public IActionResult Login(string id)
         {
             var patient = _patientBlServer.LogIn(id);
             if (patient != null)

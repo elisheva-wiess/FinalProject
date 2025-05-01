@@ -13,7 +13,7 @@ namespace Bl.Services
     {
         private readonly ITherapistDal therapistDalServices;
 
-        public List<BlAppointment> GetTherapistApointmentsById(int id)
+        public List<BlAppointment> GetTherapistApointmentsById(string id)
         {
             var appintments= therapistDalServices.GetTherapistApointmentsById(id);
             return DalToBl.ToListAppointment(appintments);

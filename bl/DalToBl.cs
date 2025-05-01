@@ -1,132 +1,114 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Bl.Models;
 using Dal.models;
 
 namespace Bl
 {
-    class DalToBl
+    public class DalToBl
     {
         public static BlAppointment ToAppointment(Appointment appointment)
         {
-            if (appointment != null)
-            {
-                return new BlAppointment
-                {
-                    AppointmentId = appointment.AppointmentId,
-                    PatientId = appointment.PatientId,
-                    AppointmentDate = appointment.AppointmentDate,
-
-                };
-            }
-            else
+            if (appointment == null)
                 return null;
+
+            return new BlAppointment
+            {
+                AppointmentId = appointment.AppointmentId,
+                PatientId = appointment.PatientId,
+                AppointmentDate = appointment.AppointmentDate,
+            };
         }
 
-        public static List<BlAppointment> ToListAppointment(List<Appointment> appointment)
+        public static List<BlAppointment> ToListAppointment(List<Appointment> appointments)
         {
-            List<BlAppointment> appointments = new List<BlAppointment>();
-
-            foreach (var item in appointment)
+            var result = new List<BlAppointment>();
+            foreach (var appointment in appointments)
             {
-                var appoint = ToAppointment(item);
-                appointments.Add(appoint);
+                result.Add(ToAppointment(appointment));
             }
-            return appointments;
+            return result;
         }
 
         public static BlSpecializationsTherapists ToSpecializations(Therapist therapist)
         {
-            if (therapist != null)
-            {
-                return new BlSpecializationsTherapists
-                {
-                    TherapistsId = therapist.TherapistsId,
-                    FirstName = therapist.FirstName,
-                    LastName = therapist.LastName,
-                    SpecializationId = therapist.SpecializationId,
-                    PhoneNumber = therapist.PhoneNumber,
-                    Email = therapist.Email,
-                    YearsOfExperience = therapist.YearsOfExperience,
-                };
-            }
-            else
+            if (therapist == null)
                 return null;
+
+            return new BlSpecializationsTherapists
+            {
+                TherapistsId = therapist.TherapistsId,
+                FirstName = therapist.FirstName,
+                LastName = therapist.LastName,
+                SpecializationId = therapist.SpecializationId,
+                PhoneNumber = therapist.PhoneNumber,
+                Email = therapist.Email,
+                YearsOfExperience = therapist.YearsOfExperience,
+            };
         }
 
-        public static List<BlSpecializationsTherapists> ToListSpecializations(List<Therapist> therapist)
+        public static List<BlSpecializationsTherapists> ToListSpecializations(List<Therapist> therapists)
         {
-            List<BlSpecializationsTherapists> therapists = new List<BlSpecializationsTherapists>();
-
-            foreach (var item in therapist)
+            var result = new List<BlSpecializationsTherapists>();
+            foreach (var therapist in therapists)
             {
-                var therap = ToSpecializations(item);
-                therapists.Add(therap);
+                result.Add(ToSpecializations(therapist));
             }
-            return therapists;
+            return result;
         }
 
-        public static BlSpecializations ASpecialization(Specialization specializations)
+        public static BlSpecializations ASpecialization(Specialization specialization)
         {
-            if (specializations != null)
-            {
-                return new BlSpecializations
-                {
-                    SpecializationName = specializations.SpecializationName,
+            if (specialization == null)
+                return null;
 
-                    Description = specializations.Description
-                };
-            }
-            else
-                return null;
-        }
-        public static BlAvailableAppointment ToAvailableAppointment(TherapistHour therapistHour)
-        {
-            if (therapistHour != null)
+            return new BlSpecializations
             {
-                return new BlAvailableAppointment
-                {
-                    TherapistFirstName = therapistHour.Therapist.FirstName,
-                    TherapistLastName = therapistHour.Therapist.LastName,
-                    DayOfWeek = therapistHour.DayOfWeek,
-                    StartTime = therapistHour.StartTime,
-                    EndTime = therapistHour.EndTime,
-                };
-            }
-            else
-                return null;
+                SpecializationName = specialization.SpecializationName,
+                Description = specialization.Description
+            };
         }
 
         public static List<BlSpecializations> ToListAllSpecializations(List<Specialization> specializations)
         {
-            List<BlSpecializations> AllSpecializations = new List<BlSpecializations>();
-
-            foreach (var item in specializations)
+            var result = new List<BlSpecializations>();
+            foreach (var specialization in specializations)
             {
-                var specialization = ASpecialization(item);
-                AllSpecializations.Add(specialization);
+                result.Add(ASpecialization(specialization));
             }
-
-            return AllSpecializations;
+            return result;
         }
 
-        public static List<BlAvailableAppointment> ToListAvailableAppointment(List<TherapistHour> therapistHour)
+        public static BlAvailableAppointment ToAvailableAppointment(TherapistHour therapistHour)
         {
-            List<BlAvailableAppointment> availableAppointments = new List<BlAvailableAppointment>();
+            if (therapistHour == null || therapistHour.Therapist == null)
+                return null;
 
-            foreach (var item in therapistHour)
+            return new BlAvailableAppointment
             {
-                var availableAppoint = ToAvailableAppointment(item);
-                availableAppointments.Add(availableAppoint);
+                TherapistFirstName = therapistHour.Therapist.FirstName,
+                TherapistLastName = therapistHour.Therapist.LastName,
+                DayOfWeek = therapistHour.DayOfWeek,
+                StartTime = therapistHour.StartTime,
+                EndTime = therapistHour.EndTime,
+            };
+        }
+
+        public static List<BlAvailableAppointment> ToListAvailableAppointment(List<TherapistHour> therapistHours)
+        {
+            var result = new List<BlAvailableAppointment>();
+            foreach (var hour in therapistHours)
+            {
+                result.Add(ToAvailableAppointment(hour));
             }
-            return availableAppointments;
+            return result;
         }
 
         public static BlPatient ToPatient(Patient patient)
         {
+            if (patient == null)
+                return null;
+
             return new BlPatient
             {
                 FirstName = patient.FirstName,
@@ -134,31 +116,40 @@ namespace Bl
                 Gender = patient.Gender
             };
         }
+
         public static BlTherapist ToTherapist(Therapist therapist)
         {
+            if (therapist == null)
+                return null;
+
             return new BlTherapist
             {
-                TherapistsId=therapist.TherapistsId,
-                FirstName=therapist.FirstName,
-                LastName=therapist.LastName,
-                SpecializationId=therapist.SpecializationId,
-                PhoneNumber=therapist.PhoneNumber,
-                Email=therapist.Email,
-                YearsOfExperience=therapist.YearsOfExperience
+                TherapistsId = therapist.TherapistsId,
+                FirstName = therapist.FirstName,
+                LastName = therapist.LastName,
+                SpecializationId = therapist.SpecializationId,
+                PhoneNumber = therapist.PhoneNumber,
+                Email = therapist.Email,
+                YearsOfExperience = therapist.YearsOfExperience
             };
         }
+
         public static PatientOrTherapist IsPatient(Patient patient)
         {
-            return new PatientOrTherapist { BlPatient = ToPatient(patient), BlTherapist = null };
+            return new PatientOrTherapist
+            {
+                BlPatient = ToPatient(patient),
+                BlTherapist = null
+            };
         }
+
         public static PatientOrTherapist IsTherapist(Therapist therapist)
         {
-            return new PatientOrTherapist { BlPatient =null , BlTherapist = ToTherapist(therapist) };
+            return new PatientOrTherapist
+            {
+                BlPatient = null,
+                BlTherapist = ToTherapist(therapist)
+            };
         }
     }
 }
-
-
-
-
-

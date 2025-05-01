@@ -16,7 +16,7 @@ namespace Dal.Services
             _context = context;
         }
 
-        public List<Appointment> GetTherapistApointmentsById(int id)
+        public List<Appointment> GetTherapistApointmentsById(string id)
         {
             var therapists = _context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
             if (therapists != null)

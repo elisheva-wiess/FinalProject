@@ -9,6 +9,6 @@ namespace Dal.Api
 {
     public interface ITherapistDal
     {
-        List<Appointment> GetTherapistApointmentsById(int id);
+        List<Appointment> GetTherapistApointmentsById(string id);
     }
 }

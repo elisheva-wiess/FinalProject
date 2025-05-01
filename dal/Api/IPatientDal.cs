@@ -12,9 +12,9 @@ namespace Dal.Api
         List<Therapist> GetSpecializationsTherapistsByName(string name);
         List<Specialization> GetAllSpecializations();
         List<TherapistHour> ViewTherapistsAvailableDays(string name, string specializationName);
-        public Patient LogIn(int id);
-        Patient IsPatient(int id);
-        Therapist IsTherapist(int id);
+        public Patient LogIn(string id);
+        Patient IsPatient(string id);
+        Therapist IsTherapist(string id);
         public void SignUp(Patient patient);
     }
 }

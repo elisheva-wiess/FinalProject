@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dal.models { 
+namespace Dal.Models;
 
 public partial class Table
 {
     public int Id { get; set; }
-}
 }

@@ -15,9 +15,9 @@ namespace Bl.Api
         List<BlSpecializations> GetAllSpecializations();
 
         List<BlAvailableAppointment> ViewTherapistsAvailableDays(string name, string specializationName);
-        PatientOrTherapist LogIn(int id);
-        Patient IsPatient(int id);
-        Therapist IsTherapist(int id);
+        PatientOrTherapist LogIn(string id);
+        Patient IsPatient(string id);
+        Therapist IsTherapist(string id);
         BlPatient SingUp(Patient patient);
 
     }

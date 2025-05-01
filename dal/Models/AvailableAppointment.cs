@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dal.models { 
+namespace Dal.Models;
 
 public partial class AvailableAppointment
 {
@@ -14,5 +14,4 @@ public partial class AvailableAppointment
     public TimeOnly TimeSlot { get; set; }
 
     public virtual Therapist Therapist { get; set; } = null!;
-}
 }

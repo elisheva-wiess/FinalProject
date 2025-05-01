@@ -20,15 +20,19 @@ namespace Dal.Services
         public List<Therapist> GetSpecializationsTherapistsByName(string name)
         {
             var specialization = _context.Specializations.FirstOrDefault(s => s.SpecializationName == name);
+
             if (specialization != null)
             {
-                return _context.Therapists.Where(t => t.Specialization == specialization).ToList();
+                return _context.Therapists
+                    .Where(t => t.SpecializationId == specialization.Id)
+                    .ToList();
             }
             else
             {
                 return new List<Therapist>();
             }
         }
+
 
         public List<Specialization> GetAllSpecializations()
         {
@@ -65,18 +69,18 @@ namespace Dal.Services
             _context.SaveChanges(); 
         }
 
-        public Patient LogIn(int id)
+        public Patient LogIn(string id)
         {
             var patient = _context.Patients.FirstOrDefault(s => s.PatientsId == id);
             return patient;
 
         }
-      public  Patient IsPatient(int id)
+      public  Patient IsPatient(string id)
         {
             var patient = _context.Patients.FirstOrDefault(s => s.PatientsId == id);
             return patient;
         }
-     public   Therapist IsTherapist(int id)
+     public   Therapist IsTherapist(string id)
         {
             var therapist = _context.Therapists.FirstOrDefault(s => s.TherapistsId == id);
             return therapist;

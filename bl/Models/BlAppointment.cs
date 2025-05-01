@@ -11,7 +11,7 @@ namespace Bl.Models
     {
         public int AppointmentId { get; set; }
 
-        public int PatientId { get; set; }
+        public string PatientId { get; set; }
 
         public DateTime AppointmentDate { get; set; }
     }

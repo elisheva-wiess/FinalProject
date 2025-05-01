@@ -9,6 +9,6 @@ namespace Bl.Api
 {
     public interface ITherapistBl
     {
-        List<BlAppointment> GetTherapistApointmentsById(int id);
+        List<BlAppointment> GetTherapistApointmentsById(string id);
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Dal.models { 
+namespace Dal.Models;
 
 public partial class dbClass : DbContext
 {
@@ -29,11 +29,13 @@ public partial class dbClass : DbContext
 
     public virtual DbSet<TherapistHour> TherapistHours { get; set; }
 
+    public virtual DbSet<TherapistSpecialization> TherapistSpecializations { get; set; }
+
     public virtual DbSet<TherapistToSpecialization> TherapistToSpecializations { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='H:\\הורדות פרוייקט\\FinalProject\\dal\\Data\\database.mdf';Integrated Security=True;Connect Timeout=30");
+        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\USERS\\משתמש\\DESKTOP\\ENDTOEND PROJECT\\FINALPROJECT\\DAL\\DATA\\DATABASE.MDF';Integrated Security=True;Connect Timeout=30");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -141,13 +143,12 @@ public partial class dbClass : DbContext
 
         modelBuilder.Entity<Specialization>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Speciali__3214EC07F6A726F7");
+            entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC07EB2C6F64");
 
             entity.ToTable("Specialization");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Description)
-                .HasMaxLength(255)
+                .HasMaxLength(400)
                 .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("description");
             entity.Property(e => e.SpecializationName)
@@ -192,7 +193,6 @@ public partial class dbClass : DbContext
                 .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("phoneNumber");
             entity.Property(e => e.Salary).HasColumnName("salary");
-            entity.Property(e => e.SpecializationId).HasColumnName("specialization_id");
             entity.Property(e => e.YearsOfExperience).HasColumnName("yearsOfExperience");
         });
 
@@ -219,6 +219,33 @@ public partial class dbClass : DbContext
                 .HasConstraintName("FK__Therapist__thera__656C112C");
         });
 
+        modelBuilder.Entity<TherapistSpecialization>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Therapis__3213E83F1CA32D6E");
+
+            entity.ToTable("TherapistSpecialization");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.SpecializationId).HasColumnName("specializationId");
+            entity.Property(e => e.TherapistId)
+                .HasMaxLength(10)
+                .IsFixedLength()
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
+                .HasColumnName("therapistId");
+
+            entity.HasOne(d => d.Specialization).WithMany(p => p.TherapistSpecializations)
+                .HasForeignKey(d => d.SpecializationId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Therapist__speci__03F0984C");
+
+            entity.HasOne(d => d.Therapist).WithMany(p => p.TherapistSpecializations)
+                .HasForeignKey(d => d.TherapistId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Therapist__thera__02FC7413");
+        });
+
         modelBuilder.Entity<TherapistToSpecialization>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Therapis__3213E83F3ADD5082");
@@ -238,7 +265,7 @@ public partial class dbClass : DbContext
             entity.HasOne(d => d.Specialization).WithMany(p => p.TherapistToSpecializations)
                 .HasForeignKey(d => d.SpecializationId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Therapist__speci__6754599E");
+                .HasConstraintName("FK__Therapist__speci__6FE99F9F");
 
             entity.HasOne(d => d.Therapist).WithMany(p => p.TherapistToSpecializations)
                 .HasForeignKey(d => d.TherapistId)
@@ -248,6 +275,6 @@ public partial class dbClass : DbContext
 
         OnModelCreatingPartial(modelBuilder);
     }
-}
+
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

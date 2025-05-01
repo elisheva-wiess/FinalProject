@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dal.models
+namespace Dal.Models;
+
+public partial class Specialization
 {
+    public int Id { get; set; }
 
-    public partial class Specialization
-    {
-        public int Id { get; set; }
+    public string SpecializationName { get; set; } = null!;
 
-        public string SpecializationName { get; set; } = null!;
+    public string? Description { get; set; }
 
-        public string? Description { get; set; }
+    public virtual ICollection<TherapistSpecialization> TherapistSpecializations { get; set; } = new List<TherapistSpecialization>();
 
-        public virtual ICollection<TherapistToSpecialization> TherapistToSpecializations { get; set; } = new List<TherapistToSpecialization>();
-    }
+    public virtual ICollection<TherapistToSpecialization> TherapistToSpecializations { get; set; } = new List<TherapistToSpecialization>();
 }
