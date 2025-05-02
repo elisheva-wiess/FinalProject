@@ -23,8 +23,6 @@ public partial class dbClass : DbContext
 
     public virtual DbSet<Specialization> Specializations { get; set; }
 
-    public virtual DbSet<Table> Tables { get; set; }
-
     public virtual DbSet<Therapist> Therapists { get; set; }
 
     public virtual DbSet<TherapistHour> TherapistHours { get; set; }
@@ -153,15 +151,6 @@ public partial class dbClass : DbContext
                 .HasMaxLength(50)
                 .UseCollation("SQL_Latin1_General_CP1_CI_AS")
                 .HasColumnName("specializationName");
-        });
-
-        modelBuilder.Entity<Table>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__Table__3214EC07B3B9B45F");
-
-            entity.ToTable("Table");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Therapist>(entity =>
