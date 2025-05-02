@@ -1,5 +1,5 @@
 ﻿using Dal.Api;
-using Dal.models;
+using Dal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,56 +17,10 @@ namespace Dal.Services
             _context = context;
         }
 
-        public List<Therapist> GetSpecializationsTherapistsByName(string name)
-        {
-            var specialization = _context.Specializations.FirstOrDefault(s => s.SpecializationName == name);
-
-            if (specialization != null)
-            {
-                return _context.Therapists
-                    .Where(t => t.SpecializationId == specialization.Id)
-                    .ToList();
-            }
-            else
-            {
-                return new List<Therapist>();
-            }
-        }
-
-
-        public List<Specialization> GetAllSpecializations()
-        {
-            return _context.Specializations.ToList();
-        }
-
-        //public List<TherapistHour> ViewTherapistsAvailableDays(string name, string specializationName)
-        //{
-        //    var therapistSpecialization = _context.Specializations.FirstOrDefault(s => s.SpecializationName == specializationName);
-
-        //    if (therapistSpecialization != null)
-        //    {
-        //        return _context.TherapistHours.Where(t => t.Therapist.FirstName == name && t.Therapist.SpecializationId == therapistSpecialization.Id).ToList();
-        //    }
-        //    else
-        //    {
-        //        return new List<TherapistHour>();
-        //    }
-        //}
-
-        public List<TherapistHour> ViewTherapistsAvailableDays(string name, string specializationName)
-        {
-            var therapistSpecialization = _context.Specializations.FirstOrDefault(s => s.SpecializationName == specializationName);
-
-            return therapistSpecialization == null
-                ? new List<TherapistHour>()
-                : _context.TherapistHours
-                          .Where(t => t.Therapist.FirstName == name && t.Therapist.SpecializationId == therapistSpecialization.Id)
-                          .ToList();
-        }
         public void SignUp(Patient patient)
         {
             _context.Patients.Add(patient);
-            _context.SaveChanges(); 
+            _context.SaveChanges();
         }
 
         public Patient LogIn(string id)
@@ -75,16 +29,58 @@ namespace Dal.Services
             return patient;
 
         }
-      public  Patient IsPatient(string id)
+        public Patient IsPatient(string id)
         {
             var patient = _context.Patients.FirstOrDefault(s => s.PatientsId == id);
             return patient;
         }
-     public   Therapist IsTherapist(string id)
+        public Therapist IsTherapist(string id)
         {
             var therapist = _context.Therapists.FirstOrDefault(s => s.TherapistsId == id);
             return therapist;
         }
+
+        public List<Therapist> GetTherapistsBySpecializationName(string name)
+        {
+            var specialization = _context.Specializations.FirstOrDefault(s => s.SpecializationName == name);
+
+            if (specialization != null)
+            {
+                return _context.TherapistSpecializations
+                    .Where(ts => ts.SpecializationId == specialization.Id)
+                    .Select(ts => ts.Therapist)
+                    .Distinct()
+                    .ToList();
+            }
+            else
+            {
+                return new List<Therapist>();
+            }
+        }
+
+        public List<Specialization> GetAllSpecializations()
+        {
+            return _context.Specializations.ToList();
+        }
+
+        public List<TherapistHour> ViewTherapistsAvailableDays(string name, string specializationName)
+        {
+            var specialization = _context.Specializations
+                                         .FirstOrDefault(s => s.SpecializationName == specializationName);
+
+            if (specialization == null)
+                return new List<TherapistHour>();
+
+            var therapistIdsWithSpecialization = _context.TherapistSpecializations
+                                                         .Where(ts => ts.SpecializationId == specialization.Id)
+                                                         .Select(ts => ts.TherapistId)
+                                                         .ToList();
+
+            return _context.TherapistHours
+                           .Where(th => th.Therapist.FirstName == name && therapistIdsWithSpecialization.Contains(th.TherapistId))
+                           .ToList();
+        }
+
 
     }
 }

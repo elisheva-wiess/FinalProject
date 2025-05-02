@@ -1,4 +1,4 @@
-﻿using Dal.models;
+﻿using Dal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +14,6 @@ namespace Bl.Models
         public string FirstName { get; set; } = null!;
 
         public string LastName { get; set; } = null!;
-
-        public int SpecializationId { get; set; }
 
         public string PhoneNumber { get; set; } = null!;
 

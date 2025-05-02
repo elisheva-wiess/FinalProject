@@ -1,5 +1,5 @@
 ﻿using Bl.Models;
-using Dal.models;
+using Dal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +10,12 @@ namespace Bl.Api
 {
     public interface IPatientBl
     {
-        List<BlSpecializationsTherapists> GetSpecializationsTherapistsByName(string name);
-
-        List<BlSpecializations> GetAllSpecializations();
-
-        List<BlAvailableAppointment> ViewTherapistsAvailableDays(string name, string specializationName);
         PatientOrTherapist LogIn(string id);
         Patient IsPatient(string id);
         Therapist IsTherapist(string id);
         BlPatient SingUp(Patient patient);
-
+        List<BlSpecializationsTherapists> GetSpecializationsTherapistsByName(string name);
+        List<BlSpecializations> GetAllSpecializations();
+        List<BlAvailableAppointment> ViewTherapistsAvailableDays(string name, string specializationName);
     }
 }

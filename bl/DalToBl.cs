@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Bl.Models;
-using Dal.models;
+using Dal.Models;
 
 namespace Bl
 {
@@ -40,7 +40,6 @@ namespace Bl
                 TherapistsId = therapist.TherapistsId,
                 FirstName = therapist.FirstName,
                 LastName = therapist.LastName,
-                SpecializationId = therapist.SpecializationId,
                 PhoneNumber = therapist.PhoneNumber,
                 Email = therapist.Email,
                 YearsOfExperience = therapist.YearsOfExperience,
@@ -127,7 +126,6 @@ namespace Bl
                 TherapistsId = therapist.TherapistsId,
                 FirstName = therapist.FirstName,
                 LastName = therapist.LastName,
-                SpecializationId = therapist.SpecializationId,
                 PhoneNumber = therapist.PhoneNumber,
                 Email = therapist.Email,
                 YearsOfExperience = therapist.YearsOfExperience

@@ -1,7 +1,7 @@
 ﻿using Bl.Api;
 using Bl.Models;
 using Dal.Api;
-using Dal.models;
+using Dal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace Bl.Services
 
         public List<BlSpecializationsTherapists> GetSpecializationsTherapistsByName(string name)
         {
-            var specializationsTherapists = patientsDalServer.GetSpecializationsTherapistsByName(name);
+            var specializationsTherapists = patientsDalServer.GetTherapistsBySpecializationName(name);
             return DalToBl.ToListSpecializations(specializationsTherapists);
         }
         public List<BlAvailableAppointment> ViewTherapistsAvailableDays(string name, string specializationName)

@@ -1,0 +1,439 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Server",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Patient/{id}": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Patient": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Patient"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Patient"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Patient"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Patient/SpecializationsTherapists": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Patient/GetAllSpecializations": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Patient/{name} {specializationName}": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "specializationName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Therapist": {
+      "get": {
+        "tags": [
+          "Therapist"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Appointment": {
+        "type": "object",
+        "properties": {
+          "appointmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "therapistId": {
+            "type": "string",
+            "nullable": true
+          },
+          "patientId": {
+            "type": "string",
+            "nullable": true
+          },
+          "appointmentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "patient": {
+            "$ref": "#/components/schemas/Patient"
+          },
+          "therapist": {
+            "$ref": "#/components/schemas/Therapist"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AvailableAppointment": {
+        "type": "object",
+        "properties": {
+          "availableId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "therapistId": {
+            "type": "string",
+            "nullable": true
+          },
+          "availableDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "timeSlot": {
+            "type": "string",
+            "format": "time"
+          },
+          "therapist": {
+            "$ref": "#/components/schemas/Therapist"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Patient": {
+        "type": "object",
+        "properties": {
+          "patientsId": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "healthInsurance": {
+            "type": "string",
+            "nullable": true
+          },
+          "appointments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Appointment"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Specialization": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "specializationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "therapistSpecializations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TherapistSpecialization"
+            },
+            "nullable": true
+          },
+          "therapistToSpecializations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TherapistToSpecialization"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Therapist": {
+        "type": "object",
+        "properties": {
+          "therapistsId": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "yearsOfExperience": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "salary": {
+            "type": "number",
+            "format": "double"
+          },
+          "appointments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Appointment"
+            },
+            "nullable": true
+          },
+          "availableAppointments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AvailableAppointment"
+            },
+            "nullable": true
+          },
+          "therapistHours": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TherapistHour"
+            },
+            "nullable": true
+          },
+          "therapistSpecializations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TherapistSpecialization"
+            },
+            "nullable": true
+          },
+          "therapistToSpecializations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TherapistToSpecialization"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TherapistHour": {
+        "type": "object",
+        "properties": {
+          "therapistHoursId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "therapistId": {
+            "type": "string",
+            "nullable": true
+          },
+          "dayOfWeek": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "time"
+          },
+          "treatmentTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "therapist": {
+            "$ref": "#/components/schemas/Therapist"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TherapistSpecialization": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "specializationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "therapistId": {
+            "type": "string",
+            "nullable": true
+          },
+          "specialization": {
+            "$ref": "#/components/schemas/Specialization"
+          },
+          "therapist": {
+            "$ref": "#/components/schemas/Therapist"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TherapistToSpecialization": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "specializationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "therapistId": {
+            "type": "string",
+            "nullable": true
+          },
+          "specialization": {
+            "$ref": "#/components/schemas/Specialization"
+          },
+          "therapist": {
+            "$ref": "#/components/schemas/Therapist"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

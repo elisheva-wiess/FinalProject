@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Server.models;
+namespace Server.Models;
 
 public partial class Therapist
 {
@@ -10,8 +10,6 @@ public partial class Therapist
     public string FirstName { get; set; } = null!;
 
     public string LastName { get; set; } = null!;
-
-    public int SpecializationId { get; set; }
 
     public string PhoneNumber { get; set; } = null!;
 
@@ -27,5 +25,5 @@ public partial class Therapist
 
     public virtual ICollection<TherapistHour> TherapistHours { get; set; } = new List<TherapistHour>();
 
-    public virtual ICollection<TherapistToSpecialization> TherapistToSpecializations { get; set; } = new List<TherapistToSpecialization>();
+    public virtual ICollection<TherapistSpecialization> TherapistSpecializations { get; set; } = new List<TherapistSpecialization>();
 }

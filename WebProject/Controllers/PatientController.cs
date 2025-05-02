@@ -1,7 +1,7 @@
 ﻿using Bl.Api;
 using Bl.Models;
 using Dal.Api;
-using Dal.models;
+using Dal.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

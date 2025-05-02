@@ -15,8 +15,6 @@ namespace Bl.Models
 
         public string LastName { get; set; } = null!;
 
-        public int SpecializationId { get; set; }
-
         public string PhoneNumber { get; set; } = null!;
 
         public string? Email { get; set; }
