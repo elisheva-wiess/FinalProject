@@ -1,4 +1,4 @@
-﻿
+﻿using Dal.Models;
 using Microsoft.AspNetCore.Mvc;
 using Bl.Api;
 
