@@ -208,13 +208,11 @@ public partial class dbClass : DbContext
 
         modelBuilder.Entity<TherapistSpecialization>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Therapis__3213E83F1CA32D6E");
+            entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3213E83FE9B08889");
 
             entity.ToTable("TherapistSpecialization");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.SpecializationId).HasColumnName("specializationId");
             entity.Property(e => e.TherapistId)
                 .HasMaxLength(10)
@@ -225,12 +223,12 @@ public partial class dbClass : DbContext
             entity.HasOne(d => d.Specialization).WithMany(p => p.TherapistSpecializations)
                 .HasForeignKey(d => d.SpecializationId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Therapist__speci__03F0984C");
+                .HasConstraintName("FK__Therapist__speci__17036CC0");
 
             entity.HasOne(d => d.Therapist).WithMany(p => p.TherapistSpecializations)
                 .HasForeignKey(d => d.TherapistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Therapist__thera__02FC7413");
+                .HasConstraintName("FK__Therapist__thera__160F4887");
         });
 
         OnModelCreatingPartial(modelBuilder);
