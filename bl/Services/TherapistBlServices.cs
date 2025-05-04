@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bl.Services
 {
-    internal class TherapistBlServices : ITherapistBl
+    public class TherapistBlServices : ITherapistBl
     {
         private readonly ITherapistDal therapistDalServices;
 

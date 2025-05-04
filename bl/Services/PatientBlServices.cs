@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Bl.Services
 {
-    internal class PatientBlServices : IPatientBl
+    public class PatientBlServices : IPatientBl
     {
         private readonly IPatientDal patientsDalServer;
 

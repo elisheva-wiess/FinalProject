@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dal.Services
 {
-    internal class PatientDallServices : IPatientDal
+    public class PatientDallServices : IPatientDal
     {
         private readonly dbClass _context;
 

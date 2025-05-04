@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Dal.Services
 {
-    internal class TherapistDalServices : ITherapistDal
+    public class TherapistDalServices : ITherapistDal
     {
         private readonly dbClass _context;
 
