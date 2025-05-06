@@ -1,29 +1,23 @@
+using Bl;
 using Bl.Api;
 using Bl.Services;
+using Dal.Api;
+using Dal.Models;
+using Dal.Services;
+using Dal;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddScoped<IPatientBl, PatientBlServices>();
+builder.Services.AddScoped<IBlManager, BlManager>();
+builder.Services.AddScoped<IDalManager, DalManager>();
+builder.Services.AddScoped<IPatientDal, PatientDallServices>();
+builder.Services.AddScoped<IPatientBl, PatientBlServices>();
+builder.Services.AddSingleton<dbClass>();
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
-//}
-
-//app.UseHttpsRedirection();
-
-//app.UseAuthorization();
-//app.MapControllers();
 
 app.MapControllers();
 app.UseSwagger();

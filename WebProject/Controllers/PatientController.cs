@@ -18,24 +18,34 @@ namespace Server.Controllers
         }
 
 
-
-
         [HttpGet("{id}")]
-        public IActionResult Login(string id)
+
+        public IActionResult Login([FromRoute] string id)
+
         {
+
             var patient = _patientBlServer.LogIn(id);
+
             if (patient != null)
+
                 return Ok(patient);
-            return null;
+
+            return NotFound("Patient not found.");
+
         }
 
         [HttpPost]
-        public IActionResult signUp([FromBody] Patient patient)
+        public IActionResult SignUp([FromBody] Patient patient)
         {
-            var pat= _patientBlServer.SingUp(patient);
-            if (pat != null)
+            try
+            {
+                var pat = _patientBlServer.SingUp(patient);
                 return Ok(pat);
-            return null;
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}"); 
+            }
         }
 
         [HttpGet("SpecializationsTherapists")]
@@ -48,12 +58,19 @@ namespace Server.Controllers
         }
 
         [HttpGet("GetAllSpecializations")]
+
         public IActionResult GetAllSpecializations()
+
         {
+
             var AllSpecializationsTherapists = _patientBlServer.GetAllSpecializations();
-            if (AllSpecializationsTherapists != null)
+
+            if (AllSpecializationsTherapists != null && AllSpecializationsTherapists.Any())
+
                 return Ok(AllSpecializationsTherapists);
-            return BadRequest();
+
+            return NotFound("No specializations found."); // improved handling for empty result
+
         }
 
         [HttpGet("{name} {specializationName}")]

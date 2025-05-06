@@ -4741,11 +4741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ברקוביץ דבורה\\FinalProject\\dal\\Dal.csproj",
+      "projectUniqueName": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj",
       "projectName": "Dal",
-      "projectPath": "C:\\Users\\ברקוביץ דבורה\\FinalProject\\dal\\Dal.csproj",
+      "projectPath": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj",
       "packagesPath": "C:\\Users\\ברקוביץ דבורה\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ברקוביץ דבורה\\FinalProject\\dal\\obj\\",
+      "outputPath": "H:\\EndToEndProject\\FinalProject\\dal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

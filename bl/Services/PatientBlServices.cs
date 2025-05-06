@@ -14,6 +14,11 @@ namespace Bl.Services
     {
         private readonly IPatientDal patientsDalServer;
 
+        public PatientBlServices(IPatientDal _patientsDalServer)
+        {
+            patientsDalServer = _patientsDalServer;
+        }
+
         public List<BlSpecializationsTherapists> GetSpecializationsTherapistsByName(string name)
         {
             var specializationsTherapists = patientsDalServer.GetTherapistsBySpecializationName(name);

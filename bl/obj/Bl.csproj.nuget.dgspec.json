@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ברקוביץ דבורה\\FinalProject\\bl\\Bl.csproj": {}
+    "H:\\EndToEndProject\\FinalProject\\bl\\Bl.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ברקוביץ דבורה\\FinalProject\\bl\\Bl.csproj": {
+    "H:\\EndToEndProject\\FinalProject\\bl\\Bl.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ברקוביץ דבורה\\FinalProject\\bl\\Bl.csproj",
+        "projectUniqueName": "H:\\EndToEndProject\\FinalProject\\bl\\Bl.csproj",
         "projectName": "Bl",
-        "projectPath": "C:\\Users\\ברקוביץ דבורה\\FinalProject\\bl\\Bl.csproj",
+        "projectPath": "H:\\EndToEndProject\\FinalProject\\bl\\Bl.csproj",
         "packagesPath": "C:\\Users\\ברקוביץ דבורה\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ברקוביץ דבורה\\FinalProject\\bl\\obj\\",
+        "outputPath": "H:\\EndToEndProject\\FinalProject\\bl\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ברקוביץ דבורה\\FinalProject\\dal\\Dal.csproj": {
-                "projectPath": "C:\\Users\\ברקוביץ דבורה\\FinalProject\\dal\\Dal.csproj"
+              "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj": {
+                "projectPath": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "C:\\Users\\ברקוביץ דבורה\\FinalProject\\dal\\Dal.csproj": {
+    "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ברקוביץ דבורה\\FinalProject\\dal\\Dal.csproj",
+        "projectUniqueName": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj",
         "projectName": "Dal",
-        "projectPath": "C:\\Users\\ברקוביץ דבורה\\FinalProject\\dal\\Dal.csproj",
+        "projectPath": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj",
         "packagesPath": "C:\\Users\\ברקוביץ דבורה\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ברקוביץ דבורה\\FinalProject\\dal\\obj\\",
+        "outputPath": "H:\\EndToEndProject\\FinalProject\\dal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
