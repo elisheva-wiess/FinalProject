@@ -26,6 +26,4 @@ public partial class Therapist
     public virtual ICollection<TherapistHour> TherapistHours { get; set; } = new List<TherapistHour>();
 
     public virtual ICollection<TherapistSpecialization> TherapistSpecializations { get; set; } = new List<TherapistSpecialization>();
-
-    public virtual ICollection<TherapistToSpecialization> TherapistToSpecializations { get; set; } = new List<TherapistToSpecialization>();
 }

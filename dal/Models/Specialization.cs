@@ -12,6 +12,4 @@ public partial class Specialization
     public string? Description { get; set; }
 
     public virtual ICollection<TherapistSpecialization> TherapistSpecializations { get; set; } = new List<TherapistSpecialization>();
-
-    public virtual ICollection<TherapistToSpecialization> TherapistToSpecializations { get; set; } = new List<TherapistToSpecialization>();
 }

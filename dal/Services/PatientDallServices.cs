@@ -63,7 +63,7 @@ namespace Dal.Services
             return _context.Specializations.ToList();
         }
 
-        public List<TherapistHour> ViewTherapistsAvailableDays(string name, string specializationName)
+        public List<TherapistHour> ViewTherapistsAvailableDays(string therapistFirstName, string specializationName)
         {
             var specialization = _context.Specializations
                                          .FirstOrDefault(s => s.SpecializationName == specializationName);
@@ -77,7 +77,7 @@ namespace Dal.Services
                                                          .ToList();
 
             return _context.TherapistHours
-                           .Where(th => th.Therapist.FirstName == name && therapistIdsWithSpecialization.Contains(th.TherapistId))
+                           .Where(th => th.Therapist.FirstName == therapistFirstName && therapistIdsWithSpecialization.Contains(th.TherapistId))
                            .ToList();
         }
 

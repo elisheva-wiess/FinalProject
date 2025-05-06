@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Server.Controllers.PatientController",
-    "Method": "signUp",
+    "Method": "SignUp",
     "RelativePath": "api/Patient",
     "HttpMethod": "POST",
     "IsController": true,
@@ -33,7 +33,7 @@
   },
   {
     "ContainingType": "Server.Controllers.PatientController",
-    "Method": "GetTherapistApointmentsById",
+    "Method": "ViewTherapistsAvailableDays",
     "RelativePath": "api/Patient/{name} {specializationName}",
     "HttpMethod": "GET",
     "IsController": true,

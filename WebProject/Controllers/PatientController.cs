@@ -69,14 +69,13 @@ namespace Server.Controllers
 
                 return Ok(AllSpecializationsTherapists);
 
-            return NotFound("No specializations found."); // improved handling for empty result
-
+            return NotFound("No specializations found."); 
         }
 
         [HttpGet("{name} {specializationName}")]
-        public IActionResult GetTherapistApointmentsById(string name, string specializationName)
+        public IActionResult ViewTherapistsAvailableDays(string therapistFirstName, string specializationName)
         {
-            var availableAppointment = _patientBlServer.ViewTherapistsAvailableDays(name, specializationName);
+            var availableAppointment = _patientBlServer.ViewTherapistsAvailableDays(therapistFirstName, specializationName);
             if (availableAppointment != null)
                 return Ok(availableAppointment);
             return BadRequest();

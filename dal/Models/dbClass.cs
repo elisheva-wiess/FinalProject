@@ -23,15 +23,11 @@ public partial class dbClass : DbContext
 
     public virtual DbSet<Specialization> Specializations { get; set; }
 
-    public virtual DbSet<Table> Tables { get; set; }
-
     public virtual DbSet<Therapist> Therapists { get; set; }
 
     public virtual DbSet<TherapistHour> TherapistHours { get; set; }
 
     public virtual DbSet<TherapistSpecialization> TherapistSpecializations { get; set; }
-
-    public virtual DbSet<TherapistToSpecialization> TherapistToSpecializations { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -157,15 +153,6 @@ public partial class dbClass : DbContext
                 .HasColumnName("specializationName");
         });
 
-        modelBuilder.Entity<Table>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__Table__3214EC07B3B9B45F");
-
-            entity.ToTable("Table");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
-        });
-
         modelBuilder.Entity<Therapist>(entity =>
         {
             entity.HasKey(e => e.TherapistsId).HasName("PK__tmp_ms_x__15D8DB2311D97990");
@@ -244,33 +231,6 @@ public partial class dbClass : DbContext
                 .HasForeignKey(d => d.TherapistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Therapist__thera__02FC7413");
-        });
-
-        modelBuilder.Entity<TherapistToSpecialization>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__Therapis__3213E83F3ADD5082");
-
-            entity.ToTable("TherapistToSpecialization");
-
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.SpecializationId).HasColumnName("specializationId");
-            entity.Property(e => e.TherapistId)
-                .HasMaxLength(10)
-                .IsFixedLength()
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS")
-                .HasColumnName("therapistId");
-
-            entity.HasOne(d => d.Specialization).WithMany(p => p.TherapistToSpecializations)
-                .HasForeignKey(d => d.SpecializationId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Therapist__speci__6FE99F9F");
-
-            entity.HasOne(d => d.Therapist).WithMany(p => p.TherapistToSpecializations)
-                .HasForeignKey(d => d.TherapistId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Therapist__thera__66603565");
         });
 
         OnModelCreatingPartial(modelBuilder);
