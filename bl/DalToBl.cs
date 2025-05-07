@@ -132,22 +132,32 @@ namespace Bl
             };
         }
 
-        public static PatientOrTherapist IsPatient(Patient patient)
+        public static BlPatientOrTherapist IsPatient(Patient patient)
         {
-            return new PatientOrTherapist
+            return new BlPatientOrTherapist
             {
                 BlPatient = ToPatient(patient),
                 BlTherapist = null
             };
         }
 
-        public static PatientOrTherapist IsTherapist(Therapist therapist)
+        public static BlPatientOrTherapist IsTherapist(Therapist therapist)
         {
-            return new PatientOrTherapist
+            return new BlPatientOrTherapist
             {
                 BlPatient = null,
                 BlTherapist = ToTherapist(therapist)
             };
         }
+
+        public static BlWorkingHours ToWorkingHours(TherapistHour therapistHour)
+        {
+            return new BlWorkingHours
+            {
+                StartTime = therapistHour.StartTime,
+                EndTime = therapistHour.EndTime,
+            };
+        }
+
     }
 }

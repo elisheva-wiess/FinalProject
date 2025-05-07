@@ -19,7 +19,7 @@ namespace Bl.Services
             patientsDalServer = _patientsDalServer;
         }
 
-        public PatientOrTherapist LogIn(string id)
+        public BlPatientOrTherapist LogIn(string id)
         {
             var patient = IsPatient(id);
             if (patient != null)

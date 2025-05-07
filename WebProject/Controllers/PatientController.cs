@@ -72,7 +72,7 @@ namespace Server.Controllers
             return NotFound("No specializations found."); 
         }
 
-        [HttpGet("{name} {specializationName}")]
+        [HttpGet("{therapistFirstName} {specializationName}")]
         public IActionResult ViewTherapistsAvailableDays(string therapistFirstName, string specializationName)
         {
             var availableAppointment = _patientBlServer.ViewTherapistsAvailableDays(therapistFirstName, specializationName);

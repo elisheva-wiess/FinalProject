@@ -34,13 +34,13 @@
   {
     "ContainingType": "Server.Controllers.PatientController",
     "Method": "ViewTherapistsAvailableDays",
-    "RelativePath": "api/Patient/{name} {specializationName}",
+    "RelativePath": "api/Patient/{therapistFirstName} {specializationName}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "name",
+        "Name": "therapistFirstName",
         "Type": "System.String",
         "IsRequired": true
       },
@@ -90,6 +90,22 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.TherapistController",
+    "Method": "GetTherapistWorkingHoursById",
+    "RelativePath": "api/Therapist/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

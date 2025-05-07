@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bl.Models
 {
-    public  class PatientOrTherapist
+    public  class BlPatientOrTherapist
     {
       public BlPatient BlPatient { get; set; }
      public  BlTherapist BlTherapist { get; set; }   

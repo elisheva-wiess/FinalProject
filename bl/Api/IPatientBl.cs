@@ -10,7 +10,7 @@ namespace Bl.Api
 {
     public interface IPatientBl
     {
-        PatientOrTherapist LogIn(string id);
+        BlPatientOrTherapist LogIn(string id);
         Patient IsPatient(string id);
         Therapist IsTherapist(string id);
         BlPatient SingUp(Patient patient);
