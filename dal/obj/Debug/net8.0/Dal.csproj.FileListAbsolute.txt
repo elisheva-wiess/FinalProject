@@ -94,6 +94,23 @@ C:\Users\ברקוביץ דבורה\FinalProject\dal\obj\Debug\net8.0\refint\Dal.
 C:\Users\ברקוביץ דבורה\FinalProject\dal\obj\Debug\net8.0\Dal.pdb
 C:\Users\ברקוביץ דבורה\FinalProject\dal\obj\Debug\net8.0\Dal.genruntimeconfig.cache
 C:\Users\ברקוביץ דבורה\FinalProject\dal\obj\Debug\net8.0\ref\Dal.dll
+<<<<<<< HEAD
+H:\project\FinalProject\dal\bin\Debug\net8.0\Dal.deps.json
+H:\project\FinalProject\dal\bin\Debug\net8.0\Dal.runtimeconfig.json
+H:\project\FinalProject\dal\bin\Debug\net8.0\Dal.dll
+H:\project\FinalProject\dal\bin\Debug\net8.0\Dal.pdb
+H:\project\FinalProject\dal\obj\Debug\net8.0\Dal.csproj.AssemblyReference.cache
+H:\project\FinalProject\dal\obj\Debug\net8.0\Dal.GeneratedMSBuildEditorConfig.editorconfig
+H:\project\FinalProject\dal\obj\Debug\net8.0\Dal.AssemblyInfoInputs.cache
+H:\project\FinalProject\dal\obj\Debug\net8.0\Dal.AssemblyInfo.cs
+H:\project\FinalProject\dal\obj\Debug\net8.0\Dal.csproj.CoreCompileInputs.cache
+H:\project\FinalProject\dal\obj\Debug\net8.0\Dal.sourcelink.json
+H:\project\FinalProject\dal\obj\Debug\net8.0\Dal.dll
+H:\project\FinalProject\dal\obj\Debug\net8.0\refint\Dal.dll
+H:\project\FinalProject\dal\obj\Debug\net8.0\Dal.pdb
+H:\project\FinalProject\dal\obj\Debug\net8.0\Dal.genruntimeconfig.cache
+H:\project\FinalProject\dal\obj\Debug\net8.0\ref\Dal.dll
+=======
 C:\Users\משתמש\Downloads\FinalProject\dal\bin\Debug\net8.0\Dal.deps.json
 C:\Users\משתמש\Downloads\FinalProject\dal\bin\Debug\net8.0\Dal.runtimeconfig.json
 C:\Users\משתמש\Downloads\FinalProject\dal\bin\Debug\net8.0\Dal.dll
@@ -109,3 +126,4 @@ C:\Users\משתמש\Downloads\FinalProject\dal\obj\Debug\net8.0\refint\Dal.dll
 C:\Users\משתמש\Downloads\FinalProject\dal\obj\Debug\net8.0\Dal.pdb
 C:\Users\משתמש\Downloads\FinalProject\dal\obj\Debug\net8.0\Dal.genruntimeconfig.cache
 C:\Users\משתמש\Downloads\FinalProject\dal\obj\Debug\net8.0\ref\Dal.dll
+>>>>>>> ae61c5cf72f47aa834bfef9b6c021c7828e1b97b

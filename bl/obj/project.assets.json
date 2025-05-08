@@ -3241,23 +3241,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\ברקוביץ דבורה\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\ויס אלישבע\\.nuget\\packages\\": {},
+>>>>>>> 5a54c57f23ef79184fbd04517eec272ed8f0aa15
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "H:\\EndToEndProject\\FinalProject\\bl\\Bl.csproj",
       "projectName": "Bl",
       "projectPath": "H:\\EndToEndProject\\FinalProject\\bl\\Bl.csproj",
       "packagesPath": "C:\\Users\\ברקוביץ דבורה\\.nuget\\packages\\",
       "outputPath": "H:\\EndToEndProject\\FinalProject\\bl\\obj\\",
+=======
+      "projectUniqueName": "H:\\project\\FinalProject\\bl\\Bl.csproj",
+      "projectName": "Bl",
+      "projectPath": "H:\\project\\FinalProject\\bl\\Bl.csproj",
+      "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
+      "outputPath": "H:\\project\\FinalProject\\bl\\obj\\",
+>>>>>>> 5a54c57f23ef79184fbd04517eec272ed8f0aa15
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\ברקוביץ דבורה\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 5a54c57f23ef79184fbd04517eec272ed8f0aa15
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3273,8 +3289,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+<<<<<<< HEAD
             "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj": {
               "projectPath": "H:\\EndToEndProject\\FinalProject\\dal\\Dal.csproj"
+=======
+            "H:\\project\\FinalProject\\dal\\Dal.csproj": {
+              "projectPath": "H:\\project\\FinalProject\\dal\\Dal.csproj"
+>>>>>>> 5a54c57f23ef79184fbd04517eec272ed8f0aa15
             }
           }
         }
