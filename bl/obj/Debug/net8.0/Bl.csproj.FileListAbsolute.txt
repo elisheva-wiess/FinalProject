@@ -106,3 +106,19 @@ C:\Users\ברקוביץ דבורה\FinalProject\bl\obj\Debug\net8.0\Bl.dll
 C:\Users\ברקוביץ דבורה\FinalProject\bl\obj\Debug\net8.0\refint\Bl.dll
 C:\Users\ברקוביץ דבורה\FinalProject\bl\obj\Debug\net8.0\Bl.pdb
 C:\Users\ברקוביץ דבורה\FinalProject\bl\obj\Debug\net8.0\ref\Bl.dll
+H:\project\FinalProject\bl\bin\Debug\net8.0\Bl.deps.json
+H:\project\FinalProject\bl\bin\Debug\net8.0\Bl.dll
+H:\project\FinalProject\bl\bin\Debug\net8.0\Bl.pdb
+H:\project\FinalProject\bl\bin\Debug\net8.0\Dal.dll
+H:\project\FinalProject\bl\bin\Debug\net8.0\Dal.pdb
+H:\project\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.AssemblyReference.cache
+H:\project\FinalProject\bl\obj\Debug\net8.0\Bl.GeneratedMSBuildEditorConfig.editorconfig
+H:\project\FinalProject\bl\obj\Debug\net8.0\Bl.AssemblyInfoInputs.cache
+H:\project\FinalProject\bl\obj\Debug\net8.0\Bl.AssemblyInfo.cs
+H:\project\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.CoreCompileInputs.cache
+H:\project\FinalProject\bl\obj\Debug\net8.0\Bl.sourcelink.json
+H:\project\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.Up2Date
+H:\project\FinalProject\bl\obj\Debug\net8.0\Bl.dll
+H:\project\FinalProject\bl\obj\Debug\net8.0\refint\Bl.dll
+H:\project\FinalProject\bl\obj\Debug\net8.0\Bl.pdb
+H:\project\FinalProject\bl\obj\Debug\net8.0\ref\Bl.dll

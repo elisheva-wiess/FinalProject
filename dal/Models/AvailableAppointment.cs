@@ -13,5 +13,7 @@ public partial class AvailableAppointment
 
     public TimeOnly TimeSlot { get; set; }
 
+    public bool Status { get; set; }
+
     public virtual Therapist Therapist { get; set; } = null!;
 }

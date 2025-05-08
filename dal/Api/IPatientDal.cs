@@ -16,5 +16,6 @@ namespace Dal.Api
         List<Therapist> GetTherapistsBySpecializationName(string name);
         List<Specialization> GetAllSpecializations();
         List<TherapistHour> ViewTherapistsAvailableDays(string therapistFirstName, string specializationName);
+        public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate);
     }
 }

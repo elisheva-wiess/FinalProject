@@ -1,5 +1,6 @@
 ﻿using Dal.Api;
 using Dal.Models;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,6 +82,12 @@ namespace Dal.Services
                            .ToList();
         }
 
+        public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate)
+        {
+            return _context.AvailableAppointments
+                           .Where(a => a.AvailableDate >= startDate && a.AvailableDate <= endDate)
+                           .ToList();
+        }
 
     }
 }
