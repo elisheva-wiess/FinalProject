@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Bl.Models;
 using Dal.Api;
+using Microsoft.AspNetCore.Mvc;
 namespace Bl.Api
 {
     public interface ITherapistBl
     {
         List<BlAppointment> GetTherapistApointmentsById(string id);
+        BlWorkingHours GetTherapistWorkingHoursById(string id);
     }
 }

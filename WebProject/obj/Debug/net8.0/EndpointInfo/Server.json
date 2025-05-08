@@ -91,14 +91,14 @@
         }
       }
     },
-    "/api/Patient/{name} {specializationName}": {
+    "/api/Patient/{therapistFirstName} {specializationName}": {
       "get": {
         "tags": [
           "Patient"
         ],
         "parameters": [
           {
-            "name": "name",
+            "name": "therapistFirstName",
             "in": "path",
             "required": true,
             "schema": {
@@ -130,6 +130,28 @@
           {
             "name": "id",
             "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Therapist/{id}": {
+      "get": {
+        "tags": [
+          "Therapist"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }

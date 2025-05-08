@@ -29,6 +29,16 @@ namespace Dal.Services
             }
         }
 
+        public TherapistHour GetTherapistWorkingHoursById(string id)
+        {
+            var therapist = _context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
+            if (therapist != null)
+            {
+                return _context.TherapistHours.FirstOrDefault(t => t.TherapistId == id);
+            }
+            return null;
+        }
+
     }
 }
 

@@ -13,11 +13,29 @@ namespace Bl.Services
     {
         private readonly ITherapistDal therapistDalServices;
 
+        public TherapistBlServices(ITherapistDal therapistDal)
+        {
+            therapistDalServices = therapistDal;
+        }
+
         public List<BlAppointment> GetTherapistApointmentsById(string id)
         {
-            var appintments= therapistDalServices.GetTherapistApointmentsById(id);
+            var appintments = therapistDalServices.GetTherapistApointmentsById(id);
             return DalToBl.ToListAppointment(appintments);
         }
+
+        public BlWorkingHours GetTherapistWorkingHoursById(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+                throw new ArgumentException("Invalid therapist ID.");
+
+            var workingHours = therapistDalServices?.GetTherapistWorkingHoursById(id);
+            if (workingHours == null)
+                return null;
+
+            return DalToBl.ToWorkingHours(workingHours);
+        }
+
 
     }
 }
