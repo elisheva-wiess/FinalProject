@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:7102'; // עדכון ל-URL הנכון
+const API_URL = 'http://localhost:5294'; // עדכון ל-URL הנכון
 
 // פונקציה לרישום משתמש
 export const registerUser = async (userData) => {

@@ -17,6 +17,16 @@
   },
   {
     "ContainingType": "Server.Controllers.PatientController",
+    "Method": "GetAvailableAppointments",
+    "RelativePath": "api/Patient",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.PatientController",
     "Method": "Login",
     "RelativePath": "api/Patient/{id}",
     "HttpMethod": "GET",
