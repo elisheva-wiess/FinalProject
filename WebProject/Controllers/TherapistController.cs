@@ -24,7 +24,7 @@ namespace Server.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetTherapistWorkingHoursById(string id)
+        public IActionResult GetTherapistWorkingHoursById([FromRoute] string id)
         {
             var therapistWorkingHours = _therapistBlServices.GetTherapistWorkingHoursById(id);
             if (therapistWorkingHours != null)
