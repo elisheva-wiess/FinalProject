@@ -39,6 +39,17 @@ namespace Dal.Services
             return null;
         }
 
+        public Therapist GetTherapistSalaryById(string id)
+        {
+            var therapist = _context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
+            if (therapist != null)
+            {
+                return _context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
+            }
+            return null;
+        }
+
+
     }
 }
 

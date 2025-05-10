@@ -81,15 +81,15 @@ namespace Server.Controllers
             return BadRequest();
         }
 
-        [HttpGet]
+        [HttpGet("GetAvailableAppointments")]
         public IActionResult GetAvailableAppointments()
         {
             var currentDate = DateTime.Now;
             var endDate = currentDate.AddMonths(1);
-
             var availableAppointments = _patientBlServer.GetAvailableAppointments(currentDate, endDate);
-
-            return Ok(availableAppointments);
+            if (availableAppointments != null)
+                return Ok(availableAppointments);
+            return BadRequest();
         }
 
     }

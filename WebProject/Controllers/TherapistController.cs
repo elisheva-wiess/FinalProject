@@ -32,5 +32,14 @@ namespace Server.Controllers
             return BadRequest();
         }
 
+        [HttpGet("GetTherapistSalaryById")]
+        public IActionResult GetTherapistSalaryById(string id)
+        {
+            var therapistSalary = _therapistBlServices.GetTherapistSalaryById(id);
+            if (therapistSalary != null)
+                return Ok(therapistSalary);
+            return BadRequest();
+        }
+
     }
 }

@@ -56,16 +56,6 @@
             "description": "OK"
           }
         }
-      },
-      "get": {
-        "tags": [
-          "Patient"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     },
     "/api/Patient/SpecializationsTherapists": {
@@ -131,6 +121,18 @@
         }
       }
     },
+    "/api/Patient/GetAvailableAppointments": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Therapist": {
       "get": {
         "tags": [
@@ -162,6 +164,27 @@
             "name": "id",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Therapist/GetTherapistSalaryById": {
+      "get": {
+        "tags": [
+          "Therapist"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -227,9 +250,6 @@
           "timeSlot": {
             "type": "string",
             "format": "time"
-          },
-          "status": {
-            "type": "boolean"
           },
           "therapist": {
             "$ref": "#/components/schemas/Therapist"

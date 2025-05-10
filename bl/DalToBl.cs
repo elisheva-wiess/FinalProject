@@ -159,5 +159,13 @@ namespace Bl
             };
         }
 
+        public static BlTherapistSalary ToTherapistSalary(Therapist therapist)
+        {
+            return new BlTherapistSalary
+            {
+                Salary = therapist.Salary,
+            };
+        }
+        
     }
 }

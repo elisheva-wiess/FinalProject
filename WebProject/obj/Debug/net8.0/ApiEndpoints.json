@@ -17,16 +17,6 @@
   },
   {
     "ContainingType": "Server.Controllers.PatientController",
-    "Method": "GetAvailableAppointments",
-    "RelativePath": "api/Patient",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Server.Controllers.PatientController",
     "Method": "Login",
     "RelativePath": "api/Patient/{id}",
     "HttpMethod": "GET",
@@ -66,6 +56,16 @@
     "ContainingType": "Server.Controllers.PatientController",
     "Method": "GetAllSpecializations",
     "RelativePath": "api/Patient/GetAllSpecializations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.PatientController",
+    "Method": "GetAvailableAppointments",
+    "RelativePath": "api/Patient/GetAvailableAppointments",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -116,6 +116,22 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.TherapistController",
+    "Method": "GetTherapistSalaryById",
+    "RelativePath": "api/Therapist/GetTherapistSalaryById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

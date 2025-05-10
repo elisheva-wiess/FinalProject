@@ -36,6 +36,17 @@ namespace Bl.Services
             return DalToBl.ToWorkingHours(workingHours);
         }
 
+        public BlTherapistSalary GetTherapistSalaryById(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+                throw new ArgumentException("Invalid therapist ID.");
+
+            var therapistSalary = therapistDalServices?.GetTherapistSalaryById(id);
+            if (therapistSalary == null)
+                return null;
+
+            return DalToBl.ToTherapistSalary(therapistSalary);
+        }
 
     }
 }
