@@ -17,6 +17,6 @@ namespace Bl.Api
         List<BlSpecializationsTherapists> GetSpecializationsTherapistsByName(string name);
         List<BlSpecializations> GetAllSpecializations();
         List<BlAvailableAppointment> ViewTherapistsAvailableDays(string therapistFirstName, string specializationName);
-        List<AppointmentSummary> GetAvailableAppointments(DateTime startDate, DateTime endDate);
+
     }
 }

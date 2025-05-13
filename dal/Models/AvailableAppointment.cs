@@ -11,7 +11,11 @@ public partial class AvailableAppointment
 
     public DateTime AvailableDate { get; set; }
 
-    public TimeOnly TimeSlot { get; set; }
+    public TimeOnly StartTimeSlot { get; set; }
+
+    public TimeOnly EndTimeSlot { get; set; }
+
+    public bool Status { get; set; }
 
     public virtual Therapist Therapist { get; set; } = null!;
 }

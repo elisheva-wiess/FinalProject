@@ -13,8 +13,6 @@ public partial class Appointment
 
     public DateTime AppointmentDate { get; set; }
 
-    public string Status { get; set; } = null!;
-
     public virtual Patient Patient { get; set; } = null!;
 
     public virtual Therapist Therapist { get; set; } = null!;

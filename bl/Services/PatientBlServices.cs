@@ -67,22 +67,7 @@ namespace Bl.Services
             return DalToBl.ToListAvailableAppointment(availableAppoints);
         }
 
-        public List<AppointmentSummary> GetAvailableAppointments(DateTime startDate, DateTime endDate)
-        {
-            var appointments = patientsDalServer.GetAppointmentsByDateRange(startDate, endDate);
-
-            var result = appointments
-                .GroupBy(a => new { a.AvailableDate.Date, a.TherapistId })
-                .Select(g => new AppointmentSummary
-                {
-                    Date = g.Key.Date,
-                    TherapistId = g.Key.TherapistId,
-                    StartTime = g.Min(x => x.TimeSlot), // Getting the earliest time slot
-                    EndTime = g.Max(x => x.TimeSlot) // Getting the latest time slot
-                }).ToList();
-
-            return result;
-        }
+      
 
     }
 }

@@ -28,3 +28,33 @@ C:\Users\משתמש\Downloads\‏‏תיקיה חדשה (2)\FinalProject\dal\obj
 C:\Users\משתמש\Downloads\‏‏תיקיה חדשה (2)\FinalProject\dal\obj\Debug\net8.0\Dal.pdb
 C:\Users\משתמש\Downloads\‏‏תיקיה חדשה (2)\FinalProject\dal\obj\Debug\net8.0\Dal.genruntimeconfig.cache
 C:\Users\משתמש\Downloads\‏‏תיקיה חדשה (2)\FinalProject\dal\obj\Debug\net8.0\ref\Dal.dll
+C:\3\FinalProject\dal\bin\Debug\net8.0\Dal.deps.json
+C:\3\FinalProject\dal\bin\Debug\net8.0\Dal.runtimeconfig.json
+C:\3\FinalProject\dal\bin\Debug\net8.0\Dal.dll
+C:\3\FinalProject\dal\bin\Debug\net8.0\Dal.pdb
+C:\3\FinalProject\dal\obj\Debug\net8.0\Dal.csproj.AssemblyReference.cache
+C:\3\FinalProject\dal\obj\Debug\net8.0\Dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\3\FinalProject\dal\obj\Debug\net8.0\Dal.AssemblyInfoInputs.cache
+C:\3\FinalProject\dal\obj\Debug\net8.0\Dal.AssemblyInfo.cs
+C:\3\FinalProject\dal\obj\Debug\net8.0\Dal.csproj.CoreCompileInputs.cache
+C:\3\FinalProject\dal\obj\Debug\net8.0\Dal.sourcelink.json
+C:\3\FinalProject\dal\obj\Debug\net8.0\Dal.dll
+C:\3\FinalProject\dal\obj\Debug\net8.0\refint\Dal.dll
+C:\3\FinalProject\dal\obj\Debug\net8.0\Dal.pdb
+C:\3\FinalProject\dal\obj\Debug\net8.0\Dal.genruntimeconfig.cache
+C:\3\FinalProject\dal\obj\Debug\net8.0\ref\Dal.dll
+H:\הורדות פרוייקט\4\FinalProject\dal\bin\Debug\net8.0\Dal.deps.json
+H:\הורדות פרוייקט\4\FinalProject\dal\bin\Debug\net8.0\Dal.runtimeconfig.json
+H:\הורדות פרוייקט\4\FinalProject\dal\bin\Debug\net8.0\Dal.dll
+H:\הורדות פרוייקט\4\FinalProject\dal\bin\Debug\net8.0\Dal.pdb
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\Dal.csproj.AssemblyReference.cache
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\Dal.GeneratedMSBuildEditorConfig.editorconfig
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\Dal.AssemblyInfoInputs.cache
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\Dal.AssemblyInfo.cs
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\Dal.csproj.CoreCompileInputs.cache
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\Dal.sourcelink.json
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\Dal.dll
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\refint\Dal.dll
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\Dal.pdb
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\Dal.genruntimeconfig.cache
+H:\הורדות פרוייקט\4\FinalProject\dal\obj\Debug\net8.0\ref\Dal.dll

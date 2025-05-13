@@ -166,6 +166,17 @@ namespace Bl
                 Salary = therapist.Salary,
             };
         }
-        
+        public static AppointmentSummary ToTherapistSalary(AvailableAppointment availableAppointment)
+        {
+            return new AppointmentSummary
+            {
+                Date = availableAppointment.AvailableDate,
+                TherapistId = availableAppointment.TherapistId,
+                StartTime = availableAppointment.StartTimeSlot,
+                EndTime = availableAppointment.EndTimeSlot
+            };
+
+
+        }
     }
 }
