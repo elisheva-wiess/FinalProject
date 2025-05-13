@@ -22,6 +22,16 @@ builder.Services.AddScoped<ITherapistBl, TherapistBlServices>();
 builder.Services.AddScoped<ITherapistDal, TherapistDalServices>();
 builder.Services.AddSingleton<dbClass>();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
+
 var app = builder.Build();
 
 // הפעלת Swagger רק בסביבת פיתוח
@@ -32,7 +42,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection(); // מבטיח הפניה ל-HTTPS
-app.UseRouting();          // מוסיף יכולת ניתוב
+app.UseRouting();// מוסיף יכולת ניתוב
+app.UseCors("AllowReactApp");// אחרי app.UseRouting()
 app.UseAuthorization();    // שימוש בהרשאות אם צריך
 
 app.MapControllers();

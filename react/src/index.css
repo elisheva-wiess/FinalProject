@@ -28,8 +28,11 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;  /* מרכז אופקית */
+  align-items: flex-start;      /* מרכז אנכית */
+  height: 100vh;            /* גובה כל המסך */
 }
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

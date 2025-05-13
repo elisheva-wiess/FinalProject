@@ -1,0 +1,34 @@
+.therapist-details {
+    max-width: 600px;
+    margin: 100px auto; /* מרכז את התוכן ויוצר רווח מה־nav */
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    direction: rtl;
+  }
+  
+  .therapist-details h2 {
+    font-size: 1.5rem;
+    color: #0056b3;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+  }
+  
+  .therapist-details ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  
+  .therapist-details li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
