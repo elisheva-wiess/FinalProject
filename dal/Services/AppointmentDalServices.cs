@@ -11,24 +11,24 @@ namespace Dal.Services
 {
     internal class AppointmentDalServices
     {
-        public class PatientDallServices : IAppointmentDalServices
+        public class PatientDallServices : IAppointmentDal
         {
-            private readonly dbClass _context;
+            private readonly dbClass context;
 
-            public PatientDallServices(dbClass context)
+            public PatientDallServices(dbClass _context)
             {
-                _context = context;
+                context = _context;
             }
             public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate)
             {
-                return _context.AvailableAppointments
+                return context.AvailableAppointments
                                .Where(a => a.AvailableDate >= startDate && a.AvailableDate <= endDate)
                                .ToList();
             }
 
             public List<AvailableAppointment> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day)
             {
-                return _context.AvailableAppointments
+                return context.AvailableAppointments
                     .Where(th => th.TherapistId == idTherapist && th.AvailableDate == day)
                     .ToList();
             }

@@ -11,15 +11,16 @@ namespace Bl.Services
 {
     internal class AppointmentBlServices
     {
-        public class PatientBlServices : IAppointmentBlServices
+        public class PatientBlServices : IAppointmentBl
         {
-            private readonly IAppointmentDalServices appointmentDalServices;
+            private readonly IAppointmentDal appointmentDalServices;
 
-            public PatientBlServices(IAppointmentDalServices _appointmentDalServices)
+            public PatientBlServices(IAppointmentDal _appointmentDalServices)
             {
                 appointmentDalServices = _appointmentDalServices;
             }
-            public List<AppointmentSummary> GetAvailableAppointments(DateTime startDate, DateTime endDate)
+
+            public List<AppointmentSummary> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate)
             {
                 var appointments = appointmentDalServices.GetAppointmentsByDateRange(startDate, endDate);
 

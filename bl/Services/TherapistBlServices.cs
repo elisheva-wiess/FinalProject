@@ -48,5 +48,11 @@ namespace Bl.Services
             return DalToBl.ToTherapistSalary(therapistSalary);
         }
 
+        //public List<BlAvailableAppointment> WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName)
+        //{
+        //    var availableAppoints = therapistDalServices.WorkingHoursTherapistByNameAndSpecialization(therapistFirstName, specializationName);
+        //    return DalToBl.ToListAvailableAppointment(availableAppoints);
+        //}
+
     }
 }

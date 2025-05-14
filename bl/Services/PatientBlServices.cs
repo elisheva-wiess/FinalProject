@@ -19,55 +19,6 @@ namespace Bl.Services
             patientsDalServer = _patientsDalServer;
         }
 
-        public BlPatientOrTherapist LogIn(string id)
-        {
-            var patient = IsPatient(id);
-            if (patient != null)
-            {
-                return DalToBl.IsPatient(patient);
-            }
-            var therapist = IsTherapist(id);
-            if (therapist != null)
-            {
-                return DalToBl.IsTherapist(therapist);
-            }
-            return null;
-        }
-
-        public Patient IsPatient(string id)
-        {
-            return patientsDalServer.IsPatient(id);
-        }
-        public Therapist IsTherapist(string id)
-        {
-            return patientsDalServer.IsTherapist(id);
-        }
-        public BlPatient SingUp(Patient patient)
-        {
-            patientsDalServer.SignUp(patient);
-            return DalToBl.ToPatient(patient);
-        }
-
-        public List<BlSpecializationsTherapists> GetSpecializationsTherapistsByName(string name)
-        {
-            var specializationsTherapists = patientsDalServer.GetTherapistsBySpecializationName(name);
-            return DalToBl.ToListSpecializations(specializationsTherapists);
-        }
-
-        public List<BlSpecializations> GetAllSpecializations()
-        {
-            var AllSpecializations = patientsDalServer.GetAllSpecializations();
-            return DalToBl.ToListAllSpecializations(AllSpecializations);
-
-        }
-
-        public List<BlAvailableAppointment> ViewTherapistsAvailableDays(string therapistFirstName, string specializationName)
-        {
-            var availableAppoints = patientsDalServer.ViewTherapistsAvailableDays(therapistFirstName, specializationName);
-            return DalToBl.ToListAvailableAppointment(availableAppoints);
-        }
-
-      
 
     }
 }

@@ -6,20 +6,20 @@ namespace Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Appointment : ControllerBase
+    public class AppointmentController : ControllerBase
     {
-        IAppointmentBlServices appointmentBlServices;
-        public Appointment(IAppointmentBlServices _appointmentBlServices)
+        IAppointmentBl appointmentBlServices;
+        public AppointmentController(IAppointmentBl _appointmentBlServices)
         {
             appointmentBlServices = _appointmentBlServices;
         }
 
         [HttpGet("GetAvailableAppointments")]
-        public IActionResult GetAvailableAppointments()
+        public IActionResult GetAppointmentsByDateRange()
         {
             var currentDate = DateTime.Now;
             var endDate = currentDate.AddMonths(1);
-            var availableAppointments = appointmentBlServices.GetAvailableAppointments(currentDate, endDate);
+            var availableAppointments = appointmentBlServices.GetAppointmentsByDateRange(currentDate, endDate);
             if (availableAppointments != null)
                 return Ok(availableAppointments);
             return BadRequest();

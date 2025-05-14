@@ -9,19 +9,19 @@ namespace Dal.Services
 {
     public class TherapistDalServices : ITherapistDal
     {
-        private readonly dbClass _context;
+        private readonly dbClass context;
 
-        public TherapistDalServices(dbClass context)
+        public TherapistDalServices(dbClass _context)
         {
-            _context = context;
+            context = _context;
         }
 
         public List<Appointment> GetTherapistApointmentsById(string id)
         {
-            var therapists = _context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
+            var therapists = context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
             if (therapists != null)
             {
-                return _context.Appointments.Where(t => t.TherapistId == therapists.TherapistsId).ToList();
+                return  context.Appointments.Where(t => t.TherapistId == therapists.TherapistsId).ToList();
             }
             else
             {
@@ -31,24 +31,41 @@ namespace Dal.Services
 
         public TherapistHour GetTherapistWorkingHoursById(string id)
         {
-            var therapist = _context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
+            var therapist = context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
             if (therapist != null)
             {
-                return _context.TherapistHours.FirstOrDefault(t => t.TherapistId == id);
+                return context.TherapistHours.FirstOrDefault(t => t.TherapistId == id);
             }
             return null;
         }
 
         public Therapist GetTherapistSalaryById(string id)
         {
-            var therapist = _context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
+            var therapist = context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
             if (therapist != null)
             {
-                return _context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
+                return context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
             }
             return null;
         }
 
+        //public List<TherapistHour> WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName)
+        //{
+        //    var specialization = context.Specializations
+        //                                 .FirstOrDefault(s => s.SpecializationName == specializationName);
+
+        //    if (specialization == null)
+        //        return new List<TherapistHour>();
+
+        //    var therapistIdsWithSpecialization = context.TherapistSpecializations
+        //                                                 .Where(ts => ts.SpecializationId == specialization.Id)
+        //                                                 .Select(ts => ts.TherapistId)
+        //                                                 .ToList();
+
+        //    return context.TherapistHours
+        //                   .Where(th => th.Therapist.FirstName == therapistFirstName && therapistIdsWithSpecialization.Contains(th.TherapistId))
+        //                   .ToList();
+        //}
 
     }
 }

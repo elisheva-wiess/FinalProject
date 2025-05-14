@@ -8,16 +8,16 @@ namespace Server.Controllers
     [ApiController]
     public class TherapistController : ControllerBase
     {
-        ITherapistBl _therapistBlServices;
-        public TherapistController(ITherapistBl therapistBlServices)
+        ITherapistBl therapistBlServices;
+        public TherapistController(ITherapistBl _therapistBlServices)
         {
-            _therapistBlServices = therapistBlServices;
+            therapistBlServices = _therapistBlServices;
         }
 
         [HttpGet]
         public IActionResult GetTherapistApointmentsById(string id)
         {
-            var therapistApointments = _therapistBlServices.GetTherapistApointmentsById(id);
+            var therapistApointments = therapistBlServices.GetTherapistApointmentsById(id);
             if (therapistApointments != null)
                 return Ok(therapistApointments);
             return BadRequest();
@@ -26,7 +26,7 @@ namespace Server.Controllers
         [HttpGet("{id}")]
         public IActionResult GetTherapistWorkingHoursById([FromRoute] string id)
         {
-            var therapistWorkingHours = _therapistBlServices.GetTherapistWorkingHoursById(id);
+            var therapistWorkingHours = therapistBlServices.GetTherapistWorkingHoursById(id);
             if (therapistWorkingHours != null)
                 return Ok(therapistWorkingHours);
             return BadRequest();
@@ -35,11 +35,19 @@ namespace Server.Controllers
         [HttpGet("GetTherapistSalaryById")]
         public IActionResult GetTherapistSalaryById(string id)
         {
-            var therapistSalary = _therapistBlServices.GetTherapistSalaryById(id);
+            var therapistSalary = therapistBlServices.GetTherapistSalaryById(id);
             if (therapistSalary != null)
                 return Ok(therapistSalary);
             return BadRequest();
         }
 
+        //[HttpGet("{therapistFirstName} {specializationName}")]
+        //public IActionResult WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName)
+        //{
+        //    var availableAppointment = therapistBlServices.WorkingHoursTherapistByNameAndSpecialization(therapistFirstName, specializationName);
+        //    if (availableAppointment != null)
+        //        return Ok(availableAppointment);
+        //    return BadRequest();
+        //}
     }
 }

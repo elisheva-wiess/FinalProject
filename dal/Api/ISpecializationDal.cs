@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Dal.Api
 {
-    public interface IPatientDal
+    public interface ISpecializationDal
     {
-       
+        List<Specialization> GetAllSpecializations();
+        List<Therapist> GetTherapistsBySpecializationName(string name);
     }
 }

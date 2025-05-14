@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Bl.Api
 {
-    public interface IAppointmentBlServices
+    public interface IAppointmentBl
     {
-        public List<AppointmentSummary> GetAvailableAppointments(DateTime startDate, DateTime endDate);
+        public List<AppointmentSummary> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate);
         public List<AppointmentSummary> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day);
     }
 }

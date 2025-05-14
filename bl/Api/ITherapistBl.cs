@@ -13,6 +13,6 @@ namespace Bl.Api
         List<BlAppointment> GetTherapistApointmentsById(string id);
         BlWorkingHours GetTherapistWorkingHoursById(string id);
         BlTherapistSalary GetTherapistSalaryById(string id);
-
+        //List<BlAvailableAppointment> WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName);
     }
 }

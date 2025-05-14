@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dal.Api
 {
-    public interface IAppointmentDalServices
+    public interface IAppointmentDal
     {
         public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate);
         public List<AvailableAppointment> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day);

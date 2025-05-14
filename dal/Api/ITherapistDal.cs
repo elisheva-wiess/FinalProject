@@ -12,5 +12,6 @@ namespace Dal.Api
         List<Appointment> GetTherapistApointmentsById(string id);
         TherapistHour GetTherapistWorkingHoursById(string id);
         Therapist GetTherapistSalaryById(string id);
+        //List<TherapistHour> WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName);
     }
 }
