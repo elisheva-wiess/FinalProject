@@ -9,48 +9,47 @@ using System.Threading.Tasks;
 
 namespace Bl.Services
 {
-    internal class AppointmentBlServices
+    public class AppointmentBlServices : IAppointmentBl
     {
-        public class PatientBlServices : IAppointmentBl
+        private readonly IAppointmentDal appointmentDalServices;
+
+        public AppointmentBlServices(IAppointmentDal _appointmentDalServices)
         {
-            private readonly IAppointmentDal appointmentDalServices;
+            appointmentDalServices = _appointmentDalServices;
+        }
 
-            public PatientBlServices(IAppointmentDal _appointmentDalServices)
-            {
-                appointmentDalServices = _appointmentDalServices;
-            }
+        public List<AppointmentSummary> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate)
+        {
+            var appointments = appointmentDalServices.GetAppointmentsByDateRange(startDate, endDate);
 
-            public List<AppointmentSummary> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate)
-            {
-                var appointments = appointmentDalServices.GetAppointmentsByDateRange(startDate, endDate);
+            var result = appointments
+                .GroupBy(a => new { a.AvailableDate.Date, a.TherapistId })
+                .Select(g => new AppointmentSummary
+                {
+                    Date = g.Key.Date,
+                    TherapistId = g.Key.TherapistId,
+                    StartTime = g.Min(x => x.StartTimeSlot), // Getting the earliest time slot
+                    EndTime = g.Max(x => x.EndTimeSlot) // Getting the latest time slot
+                }).ToList();
 
-                var result = appointments
-                    .GroupBy(a => new { a.AvailableDate.Date, a.TherapistId })
-                    .Select(g => new AppointmentSummary
-                    {
-                        Date = g.Key.Date,
-                        TherapistId = g.Key.TherapistId,
-                        StartTime = g.Min(x => x.StartTimeSlot), // Getting the earliest time slot
-                        EndTime = g.Max(x => x.EndTimeSlot) // Getting the latest time slot
-                    }).ToList();
+            return result;
+        }
 
-                return result;
-            }
+        public List<AppointmentSummary> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day)
+        {
+            var appointments = appointmentDalServices.AllHourSpetificalDayAndTherapist(idTherapist, day);
+            //בדיקה tryוכו'
+            //return new AppointmentSummary
+            //{
+            //    Date = day,
+            //    TherapistId = idTherapist,
+            //    StartTime = appointments.
 
-            public List<AppointmentSummary> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day)
-            {
-                var appointments = appointmentDalServices.AllHourSpetificalDayAndTherapist(idTherapist, day);
-                //בדיקה tryוכו'
-                //return new AppointmentSummary
-                //{
-                //    Date = day,
-                //    TherapistId = idTherapist,
-                //    StartTime = appointments.
+            //};
+            return null;
 
-                //};
-                return null;
-
-            }
         }
     }
 }
+
+

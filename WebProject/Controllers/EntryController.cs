@@ -1,4 +1,7 @@
 ﻿using Bl.Api;
+using Bl.Models;
+using Bl.Services;
+using Dal.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,17 +21,24 @@ namespace Server.Controllers
         [HttpGet("{id}")]
         public IActionResult Login([FromRoute] string id)
         {
-            var patient = entryBlServer.LogIn(id);
+            try
+            {
+                var patient = entryBlServer.LogIn(id);
 
-            if (patient != null)
+                if (patient != null)
+                    return Ok(patient);
 
-                return Ok(patient);
-
-            return NotFound("Patient not found.");
-
+                return NotFound("Patient not found.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
-        [HttpPost]
+
+        [HttpPost("signup")]
+
         public IActionResult SignUp([FromBody] Patient patient)
         {
             try
@@ -41,5 +51,6 @@ namespace Server.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
     }
 }

@@ -1,22 +1,30 @@
-// components/Specializations/SpecializationsList.jsx
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../Authorization/UserContext';
 import '../../css/SpecializationsList.css';
 
 const SpecializationsList = () => {
   const [specializations, setSpecializations] = useState([]);
   const navigate = useNavigate();
+  const { user } = useUser();
 
   useEffect(() => {
-    api.get('/Patient/GetAllSpecializations')
-      .then(res => setSpecializations(res.data))
+    api
+      .get('/Specialization/GetAllSpecializations')
+      .then((res) => setSpecializations(res.data))
       .catch(() => alert('שגיאה בטעינת ההתמחויות'));
   }, []);
 
   return (
     <div className="specializations-container">
-      <h2>בחר התמחות</h2>
+      {user && (
+        <h2>
+          שלום, {user.blPatient.firstName} {user.blPatient.lastName}
+        </h2>
+      )}
+      <h3>בחר התמחות</h3>
+
       <div className="specializations-grid">
         {specializations.map((s, i) => (
           <div

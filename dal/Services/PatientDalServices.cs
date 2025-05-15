@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Dal.Services
 {
-    public class PatientDallServices : IPatientDal
+    public class PatientDalServices : IPatientDal
     {
         private readonly dbClass context;
 
-        public PatientDallServices(dbClass _context)
+        public PatientDalServices(dbClass _context)
         {
             context = _context;
         }

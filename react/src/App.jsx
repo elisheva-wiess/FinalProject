@@ -6,7 +6,7 @@ import Footer from './components/Layout/Footer';
 import HomePage from './components/Home/HomePage';
 import About from './components/Home/About';
 import Login from './components/Authorization/Login';
-import Register from './components/Authorization/Register';
+import Register from './components/Authorization/SignUp';
 import SpecializationsList from './components/Specializations/SpecializationsList';
 import SpecializationDetails from './components/Specializations/SpecializationDetails';
 import TherapistDetails from './components/Therapists/TherapistDetails';

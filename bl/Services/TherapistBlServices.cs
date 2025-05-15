@@ -56,3 +56,57 @@ namespace Bl.Services
 
     }
 }
+
+
+
+//using AutoMapper;
+//using Bl.Api;
+//using Bl.Models;
+//using Dal.Api;
+//using System;
+//using System.Collections.Generic;
+
+//namespace Bl.Services
+//{
+//    public class TherapistBlServices : ITherapistBl
+//    {
+//        private readonly ITherapistDal therapistDalServices;
+//        private readonly IMapper mapper;
+
+//        public TherapistBlServices(ITherapistDal therapistDal, IMapper _mapper)
+//        {
+//            therapistDalServices = therapistDal;
+//            mapper = _mapper;
+//        }
+
+//        public List<BlAppointment> GetTherapistAppointmentsById(string id)
+//        {
+//            var appointments = therapistDalServices.GetTherapistAppointmentsById(id);
+//            return mapper.Map<List<BlAppointment>>(appointments);
+//        }
+
+//        public BlWorkingHours GetTherapistWorkingHoursById(string id)
+//        {
+//            if (string.IsNullOrWhiteSpace(id))
+//                throw new ArgumentException("Invalid therapist ID.");
+
+//            var workingHours = therapistDalServices?.GetTherapistWorkingHoursById(id);
+//            if (workingHours == null)
+//                return null;
+
+//            return mapper.Map<BlWorkingHours>(workingHours);
+//        }
+
+//        public BlTherapistSalary GetTherapistSalaryById(string id)
+//        {
+//            if (string.IsNullOrWhiteSpace(id))
+//                throw new ArgumentException("Invalid therapist ID.");
+
+//            var therapistSalary = therapistDalServices?.GetTherapistSalaryById(id);
+//            if (therapistSalary == null)
+//                return null;
+
+//            return mapper.Map<BlTherapistSalary>(therapistSalary);
+//        }
+//    }
+//}

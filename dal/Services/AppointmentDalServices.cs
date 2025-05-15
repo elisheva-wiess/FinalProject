@@ -9,29 +9,27 @@ using System.Threading.Tasks;
 
 namespace Dal.Services
 {
-    internal class AppointmentDalServices
+    public class AppointmentDalServices : IAppointmentDal
     {
-        public class PatientDallServices : IAppointmentDal
+        private readonly dbClass context;
+
+        public AppointmentDalServices(dbClass _context)
         {
-            private readonly dbClass context;
+            context = _context;
+        }
+        public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate)
+        {
+            return context.AvailableAppointments
+                           .Where(a => a.AvailableDate >= startDate && a.AvailableDate <= endDate)
+                           .ToList();
+        }
 
-            public PatientDallServices(dbClass _context)
-            {
-                context = _context;
-            }
-            public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate)
-            {
-                return context.AvailableAppointments
-                               .Where(a => a.AvailableDate >= startDate && a.AvailableDate <= endDate)
-                               .ToList();
-            }
-
-            public List<AvailableAppointment> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day)
-            {
-                return context.AvailableAppointments
-                    .Where(th => th.TherapistId == idTherapist && th.AvailableDate == day)
-                    .ToList();
-            }
+        public List<AvailableAppointment> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day)
+        {
+            return context.AvailableAppointments
+                .Where(th => th.TherapistId == idTherapist && th.AvailableDate == day)
+                .ToList();
         }
     }
 }
+

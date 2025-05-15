@@ -5,10 +5,51 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Patient/{id}": {
+    "/api/Appointment/GetAvailableAppointments": {
       "get": {
         "tags": [
-          "Patient"
+          "Appointment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Appointment/AllHourSpetificalDayAndTherapist": {
+      "get": {
+        "tags": [
+          "Appointment"
+        ],
+        "parameters": [
+          {
+            "name": "idTherapist",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "day",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Entry/{id}": {
+      "get": {
+        "tags": [
+          "Entry"
         ],
         "parameters": [
           {
@@ -27,10 +68,10 @@
         }
       }
     },
-    "/api/Patient": {
+    "/api/Entry": {
       "post": {
         "tags": [
-          "Patient"
+          "Entry"
         ],
         "requestBody": {
           "content": {
@@ -58,10 +99,22 @@
         }
       }
     },
-    "/api/Patient/SpecializationsTherapists": {
+    "/api/Specialization/GetAllSpecializations": {
       "get": {
         "tags": [
-          "Patient"
+          "Specialization"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Specialization/SpecializationsTherapists": {
+      "get": {
+        "tags": [
+          "Specialization"
         ],
         "parameters": [
           {
@@ -71,60 +124,6 @@
               "type": "string"
             }
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Patient/GetAllSpecializations": {
-      "get": {
-        "tags": [
-          "Patient"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Patient/{therapistFirstName} {specializationName}": {
-      "get": {
-        "tags": [
-          "Patient"
-        ],
-        "parameters": [
-          {
-            "name": "therapistFirstName",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "specializationName",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Patient/GetAvailableAppointments": {
-      "get": {
-        "tags": [
-          "Patient"
         ],
         "responses": {
           "200": {
@@ -219,10 +218,6 @@
             "type": "string",
             "format": "date-time"
           },
-          "status": {
-            "type": "string",
-            "nullable": true
-          },
           "patient": {
             "$ref": "#/components/schemas/Patient"
           },
@@ -247,9 +242,16 @@
             "type": "string",
             "format": "date-time"
           },
-          "timeSlot": {
+          "startTimeSlot": {
             "type": "string",
             "format": "time"
+          },
+          "endTimeSlot": {
+            "type": "string",
+            "format": "time"
+          },
+          "status": {
+            "type": "boolean"
           },
           "therapist": {
             "$ref": "#/components/schemas/Therapist"

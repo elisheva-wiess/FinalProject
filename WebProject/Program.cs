@@ -16,7 +16,13 @@ builder.Services.AddSwaggerGen();
 // רישום שירותים (Dependency Injection)
 builder.Services.AddScoped<IBlManager, BlManager>();
 builder.Services.AddScoped<IDalManager, DalManager>();
-builder.Services.AddScoped<IPatientDal, PatientDallServices>();
+builder.Services.AddScoped<IEntryBl, EntryBlServices>();
+builder.Services.AddScoped<IEntryDal, EntryDalServices>();
+builder.Services.AddScoped<ISpecializationBl, SpecializationBlServices>();
+builder.Services.AddScoped<ISpecializationDal, SpecializationDalServices>();
+builder.Services.AddScoped<IAppointmentBl, AppointmentBlServices>();
+builder.Services.AddScoped<IAppointmentDal, AppointmentDalServices>();
+builder.Services.AddScoped<IPatientDal, PatientDalServices>();
 builder.Services.AddScoped<IPatientBl, PatientBlServices>();
 builder.Services.AddScoped<ITherapistBl, TherapistBlServices>();
 builder.Services.AddScoped<ITherapistDal, TherapistDalServices>();

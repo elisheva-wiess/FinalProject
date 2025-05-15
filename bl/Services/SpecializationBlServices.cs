@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bl.Services
 {
-    internal class SpecializationBlServices : ISpecializationBl
+    public class SpecializationBlServices : ISpecializationBl
     {
         private readonly ISpecializationDal SpecializationsDalServer;
 

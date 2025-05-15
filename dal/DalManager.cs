@@ -17,7 +17,10 @@ namespace Dal
         public DalManager()
         {
             _context = new dbClass();
-            patientDal =new PatientDallServices(_context);
+            patientDal =new PatientDalServices(_context);
         }
     }
 }
+
+
+

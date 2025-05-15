@@ -1,8 +1,39 @@
 [
   {
-    "ContainingType": "Server.Controllers.PatientController",
+    "ContainingType": "Server.Controllers.AppointmentController",
+    "Method": "AllHourSpetificalDayAndTherapist",
+    "RelativePath": "api/Appointment/AllHourSpetificalDayAndTherapist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idTherapist",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "day",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.AppointmentController",
+    "Method": "GetAppointmentsByDateRange",
+    "RelativePath": "api/Appointment/GetAvailableAppointments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.EntryController",
     "Method": "SignUp",
-    "RelativePath": "api/Patient",
+    "RelativePath": "api/Entry",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -16,9 +47,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.PatientController",
+    "ContainingType": "Server.Controllers.EntryController",
     "Method": "Login",
-    "RelativePath": "api/Patient/{id}",
+    "RelativePath": "api/Entry/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -32,30 +63,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.PatientController",
-    "Method": "ViewTherapistsAvailableDays",
-    "RelativePath": "api/Patient/{therapistFirstName} {specializationName}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "therapistFirstName",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "specializationName",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Server.Controllers.PatientController",
+    "ContainingType": "Server.Controllers.SpecializationController",
     "Method": "GetAllSpecializations",
-    "RelativePath": "api/Patient/GetAllSpecializations",
+    "RelativePath": "api/Specialization/GetAllSpecializations",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -63,19 +73,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.PatientController",
-    "Method": "GetAvailableAppointments",
-    "RelativePath": "api/Patient/GetAvailableAppointments",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Server.Controllers.PatientController",
-    "Method": "SpecializationsTherapists",
-    "RelativePath": "api/Patient/SpecializationsTherapists",
+    "ContainingType": "Server.Controllers.SpecializationController",
+    "Method": "GetTherapistsBySpecializationName",
+    "RelativePath": "api/Specialization/SpecializationsTherapists",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
