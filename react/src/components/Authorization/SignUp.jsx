@@ -62,7 +62,7 @@ export default function SignUp() {
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        const response = await fetch('/api/entry/signup', {
+        const response = await fetch('/api/WebsiteConnection/signup', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -76,13 +76,12 @@ export default function SignUp() {
         }
 
         const data = await response.json();
-
-        localStorage.setItem('loggedInUser', JSON.stringify(data));
-
+        localStorage.setItem('user', JSON.stringify(data));
         alert('נרשמת בהצלחה!');
         navigate('/specializations');
       } catch (error) {
         alert('אירעה שגיאה בעת ההרשמה: ' + error.message);
+        console.error('Signup failed:', error);
       }
     }
   };
@@ -102,7 +101,12 @@ export default function SignUp() {
               name={key}
               autoComplete={getAutoComplete(key)}
               value={value}
-              type={key === 'birthDate' ? 'date' : 'text'}
+              type={
+                key === 'birthDate' ? 'date' :
+                key === 'email' ? 'email' :
+                key === 'phone' ? 'tel' :
+                'text'
+              }
               onChange={(e) => setUser({ ...user, [key]: e.target.value })}
               className={errors[key] ? 'error-input' : ''}
             />
@@ -111,7 +115,9 @@ export default function SignUp() {
         ))}
 
         <div className="button-wrapper">
-          <button type="button" onClick={handleRegister}>הירשם</button>
+          <button type="button" onClick={handleRegister}>
+            הירשם
+          </button>
         </div>
       </form>
     </div>

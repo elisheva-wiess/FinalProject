@@ -17,6 +17,7 @@ namespace Dal.Services
         {
             context = _context;
         }
+
         public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate)
         {
             return context.AvailableAppointments

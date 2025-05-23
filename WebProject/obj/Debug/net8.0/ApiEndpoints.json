@@ -31,38 +31,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.EntryController",
-    "Method": "SignUp",
-    "RelativePath": "api/Entry",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "patient",
-        "Type": "Dal.Models.Patient",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Server.Controllers.EntryController",
-    "Method": "Login",
-    "RelativePath": "api/Entry/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Server.Controllers.SpecializationController",
     "Method": "GetAllSpecializations",
     "RelativePath": "api/Specialization/GetAllSpecializations",
@@ -132,6 +100,86 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WebsiteConnectionController",
+    "Method": "GetUser",
+    "RelativePath": "api/WebsiteConnection/getUser/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WebsiteConnectionController",
+    "Method": "IsPatient",
+    "RelativePath": "api/WebsiteConnection/isPatient/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WebsiteConnectionController",
+    "Method": "IsTherapist",
+    "RelativePath": "api/WebsiteConnection/isTherapist/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WebsiteConnectionController",
+    "Method": "Login",
+    "RelativePath": "api/WebsiteConnection/Login/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WebsiteConnectionController",
+    "Method": "SignUp",
+    "RelativePath": "api/WebsiteConnection/SignUp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patient",
+        "Type": "Dal.Models.Patient",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import api from '../../services/api';
+import { UserContext } from '../Authorization/UserContext';
 import { useNavigate } from 'react-router-dom';
-import { useUser } from '../Authorization/UserContext';
 import '../../css/Login.css';
 
-const Login = () => {
+function Login() {
   const [id, setId] = useState('');
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
-  const { setUser } = useUser();
 
   const handleLogin = () => {
     if (!id.trim()) {
@@ -15,30 +15,48 @@ const Login = () => {
       return;
     }
 
-    api.get(`/Entry/${id}`)
+    api.get(`/WebsiteConnection/Login/${id}`)
       .then(res => {
-        if (res.data) {
-          localStorage.setItem('user', JSON.stringify(res.data));
-          setUser(res.data);
+        const data = res.data;
+
+        if (data.patient) {
+          const userData = {
+            ...data.patient,
+            role: 'patient'
+          };
+          localStorage.setItem('user', JSON.stringify(userData));
+          setUser(userData);
           navigate('/specializations');
+        } else if (data.therapist) {
+          const userData = {
+            ...data.therapist,
+            role: 'therapist'
+          };
+          localStorage.setItem('user', JSON.stringify(userData));
+          setUser(userData);
+          navigate('/therapist-dashboard');
         } else {
           alert('משתמש לא נמצא');
         }
       })
-      .catch(() => alert('שגיאה בעת התחברות'));
+      .catch(err => {
+        console.error('שגיאה בעת התחברות:', err);
+        alert('שגיאה בעת התחברות');
+      });
   };
 
   return (
     <div className="login-container">
-      <h2>התחברות</h2>
+      <h1>התחברות</h1>
       <input
-        placeholder="ת.ז"
+        type="text"
+        placeholder="תעודת זהות"
         value={id}
-        onChange={e => setId(e.target.value)}
+        onChange={(e) => setId(e.target.value)}
       />
       <button onClick={handleLogin}>התחבר</button>
     </div>
   );
-};
+}
 
 export default Login;

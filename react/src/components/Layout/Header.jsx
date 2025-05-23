@@ -17,7 +17,7 @@ const Header = () => {
         <h1 onClick={handleLogoutAndGoHome} style={{ cursor: 'pointer' }}>FocusWay</h1>
         {user && (
           <span className="user-name">
-            {user.blPatient?.firstName} {user.blPatient?.lastName}
+            {user.firstName} {user.lastName}
           </span>
         )}
       </div>

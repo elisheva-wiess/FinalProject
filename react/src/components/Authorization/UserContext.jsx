@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
-const UserContext = createContext();
+
+export const UserContext = createContext();
 
 export const useUser = () => useContext(UserContext);
 
@@ -10,7 +11,12 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const stored = localStorage.getItem('user');
     if (stored) {
-      setUser(JSON.parse(stored));
+      try {
+        setUser(JSON.parse(stored));
+      } catch {
+        localStorage.removeItem('user');
+        setUser(null);
+      }
     }
   }, []);
 

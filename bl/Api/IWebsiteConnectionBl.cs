@@ -1,17 +1,18 @@
-﻿using Dal.Models;
+﻿using Bl.Models;
+using Dal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dal.Api
+namespace Bl.Api
 {
-    public interface IEntryDal
+    public interface IWebsiteConnectionBl
     {
-        public void SignUp(Patient patient);
+        BlPatient SignUp(Patient patient);
         Patient IsPatient(string id);
         Therapist IsTherapist(string id);
-        public Patient LogIn(string id);
+        BlPatientOrTherapist LogIn(string id);
     }
 }

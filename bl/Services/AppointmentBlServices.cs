@@ -1,4 +1,5 @@
-﻿using Bl.Api;
+﻿using AutoMapper;
+using Bl.Api;
 using Bl.Models;
 using Dal.Api;
 using System;
@@ -12,10 +13,12 @@ namespace Bl.Services
     public class AppointmentBlServices : IAppointmentBl
     {
         private readonly IAppointmentDal appointmentDalServices;
+        private readonly IMapper mapper;
 
-        public AppointmentBlServices(IAppointmentDal _appointmentDalServices)
+        public AppointmentBlServices(IAppointmentDal _appointmentDalServices, IMapper _mapper)
         {
             appointmentDalServices = _appointmentDalServices;
+            mapper = _mapper;
         }
 
         public List<AppointmentSummary> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate)

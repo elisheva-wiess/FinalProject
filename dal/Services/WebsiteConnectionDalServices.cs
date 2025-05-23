@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Dal.Services
 {
-    public class EntryDalServices : IEntryDal
+    public class WebsiteConnectionDalServices : IWebsiteConnectionDal
     {
         private readonly dbClass context;
 
-        public EntryDalServices(dbClass _context)
+        public WebsiteConnectionDalServices(dbClass _context)
         {
             context = _context;
         }

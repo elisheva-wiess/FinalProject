@@ -1,10 +1,13 @@
 using Bl;
 using Bl.Api;
+using Bl.Models;
 using Bl.Services;
 using Dal;
 using Dal.Api;
 using Dal.Models;
 using Dal.Services;
+using AutoMapper;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +19,8 @@ builder.Services.AddSwaggerGen();
 // רישום שירותים (Dependency Injection)
 builder.Services.AddScoped<IBlManager, BlManager>();
 builder.Services.AddScoped<IDalManager, DalManager>();
-builder.Services.AddScoped<IEntryBl, EntryBlServices>();
-builder.Services.AddScoped<IEntryDal, EntryDalServices>();
+builder.Services.AddScoped<IWebsiteConnectionBl, WebsiteConnectionBlServices>();
+builder.Services.AddScoped<IWebsiteConnectionDal, WebsiteConnectionDalServices>();
 builder.Services.AddScoped<ISpecializationBl, SpecializationBlServices>();
 builder.Services.AddScoped<ISpecializationDal, SpecializationDalServices>();
 builder.Services.AddScoped<IAppointmentBl, AppointmentBlServices>();
@@ -27,6 +30,8 @@ builder.Services.AddScoped<IPatientBl, PatientBlServices>();
 builder.Services.AddScoped<ITherapistBl, TherapistBlServices>();
 builder.Services.AddScoped<ITherapistDal, TherapistDalServices>();
 builder.Services.AddSingleton<dbClass>();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
 
 
 builder.Services.AddCors(options =>
@@ -40,17 +45,17 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// הפעלת Swagger רק בסביבת פיתוח
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection(); // מבטיח הפניה ל-HTTPS
-app.UseRouting();// מוסיף יכולת ניתוב
-app.UseCors("AllowReactApp");// אחרי app.UseRouting()
-app.UseAuthorization();    // שימוש בהרשאות אם צריך
+app.UseHttpsRedirection(); 
+app.UseRouting();
+app.UseCors("AllowReactApp");
+app.UseAuthorization();   
 
 app.MapControllers();
 

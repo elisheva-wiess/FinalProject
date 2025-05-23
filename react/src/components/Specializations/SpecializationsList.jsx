@@ -20,7 +20,7 @@ const SpecializationsList = () => {
     <div className="specializations-container">
       {user && (
         <h2>
-          שלום, {user.blPatient.firstName} {user.blPatient.lastName}
+          שלום, {user.firstName} {user.lastName}
         </h2>
       )}
       <h3>בחר התמחות</h3>

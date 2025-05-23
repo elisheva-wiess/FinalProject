@@ -1,14 +1,13 @@
 ﻿using Bl.Api;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Bl
+namespace Bl.Api
 {
-    public class IBlManager
+    public interface IBlManager
     {
-        public IPatientBl patientBl;
+        IWebsiteConnectionBl WebsiteConnectionBl { get; }
+        IPatientBl PatientBl { get; }
+        ITherapistBl TherapistBl { get; }
+        ISpecializationBl SpecializationBl { get; }
+        IAppointmentBl AppointmentBl { get; }
     }
 }
