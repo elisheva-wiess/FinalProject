@@ -21,8 +21,8 @@ namespace Server.Controllers
             if (therapistApointments != null)
                 return Ok(therapistApointments);
             return BadRequest();
-        }
 
+        }
         [HttpGet("{id}")]
         public IActionResult GetTherapistWorkingHoursById([FromRoute] string id)
         {

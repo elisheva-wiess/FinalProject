@@ -1,6 +1,7 @@
 ﻿using Dal.Api;
 using Dal.Models;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,20 @@ namespace Dal.Services
         {
             context.Patients.Add(patient);
             context.SaveChanges();
+        }
+        public void SignOut(string id)
+        {
+            var patient = context.Patients.FirstOrDefault(s => s.PatientsId == id);
+
+            if (patient == null)
+            {
+                throw new ArgumentException("Patient not found.", nameof(id)); // Handle not found
+            }
+
+            context.Patients.Remove(patient);
+            context.SaveChanges();
+
+            Console.WriteLine("Patient deleted successfully!");
         }
 
         public Patient IsPatient(string id)

@@ -14,5 +14,6 @@ namespace Bl.Api
         Patient IsPatient(string id);
         Therapist IsTherapist(string id);
         BlPatientOrTherapist LogIn(string id);
+        public void SignOut(string id);
     }
 }

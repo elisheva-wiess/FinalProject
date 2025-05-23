@@ -9,7 +9,11 @@ namespace Dal.Api
 {
     public interface IAppointmentDal
     {
-        public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate);
+        public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate,string specializationId);
         public List<AvailableAppointment> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day);
+        public void MakingAnAppointment(string idPatient, string idTherapist, DateTime day);
+        public List<Appointment> GetAppointmentsFromToday(string idPatient, DateTime today);
+        public List<Appointment> SeeAllMyAppointment(string patientId);
+        public void DeleteApointment(string idPatient, string idTherapist, DateTime day);
     }
 }

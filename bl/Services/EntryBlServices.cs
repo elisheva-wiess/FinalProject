@@ -24,6 +24,13 @@ namespace Bl.Services
             entrysDalServer.SignUp(patient);
             return DalToBl.ToPatient(patient);
         }
+        public void SignOut(string id)
+        {
+            entrysDalServer.SignOut(id);
+
+
+
+        }
 
         public Patient IsPatient(string id)
         {

@@ -51,6 +51,16 @@ namespace Server.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+        [HttpDelete("{id}")]
+        public IActionResult SignOut([FromRoute] string id)
+        {
+
+
+            entryBlServer.SignOut(id);
+            return Ok($"you not our patient now");
+
+        }
+       
 
     }
 }

@@ -178,5 +178,29 @@ namespace Bl
 
 
         }
+        public static AppointmentRequestDto ToAppointmentRequestDto(Appointment availableAppointment)
+        {
+
+            if (availableAppointment == null)
+                return null;
+            return new AppointmentRequestDto
+            {
+                Day = availableAppointment.AppointmentDate,
+                IdTherapist = availableAppointment.TherapistId,
+                IdPatient = availableAppointment.PatientId
+
+            };
+
+
+        }
+        public static List<AppointmentRequestDto> ToListAppointmentRequestDto(List<Appointment> availableAppointment)
+        {
+            var result = new List<AppointmentRequestDto>();
+            foreach (var a in availableAppointment)
+            {
+                result.Add(ToAppointmentRequestDto(a));
+            }
+            return result;
+        }
     }
 }
