@@ -15,6 +15,6 @@ namespace Bl.Api
         public void MakingAnAppointment(AppointmentRequestDto appointmentRequestDto);
         public List<AppointmentRequestDto> GetAppointmentsForPatientFromToday(string idPatient, DateTime currentDate);
         public List<AppointmentRequestDto> SeeAllMyAppointment(string patientId);
-        public void DeleteApointment(AppointmentRequestDto request);
+        public void DeleteAppointment(AppointmentRequestDto request);
     }
 }

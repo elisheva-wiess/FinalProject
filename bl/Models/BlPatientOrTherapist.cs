@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Bl.Models
 {
-    public  class BlPatientOrTherapist
+    public class BlPatientOrTherapist
     {
-      public BlPatient BlPatient { get; set; }
-     public  BlTherapist BlTherapist { get; set; }   
+        public BlPatient? Patient { get; set; }
+        public BlTherapist? Therapist { get; set; }
+        public string Role => Patient != null ? "Patient" : "Therapist";
     }
+
 }

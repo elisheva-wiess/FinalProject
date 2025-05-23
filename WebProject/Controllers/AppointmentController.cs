@@ -72,11 +72,11 @@ namespace Server.Controllers
             return BadRequest("fdhdh");
         }
         [HttpDelete]
-        public IActionResult DeleteApointment([FromBody] AppointmentRequestDto request)
+        public IActionResult DeleteAppointment([FromBody] AppointmentRequestDto request)
         {
             try
             {
-                appointmentBlServices.DeleteApointment(request);
+                appointmentBlServices.DeleteAppointment(request);
                 return Ok("Appointment successfully deleted.");
             }
             catch (InvalidOperationException ex)

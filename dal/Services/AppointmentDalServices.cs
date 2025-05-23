@@ -20,7 +20,7 @@ namespace Dal.Services
         {
             context = _context;
         }
-        //לחשוב מה לעשות שאני רוצה לבדוק האם המטפל עובד בהתמחות הרצויה . האם לבדוק על כל אחד בנפרד ?
+
         public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate, string specializationId)
         {
           

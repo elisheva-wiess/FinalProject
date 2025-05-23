@@ -1,41 +1,26 @@
-﻿using Bl.Api;
+﻿using AutoMapper;
+using Bl.Api;
 using Bl.Services;
 using Dal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Dal.Api;
 
 namespace Bl
 {
     public class BlManager : IBlManager
     {
-        public IPatientBl patientBl{ get; }
+        public IWebsiteConnectionBl WebsiteConnectionBl { get; }
+        public IPatientBl PatientBl { get; }
+        public ITherapistBl TherapistBl { get; }
+        public ISpecializationBl SpecializationBl { get; }
+        public IAppointmentBl AppointmentBl { get; }
 
-        public BlManager(IDalManager dalManager)
+        public BlManager(IDalManager dalManager, IMapper mapper)
         {
-            patientBl = new PatientBlServices(dalManager.patientDal);
+            WebsiteConnectionBl = new WebsiteConnectionBlServices(dalManager.WebsiteConnectionDal, mapper);
+            PatientBl = new PatientBlServices(dalManager.PatientDal, mapper);
+            TherapistBl = new TherapistBlServices(dalManager.TherapistDal, mapper);
+            SpecializationBl = new SpecializationBlServices(dalManager.SpecializationDal, mapper);
+            AppointmentBl = new AppointmentBlServices(dalManager.AppointmentDal, mapper);
         }
     }
 }
-
-
-//using Bl.Api;
-//using Bl.Services;
-//using Dal;
-//using AutoMapper; // ודא שאתה מוסיף את הספרייה המתאימה אם אתה משתמש ב-AutoMapper
-//using System;
-
-//namespace Bl
-//{
-//    public class BlManager : IBlManager
-//    {
-//        public IPatientBl patientBl { get; }
-
-//        public BlManager(IDalManager dalManager, IMapper mapper) // הוסף את IMapper כפרמטר
-//        {
-//            patientBl = new PatientBlServices(dalManager.patientDal, mapper); // העבר את mapper
-//        }
-//    }
-//}

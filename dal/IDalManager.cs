@@ -1,14 +1,13 @@
 ﻿using Dal.Api;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Dal
+namespace Dal.Api
 {
-    public class IDalManager
+    public interface IDalManager
     {
-        public IPatientDal patientDal;
+        IWebsiteConnectionDal WebsiteConnectionDal { get; }
+        IPatientDal PatientDal { get; }
+        ITherapistDal TherapistDal { get; }
+        ISpecializationDal SpecializationDal { get; }
+        IAppointmentDal AppointmentDal { get; }
     }
 }

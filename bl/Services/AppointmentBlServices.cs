@@ -1,25 +1,26 @@
-﻿using Bl.Api;
+﻿using AutoMapper;
+using Bl.Api;
 using Bl.Models;
 using Dal.Api;
 using Dal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bl.Services
 {
     public class AppointmentBlServices : IAppointmentBl
     {
         private readonly IAppointmentDal appointmentDalServices;
+        private readonly IMapper mapper;
 
-        public AppointmentBlServices(IAppointmentDal _appointmentDalServices)
+        public AppointmentBlServices(IAppointmentDal _appointmentDalServices, IMapper _mapper)
         {
             appointmentDalServices = _appointmentDalServices;
+            mapper = _mapper;
         }
 
-        public List<AppointmentSummary> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate,string specializationId)
+        public List<AppointmentSummary> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate, string specializationId)
         {
             var appointments = appointmentDalServices.GetAppointmentsByDateRange(startDate, endDate, specializationId);
 
@@ -29,8 +30,8 @@ namespace Bl.Services
                 {
                     Date = g.Key.Date,
                     TherapistId = g.Key.TherapistId,
-                    StartTime = g.Min(x => x.StartTimeSlot), // Getting the earliest time slot
-                    EndTime = g.Max(x => x.EndTimeSlot) // Getting the latest time slot
+                    StartTime = g.Min(x => x.StartTimeSlot),
+                    EndTime = g.Max(x => x.EndTimeSlot)
                 }).ToList();
 
             return result;
@@ -39,16 +40,8 @@ namespace Bl.Services
         public List<AppointmentSummary> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day)
         {
             var appointments = appointmentDalServices.AllHourSpetificalDayAndTherapist(idTherapist, day);
-            var result = appointments
-            .Select(g => new AppointmentSummary
-            {
-                Date = day,
-                TherapistId = idTherapist,
-                StartTime = g.StartTimeSlot,
-                EndTime=g.EndTimeSlot
-            }).ToList();
+            var result = mapper.Map<List<AppointmentSummary>>(appointments);
             return result;
-
         }
 
         public void MakingAnAppointment(AppointmentRequestDto request)
@@ -75,23 +68,25 @@ namespace Bl.Services
                 throw new InvalidOperationException("No appointments found for the given patient from today onward.");
             }
 
-            return DalToBl.ToListAppointmentRequestDto(appointments);
+            return mapper.Map<List<AppointmentRequestDto>>(appointments);
         }
+
         public List<AppointmentRequestDto> SeeAllMyAppointment(string patientId)
         {
             var appointments = appointmentDalServices.SeeAllMyAppointment(patientId);
             if (appointments == null || !appointments.Any())
             {
-                throw new InvalidOperationException("No appointments found for the given patient from today onward.");
+                throw new InvalidOperationException("No appointments found for the given patient.");
             }
 
-            return DalToBl.ToListAppointmentRequestDto(appointments);
+            return mapper.Map<List<AppointmentRequestDto>>(appointments);
         }
-        public void DeleteApointment(AppointmentRequestDto request)
+
+        public void DeleteAppointment(AppointmentRequestDto request)
         {
             try
             {
-                appointmentDalServices.DeleteApointment(request.IdPatient, request.IdTherapist, request.Day);
+                appointmentDalServices.DeleteAppointment(request.IdPatient, request.IdTherapist, request.Day);
             }
             catch (InvalidOperationException ex)
             {
@@ -101,8 +96,6 @@ namespace Bl.Services
             {
                 throw new Exception($"An unexpected error occurred: {ex.Message}");
             }
+        }
     }
 }
-
-
-

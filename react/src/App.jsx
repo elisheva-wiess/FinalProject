@@ -10,6 +10,7 @@ import Register from './components/Authorization/SignUp';
 import SpecializationsList from './components/Specializations/SpecializationsList';
 import SpecializationDetails from './components/Specializations/SpecializationDetails';
 import TherapistDetails from './components/Therapists/TherapistDetails';
+import TherapistDashboard from './components/Therapists/TherapistDashboard'; 
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/specializations" element={<SpecializationsList />} />
         <Route path="/specializations/:name" element={<SpecializationDetails />} />
         <Route path="/therapist/:id" element={<TherapistDetails />} />
+        <Route path="/therapist-dashboard" element={<TherapistDashboard />} /> 
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

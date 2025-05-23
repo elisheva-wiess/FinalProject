@@ -1,34 +1,33 @@
-﻿using Bl.Api;
+﻿using AutoMapper;
+using Bl.Api;
 using Bl.Models;
 using Dal.Api;
-using System;
+using Dal.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bl.Services
 {
     public class SpecializationBlServices : ISpecializationBl
     {
-        private readonly ISpecializationDal SpecializationsDalServer;
+        private readonly ISpecializationDal specializationsDal;
+        private readonly IMapper mapper;
 
-        public SpecializationBlServices(ISpecializationDal _SpecializationsDalServer)
+        public SpecializationBlServices(ISpecializationDal _specializationsDal, IMapper _mapper)
         {
-            SpecializationsDalServer = _SpecializationsDalServer;
+            specializationsDal = _specializationsDal;
+            mapper = _mapper;
         }
 
         public List<BlSpecializations> GetAllSpecializations()
         {
-            var AllSpecializations = SpecializationsDalServer.GetAllSpecializations();
-            return DalToBl.ToListAllSpecializations(AllSpecializations);
-
+            var allSpecializations = specializationsDal.GetAllSpecializations();
+            return mapper.Map<List<BlSpecializations>>(allSpecializations);
         }
 
         public List<BlSpecializationsTherapists> GetTherapistsBySpecializationName(string name)
         {
-            var specializationsTherapists = SpecializationsDalServer.GetTherapistsBySpecializationName(name);
-            return DalToBl.ToListSpecializations(specializationsTherapists);
+            var specTherapists = specializationsDal.GetTherapistsBySpecializationName(name);
+            return mapper.Map<List<BlSpecializationsTherapists>>(specTherapists);
         }
     }
 }
