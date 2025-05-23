@@ -32,6 +32,7 @@ body {
   justify-content: center;  /* מרכז אופקית */
   align-items: flex-start;      /* מרכז אנכית */
   height: 100vh;            /* גובה כל המסך */
+  background-color: #1a1a1a;
 }
 h1 {
   font-size: 3.2em;
