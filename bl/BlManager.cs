@@ -13,6 +13,7 @@ namespace Bl
         public ITherapistBl TherapistBl { get; }
         public ISpecializationBl SpecializationBl { get; }
         public IAppointmentBl AppointmentBl { get; }
+        public IPersonalAreaBl PersonalAreaBl { get; } 
 
         public BlManager(IDalManager dalManager, IMapper mapper)
         {
@@ -21,6 +22,9 @@ namespace Bl
             TherapistBl = new TherapistBlServices(dalManager.TherapistDal, mapper);
             SpecializationBl = new SpecializationBlServices(dalManager.SpecializationDal, mapper);
             AppointmentBl = new AppointmentBlServices(dalManager.AppointmentDal, mapper);
+            PersonalAreaBl = new PersonalAreaBlServices(dalManager.PersonalAreaDal, mapper);
         }
     }
+
 }
+

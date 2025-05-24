@@ -9,5 +9,6 @@ namespace Dal.Api
         ITherapistDal TherapistDal { get; }
         ISpecializationDal SpecializationDal { get; }
         IAppointmentDal AppointmentDal { get; }
+        IPersonalAreaDal PersonalAreaDal { get; }
     }
 }
