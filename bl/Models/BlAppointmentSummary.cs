@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bl.Models
 {
-    public class AppointmentSummary
+    public class BlAppointmentSummary
     {
         public DateTime Date { get; set; }
         public string TherapistId { get; set; }

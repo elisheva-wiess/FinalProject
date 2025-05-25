@@ -21,7 +21,7 @@ namespace Server.Controllers
         /// מחזיר את התורים העתידיים של המטופל.
         /// </summary>
         [HttpGet("FutureAppointments")]
-        public ActionResult<List<AppointmentDto>> GetFutureAppointments([FromQuery] string patientId)
+        public ActionResult<List<BlAppointmentDto>> GetFutureAppointments([FromQuery] string patientId)
         {
             if (string.IsNullOrWhiteSpace(patientId))
                 return BadRequest("PatientId is required.");
@@ -38,7 +38,7 @@ namespace Server.Controllers
         /// מחזיר את התורים הקודמים של המטופל.
         /// </summary>
         [HttpGet("PastAppointments")]
-        public ActionResult<List<AppointmentDto>> GetPastAppointments([FromQuery] string patientId)
+        public ActionResult<List<BlAppointmentDto>> GetPastAppointments([FromQuery] string patientId)
         {
             if (string.IsNullOrWhiteSpace(patientId))
                 return BadRequest("PatientId is required.");
@@ -55,7 +55,7 @@ namespace Server.Controllers
         /// מחזיר את סיכומי הביקור של המטופל.
         /// </summary>
         [HttpGet("VisitSummaries")]
-        public ActionResult<List<VisitSummaryDto>> GetVisitSummaries([FromQuery] string patientId)
+        public ActionResult<List<BlVisitSummaryDto>> GetVisitSummaries([FromQuery] string patientId)
         {
             if (string.IsNullOrWhiteSpace(patientId))
                 return BadRequest("PatientId is required.");
@@ -72,7 +72,7 @@ namespace Server.Controllers
         /// מחזיר את הפרטים האישיים של המטופל.
         /// </summary>
         [HttpGet("PersonalDetails")]
-        public ActionResult<PatientDto> GetPersonalDetails([FromQuery] string patientId)
+        public ActionResult<BlPatientDto> GetPersonalDetails([FromQuery] string patientId)
         {
             if (string.IsNullOrWhiteSpace(patientId))
                 return BadRequest("PatientId is required.");
@@ -89,7 +89,7 @@ namespace Server.Controllers
         /// מעדכן את הפרטים האישיים של המטופל.
         /// </summary>
         [HttpPut("UpdatePersonalDetails")]
-        public IActionResult UpdatePersonalDetails([FromQuery] string patientId, [FromBody] PatientDto updatedDetails)
+        public IActionResult UpdatePersonalDetails([FromQuery] string patientId, [FromBody] BlPatientDto updatedDetails)
         {
             if (string.IsNullOrWhiteSpace(patientId))
                 return BadRequest("PatientId is required.");

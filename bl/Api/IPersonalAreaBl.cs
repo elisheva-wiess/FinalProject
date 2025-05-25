@@ -10,10 +10,10 @@ namespace Bl.Api
 {
     public interface IPersonalAreaBl
     {
-        List<AppointmentDto> GetFutureAppointments(string patientId);
-        List<AppointmentDto> GetPastAppointments(string patientId);
-        PatientDto GetPersonalDetails(string patientId);
-        bool UpdatePersonalDetails(string patientId, PatientDto updatedDetails);
-        List<VisitSummaryDto> GetVisitSummaries(string patientId);
+        List<BlAppointmentDto> GetFutureAppointments(string patientId);
+        List<BlAppointmentDto> GetPastAppointments(string patientId);
+        BlPatientDto GetPersonalDetails(string patientId);
+        bool UpdatePersonalDetails(string patientId, BlPatientDto updatedDetails);
+        List<BlVisitSummaryDto> GetVisitSummaries(string patientId);
     }
 }

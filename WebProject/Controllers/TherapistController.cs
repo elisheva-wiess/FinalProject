@@ -1,6 +1,7 @@
 ﻿using Dal.Models;
 using Microsoft.AspNetCore.Mvc;
 using Bl.Api;
+using Bl.Models;
 
 namespace Server.Controllers
 {
@@ -39,6 +40,33 @@ namespace Server.Controllers
             if (therapistSalary != null)
                 return Ok(therapistSalary);
             return BadRequest();
+        }
+
+        [HttpPost("AddTherapist")]
+        public IActionResult AddTherapist([FromBody] Therapist newTherapist)
+        {
+            var result = therapistBlServices.AddTherapist(newTherapist);
+            if (result)
+                return Ok("Therapist added successfully");
+            return BadRequest("Failed to add therapist");
+        }
+
+        [HttpPut("UpdateSalary")]
+        public IActionResult UpdateSalary(string therapistId, double newSalary)
+        {
+            var result = therapistBlServices.UpdateSalary(therapistId, newSalary);
+            if (result)
+                return Ok("Salary updated successfully");
+            return NotFound("Therapist not found");
+        }
+
+        [HttpPut("UpdateWorkingHours")]
+        public IActionResult UpdateWorkingHours(string therapistId, List<BlTherapistHourDto> newHours)
+        {
+            var result = therapistBlServices.UpdateWorkingHours(therapistId, newHours);
+            if (result)
+                return Ok("Working hours updated successfully");
+            return NotFound("Therapist not found or update failed");
         }
 
         //[HttpGet("{therapistFirstName} {specializationName}")]

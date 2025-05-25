@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Bl.Models.AppointmentRequestDto",
+        "Type": "Bl.Models.BlAppointmentRequestDto",
         "IsRequired": true
       }
     ],
@@ -78,7 +78,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Bl.Models.AppointmentRequestDto",
+        "Type": "Bl.Models.BlAppointmentRequestDto",
         "IsRequired": true
       }
     ],
@@ -116,7 +116,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Bl.Models.AppointmentDto, Bl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Bl.Models.BlAppointmentDto, Bl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -142,7 +142,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Bl.Models.AppointmentDto, Bl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Bl.Models.BlAppointmentDto, Bl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -168,7 +168,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Bl.Models.PatientDto",
+        "Type": "Bl.Models.BlPatientDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -193,7 +193,7 @@
       },
       {
         "Name": "updatedDetails",
-        "Type": "Bl.Models.PatientDto",
+        "Type": "Bl.Models.BlPatientDto",
         "IsRequired": true
       }
     ],
@@ -215,7 +215,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Bl.Models.VisitSummaryDto, Bl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Bl.Models.BlVisitSummaryDto, Bl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -285,6 +285,22 @@
   },
   {
     "ContainingType": "Server.Controllers.TherapistController",
+    "Method": "AddTherapist",
+    "RelativePath": "api/Therapist/AddTherapist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newTherapist",
+        "Type": "Dal.Models.Therapist",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.TherapistController",
     "Method": "GetTherapistSalaryById",
     "RelativePath": "api/Therapist/GetTherapistSalaryById",
     "HttpMethod": "GET",
@@ -295,6 +311,48 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.TherapistController",
+    "Method": "UpdateSalary",
+    "RelativePath": "api/Therapist/UpdateSalary",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "therapistId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "newSalary",
+        "Type": "System.Double",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.TherapistController",
+    "Method": "UpdateWorkingHours",
+    "RelativePath": "api/Therapist/UpdateWorkingHours",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "therapistId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "newHours",
+        "Type": "System.Collections.Generic.List\u00601[[Bl.Models.BlTherapistHourDto, Bl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

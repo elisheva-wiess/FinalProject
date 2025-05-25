@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Bl.Models;
 using Dal.Api;
+using Dal.Models;
 using Microsoft.AspNetCore.Mvc;
 namespace Bl.Api
 {
@@ -13,6 +14,10 @@ namespace Bl.Api
         List<BlAppointment> GetTherapistApointmentsById(string id);
         BlWorkingHours GetTherapistWorkingHoursById(string id);
         BlTherapistSalary GetTherapistSalaryById(string id);
+        bool AddTherapist(Therapist newTherapist);
+        bool UpdateSalary(string therapistId, double newSalary);
+        bool UpdateWorkingHours(string therapistId, List<BlTherapistHourDto> newHours);
+
         //List<BlAvailableAppointment> WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName);
     }
 }

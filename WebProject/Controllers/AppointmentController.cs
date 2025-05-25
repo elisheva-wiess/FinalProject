@@ -35,7 +35,7 @@ namespace Server.Controllers
         }
 
         [HttpPost("MakingAnAppointment")]
-        public IActionResult MakingAnAppointment([FromBody] AppointmentRequestDto request)
+        public IActionResult MakingAnAppointment([FromBody] BlAppointmentRequestDto request)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace Server.Controllers
             return BadRequest("fdhdh");
         }
         [HttpDelete]
-        public IActionResult DeleteAppointment([FromBody] AppointmentRequestDto request)
+        public IActionResult DeleteAppointment([FromBody] BlAppointmentRequestDto request)
         {
             try
             {

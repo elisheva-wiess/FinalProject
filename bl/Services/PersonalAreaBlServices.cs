@@ -19,31 +19,31 @@ namespace Bl.Services
             _mapper = mapper;
         }
 
-        public List<AppointmentDto> GetFutureAppointments(string patientId)
+        public List<BlAppointmentDto> GetFutureAppointments(string patientId)
         {
             var appointments = _dal.GetFutureAppointments(patientId);
-            return _mapper.Map<List<AppointmentDto>>(appointments);
+            return _mapper.Map<List<BlAppointmentDto>>(appointments);
         }
 
-        public List<AppointmentDto> GetPastAppointments(string patientId)
+        public List<BlAppointmentDto> GetPastAppointments(string patientId)
         {
             var appointments = _dal.GetPastAppointments(patientId);
-            return _mapper.Map<List<AppointmentDto>>(appointments);
+            return _mapper.Map<List<BlAppointmentDto>>(appointments);
         }
 
-        public PatientDto GetPersonalDetails(string patientId)
+        public BlPatientDto GetPersonalDetails(string patientId)
         {
             var patient = _dal.GetPersonalDetails(patientId);
-            return _mapper.Map<PatientDto>(patient);
+            return _mapper.Map<BlPatientDto>(patient);
         }
 
-        public bool UpdatePersonalDetails(string patientId, PatientDto updatedDetails)
+        public bool UpdatePersonalDetails(string patientId, BlPatientDto updatedDetails)
         {
             var patient = _mapper.Map<Patient>(updatedDetails);
             return _dal.UpdatePersonalDetails(patientId, patient);
         }
 
-        public List<VisitSummaryDto> GetVisitSummaries(string patientId)
+        public List<BlVisitSummaryDto> GetVisitSummaries(string patientId)
         {
             var appointments = _dal.GetVisitSummaries(patientId);
 
@@ -54,7 +54,7 @@ namespace Bl.Services
                 // אם יש כמה ספיקליזציות - נבחר את הראשונה (או נשיב ריק)
                 var specializationName = therapist.TherapistSpecializations?.FirstOrDefault()?.Specialization?.SpecializationName ?? "No Specialization";
 
-                return new VisitSummaryDto
+                return new BlVisitSummaryDto
                 {
                     AppointmentDate = a.AppointmentDate,
                     TherapistName = therapist.FirstName + " " + therapist.LastName,

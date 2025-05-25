@@ -1,5 +1,6 @@
 ﻿using Dal.Api;
 using Dal.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,37 @@ namespace Dal.Services
             }
             return null;
         }
+
+        public bool AddTherapist(Therapist newTherapist)
+        {
+            context.Therapists.Add(newTherapist);
+            return context.SaveChanges() > 0;
+        }
+
+        public bool UpdateSalary(string therapistId, double newSalary)
+        {
+            var therapist = context.Therapists.FirstOrDefault(t => t.TherapistsId == therapistId);
+            if (therapist == null)
+                return false;
+
+            therapist.Salary = newSalary;
+            return context.SaveChanges() > 0;
+        }
+
+        public bool UpdateWorkingHours(string therapistId, List<TherapistHour> newHours)
+        {
+            var existingHours = context.TherapistHours.Where(h => h.TherapistId == therapistId).ToList();
+
+            if (!existingHours.Any())
+                return false;
+
+            // כאן ניתן להחליף או לעדכן לפי הצורך, לדוגמה:
+            context.TherapistHours.RemoveRange(existingHours);
+            context.TherapistHours.AddRange(newHours);
+
+            return context.SaveChanges() > 0;
+        }
+
 
         //public List<TherapistHour> WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName)
         //{

@@ -2,6 +2,7 @@
 using Bl.Api;
 using Bl.Models;
 using Dal.Api;
+using Dal.Models;
 using System;
 using System.Collections.Generic;
 
@@ -41,6 +42,33 @@ namespace Bl.Services
             var salary = therapistDal.GetTherapistSalaryById(id);
             return salary == null ? null : mapper.Map<BlTherapistSalary>(salary);
         }
+
+        public bool AddTherapist(Therapist newTherapist)
+        {
+            if (newTherapist == null)
+                return false;
+
+            var therapistEntity = mapper.Map<Therapist>(newTherapist);
+            return therapistDal.AddTherapist(therapistEntity);
+        }
+
+        public bool UpdateSalary(string therapistId, double newSalary)
+        {
+            if (string.IsNullOrWhiteSpace(therapistId) || newSalary < 0)
+                return false;
+
+            return therapistDal.UpdateSalary(therapistId, newSalary);
+        }
+
+        public bool UpdateWorkingHours(string therapistId, List<BlTherapistHourDto> newHours)
+        {
+            if (string.IsNullOrWhiteSpace(therapistId) || newHours == null)
+                return false;
+
+            var hoursEntities = mapper.Map<List<TherapistHour>>(newHours);
+            return therapistDal.UpdateWorkingHours(therapistId, hoursEntities);
+        }
+
 
         //public List<BlAvailableAppointment> WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName)
         //{

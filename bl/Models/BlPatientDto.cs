@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bl.Models
 {
-    public class PatientDto
+    public class BlPatientDto
     {
         public string PatientsId { get; set; }
         public string FirstName { get; set; }
