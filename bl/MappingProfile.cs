@@ -12,7 +12,11 @@ namespace Bl
             CreateMap<Patient, BlPatient>().ReverseMap();
             CreateMap<Therapist, BlTherapist>().ReverseMap();
             CreateMap<Specialization, BlSpecializations>().ReverseMap();
-            CreateMap<AvailableAppointment, BlAppointmentSummary>().ReverseMap();
+            CreateMap<AvailableAppointment, BlAppointmentSummary>()
+.ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.AvailableDate))
+.ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTimeSlot))
+.ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTimeSlot))
+.ReverseMap();
             CreateMap<Appointment, BlAppointment>().ReverseMap();
             CreateMap<AvailableAppointment, BlAvailableAppointment>().ReverseMap();
             CreateMap<TherapistHour, BlWorkingHours>().ReverseMap();

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\Server.csproj": {}
+    "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\WebProject\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\Bl.csproj": {
+    "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\bl\\Bl.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\Bl.csproj",
+        "projectUniqueName": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\bl\\Bl.csproj",
         "projectName": "Bl",
-        "projectPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\Bl.csproj",
-        "packagesPath": "C:\\Users\\משתמש\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\obj\\",
+        "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\bl\\Bl.csproj",
+        "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
+        "outputPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\bl\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\משתמש\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\Dal.csproj": {
-                "projectPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\Dal.csproj"
+              "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\Dal.csproj": {
+                "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\Dal.csproj"
               }
             }
           }
@@ -47,8 +48,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -79,24 +79,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\Dal.csproj": {
+    "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\Dal.csproj",
+        "projectUniqueName": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\Dal.csproj",
         "projectName": "Dal",
-        "projectPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\Dal.csproj",
-        "packagesPath": "C:\\Users\\משתמש\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\obj\\",
+        "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\Dal.csproj",
+        "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
+        "outputPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\משתמש\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -105,6 +105,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -122,8 +123,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -166,24 +166,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\Server.csproj": {
+    "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\WebProject\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\Server.csproj",
+        "projectUniqueName": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\WebProject\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\Server.csproj",
-        "packagesPath": "C:\\Users\\משתמש\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\obj\\",
+        "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\WebProject\\Server.csproj",
+        "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
+        "outputPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\WebProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\משתמש\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ויס אלישבע\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -192,14 +192,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\Bl.csproj": {
-                "projectPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\Bl.csproj"
+              "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\bl\\Bl.csproj": {
+                "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\bl\\Bl.csproj"
               }
             }
           }
@@ -213,8 +214,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -254,7 +254,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

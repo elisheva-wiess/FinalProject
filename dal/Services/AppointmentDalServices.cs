@@ -37,27 +37,29 @@ namespace Dal.Services
         public List<AvailableAppointment> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day)
         {
             return context.AvailableAppointments
-                .Where(th => th.TherapistId == idTherapist && th.AvailableDate == day)
+                .Where(th => th.TherapistId == idTherapist && th.AvailableDate.Date == day.Date)
                 .ToList();
         }
-        public void MakingAnAppointment(string idPatient, string idTherapist, DateTime day)
-        {
-            var existingAppointment = context.AvailableAppointments
-                .FirstOrDefault(a => a.TherapistId == idTherapist && a.AvailableDate == day);
-            if (existingAppointment == null)
-            {
-                throw new InvalidOperationException("The selected appointment slot is not available.");
-            }
-            var newAppointment = new Appointment
-            {
-                PatientId = idPatient,
-                TherapistId = idTherapist,
-                AppointmentDate = day
-            };
-            context.Appointments.Add(newAppointment);
-            context.SaveChanges();
-        }
+      public void MakingAnAppointment(string idPatient, string idTherapist, DateTime day)
+{
+    var existingAppointment = context.AvailableAppointments
+        .FirstOrDefault(a => a.TherapistId == idTherapist &&
+                             Math.Abs(EF.Functions.DateDiffSecond(a.AvailableDate, day)) < 1
+                             && a.Status == false);
+    if (existingAppointment == null)
+    {
+        throw new InvalidOperationException("The selected appointment slot is not available.");
+    }
+    var newAppointment = new Appointment
+    {
+        PatientId = idPatient,
+        TherapistId = idTherapist,
+        AppointmentDate = day
+    };
 
+    context.Appointments.Add(newAppointment);
+    context.SaveChanges();
+}
         public List<Appointment> GetAppointmentsFromToday(string idPatient, DateTime today)
         {
             return context.Appointments
