@@ -31,7 +31,9 @@ namespace WebApi.Controllers
                 return StatusCode(500, "שגיאה בהרשמה");
             }
         }
-        [HttpDelete("{id}")]
+
+        [HttpDelete("SignOut/{id}")]
+
         public IActionResult SignOut([FromRoute] string id)
         {
             websiteConnectionBl.SignOut(id);

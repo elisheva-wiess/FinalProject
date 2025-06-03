@@ -30,24 +30,23 @@ namespace Dal.Services
             }
         }
 
-        public TherapistHour GetTherapistWorkingHoursById(string id)
+        public List<TherapistHour> GetTherapistWorkingHoursById(string therapistId)
         {
-            var therapist = context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
-            if (therapist != null)
-            {
-                return context.TherapistHours.FirstOrDefault(t => t.TherapistId == id);
-            }
-            return null;
+            if (string.IsNullOrWhiteSpace(therapistId))
+                return new List<TherapistHour>();
+
+            return context.TherapistHours
+                .Where(th => th.TherapistId == therapistId)
+                .Include(th => th.Therapist)
+                .Include(th => th.Therapist.TherapistSpecializations)
+                    .ThenInclude(ts => ts.Specialization)
+                .ToList();
         }
 
         public Therapist GetTherapistSalaryById(string id)
         {
-            var therapist = context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
-            if (therapist != null)
-            {
-                return context.Therapists.FirstOrDefault(t => t.TherapistsId == id);
-            }
-            return null;
+            return context.Therapists
+                .FirstOrDefault(t => t.TherapistsId == id);
         }
 
         public bool AddTherapist(Therapist newTherapist)
@@ -73,31 +72,46 @@ namespace Dal.Services
             if (!existingHours.Any())
                 return false;
 
-            // כאן ניתן להחליף או לעדכן לפי הצורך, לדוגמה:
             context.TherapistHours.RemoveRange(existingHours);
             context.TherapistHours.AddRange(newHours);
 
             return context.SaveChanges() > 0;
         }
 
+        public List<TherapistHour> GetWorkingHoursByTherapistFullNameAndSpecialization(string therapistFullName, string specializationName)
+        {
+            if (string.IsNullOrWhiteSpace(therapistFullName) || string.IsNullOrWhiteSpace(specializationName))
+                return new List<TherapistHour>();
 
-        //public List<TherapistHour> WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName)
-        //{
-        //    var specialization = context.Specializations
-        //                                 .FirstOrDefault(s => s.SpecializationName == specializationName);
+            // פיצול השם המלא
+            var nameParts = therapistFullName.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            if (nameParts.Length < 2)
+                return new List<TherapistHour>(); // אין שם פרטי ומשפחה
 
-        //    if (specialization == null)
-        //        return new List<TherapistHour>();
+            var firstName = nameParts[0];
+            var lastName = nameParts[1];
 
-        //    var therapistIdsWithSpecialization = context.TherapistSpecializations
-        //                                                 .Where(ts => ts.SpecializationId == specialization.Id)
-        //                                                 .Select(ts => ts.TherapistId)
-        //                                                 .ToList();
+            // מציאת התמחות
+            var specialization = context.Specializations.FirstOrDefault(s => s.SpecializationName == specializationName);
+            if (specialization == null)
+                return new List<TherapistHour>();
 
-        //    return context.TherapistHours
-        //                   .Where(th => th.Therapist.FirstName == therapistFirstName && therapistIdsWithSpecialization.Contains(th.TherapistId))
-        //                   .ToList();
-        //}
+            // מציאת כל המטפלים בהתמחות
+            var therapistIdsWithSpecialization = context.TherapistSpecializations
+                .Where(ts => ts.SpecializationId == specialization.Id)
+                .Select(ts => ts.TherapistId)
+                .ToList();
+
+            // החזרת שעות העבודה של המטפל
+            return context.TherapistHours
+                .Where(th => th.Therapist.FirstName == firstName &&
+                             th.Therapist.LastName == lastName &&
+                             therapistIdsWithSpecialization.Contains(th.TherapistId))
+                .Include(th => th.Therapist) // כדי שיהיה אפשר למפות שם
+                .Include(th => th.Therapist.TherapistSpecializations)
+                    .ThenInclude(ts => ts.Specialization)
+                .ToList();
+        }
 
     }
 }

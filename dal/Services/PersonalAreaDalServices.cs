@@ -12,20 +12,6 @@ namespace Dal.Services
             context = _context;
         }
 
-        public List<Appointment> GetFutureAppointments(string patientId)
-        {
-            return context.Appointments
-                .Where(a => a.PatientId == patientId && a.AppointmentDate > DateTime.Now)
-                .ToList();
-        }
-
-        public List<Appointment> GetPastAppointments(string patientId)
-        {
-            return context.Appointments
-                .Where(a => a.PatientId == patientId && a.AppointmentDate <= DateTime.Now)
-                .ToList();
-        }
-
         public Patient GetPersonalDetails(string patientId)
         {
             return context.Patients.FirstOrDefault(p => p.PatientsId == patientId)!;

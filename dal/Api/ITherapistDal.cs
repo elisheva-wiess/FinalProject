@@ -10,11 +10,11 @@ namespace Dal.Api
     public interface ITherapistDal
     {
         List<Appointment> GetTherapistApointmentsById(string id);
-        TherapistHour GetTherapistWorkingHoursById(string id);
+        List<TherapistHour> GetTherapistWorkingHoursById(string therapistId);
         Therapist GetTherapistSalaryById(string id);
         bool AddTherapist(Therapist newTherapist);
         bool UpdateSalary(string therapistId, double newSalary);
         bool UpdateWorkingHours(string therapistId, List<TherapistHour> newHours);
-        //List<TherapistHour> WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName);
+        List<TherapistHour> GetWorkingHoursByTherapistFullNameAndSpecialization(string therapistFullName, string specializationName);
     }
 }

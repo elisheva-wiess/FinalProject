@@ -15,13 +15,10 @@ namespace Server.Controllers
             SpecializationBlServer = _SpecializationBlServer;
         }
 
-
         [HttpGet("GetAllSpecializations")]
-
         public IActionResult GetAllSpecializations()
 
         {
-
             var AllSpecializationsTherapists = SpecializationBlServer.GetAllSpecializations();
 
             if (AllSpecializationsTherapists != null && AllSpecializationsTherapists.Any())
@@ -32,7 +29,7 @@ namespace Server.Controllers
         }
 
 
-        [HttpGet("SpecializationsTherapists")]
+        [HttpGet("GetTherapistsBySpecializationName")]
         public IActionResult GetTherapistsBySpecializationName(string name)
         {
             var specializationsTherapists = SpecializationBlServer.GetTherapistsBySpecializationName(name);
