@@ -14,13 +14,8 @@ namespace Bl
             CreateMap<Specialization, BlSpecializations>().ReverseMap();
             CreateMap<AvailableAppointment, BlAppointmentSummary>().ReverseMap();
             CreateMap<Appointment, BlAppointment>().ReverseMap();
-            CreateMap<AvailableAppointment, BlAvailableAppointment>().ReverseMap();
-            CreateMap<TherapistHour, BlWorkingHours>().ReverseMap();
-            CreateMap<Therapist, BlTherapistSalary>().ReverseMap();
             CreateMap<BlTherapistHourDto, Therapist>().ReverseMap();
             CreateMap<Therapist, BlSpecializationsTherapists>();
-            CreateMap<Appointment, BlAppointmentDto>()
-                   .ForMember(dest => dest.TherapistName, opt => opt.MapFrom(src => src.Therapist.FirstName + " " + src.Therapist.LastName));
             CreateMap<Patient, BlPatientDto>().ReverseMap();
             CreateMap<Appointment, BlVisitSummaryDto>()
                 .ForMember(dest => dest.TherapistName, opt => opt.MapFrom(src => src.Therapist.FirstName + " " + src.Therapist.LastName))
@@ -28,7 +23,16 @@ namespace Bl
                                    opt => opt.MapFrom(src => src.Therapist.TherapistSpecializations
                                   .Select(ts => ts.Specialization.SpecializationName)
                                   .FirstOrDefault()));
-
+            CreateMap<Therapist, BlTherapistSalary>()
+                .ForMember(dest => dest.TherapistId, opt => opt.MapFrom(src => src.TherapistsId))
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FirstName + " " + src.LastName))
+                .ForMember(dest => dest.Salary, opt => opt.MapFrom(src => src.Salary));
+            CreateMap<TherapistHour, BlWorkingHours>()
+                .ForMember(dest => dest.DayOfWeek, opt => opt.MapFrom(src => src.DayOfWeek.ToString()))
+                .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTime))
+                .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTime))
+                .ReverseMap();
         }
+
     }
 }

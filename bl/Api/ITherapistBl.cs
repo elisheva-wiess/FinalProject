@@ -12,12 +12,11 @@ namespace Bl.Api
     public interface ITherapistBl
     {
         List<BlAppointment> GetTherapistApointmentsById(string id);
-        BlWorkingHours GetTherapistWorkingHoursById(string id);
+        List<BlWorkingHours> GetTherapistWorkingHoursById(string id);
         BlTherapistSalary GetTherapistSalaryById(string id);
         bool AddTherapist(Therapist newTherapist);
         bool UpdateSalary(string therapistId, double newSalary);
         bool UpdateWorkingHours(string therapistId, List<BlTherapistHourDto> newHours);
-
-        //List<BlAvailableAppointment> WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName);
+        List<BlWorkingHours> GetWorkingHoursByTherapistFullNameAndSpecialization(string therapistFullName, string specializationName);
     }
 }

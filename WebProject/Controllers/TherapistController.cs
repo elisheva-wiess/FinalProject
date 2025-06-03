@@ -15,7 +15,7 @@ namespace Server.Controllers
             therapistBlServices = _therapistBlServices;
         }
 
-        [HttpGet]
+        [HttpGet("GetTherapistApointmentsById")]
         public IActionResult GetTherapistApointmentsById(string id)
         {
             var therapistApointments = therapistBlServices.GetTherapistApointmentsById(id);
@@ -24,7 +24,8 @@ namespace Server.Controllers
             return BadRequest();
 
         }
-        [HttpGet("{id}")]
+
+        [HttpGet("GetTherapistWorkingHoursById/{id}")]
         public IActionResult GetTherapistWorkingHoursById([FromRoute] string id)
         {
             var therapistWorkingHours = therapistBlServices.GetTherapistWorkingHoursById(id);
@@ -69,13 +70,16 @@ namespace Server.Controllers
             return NotFound("Therapist not found or update failed");
         }
 
-        //[HttpGet("{therapistFirstName} {specializationName}")]
-        //public IActionResult WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName)
-        //{
-        //    var availableAppointment = therapistBlServices.WorkingHoursTherapistByNameAndSpecialization(therapistFirstName, specializationName);
-        //    if (availableAppointment != null)
-        //        return Ok(availableAppointment);
-        //    return BadRequest();
-        //}
+        [HttpGet("GetWorkingHoursByTherapistFullNameAndSpecialization/{therapistFullName}/{specializationName}")]
+        public IActionResult GetWorkingHoursByTherapistFullNameAndSpecialization(string therapistFullName, string specializationName)
+        {
+            var availableAppointment = therapistBlServices.GetWorkingHoursByTherapistFullNameAndSpecialization(therapistFullName, specializationName);
+
+            if (availableAppointment != null && availableAppointment.Any())
+                return Ok(availableAppointment);
+
+            return NotFound("לא נמצאו שעות עבודה עבור מטפל זה עם ההתמחות הזו.");
+        }
+
     }
 }

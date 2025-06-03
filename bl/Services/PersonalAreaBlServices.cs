@@ -19,18 +19,6 @@ namespace Bl.Services
             _mapper = mapper;
         }
 
-        public List<BlAppointmentDto> GetFutureAppointments(string patientId)
-        {
-            var appointments = _dal.GetFutureAppointments(patientId);
-            return _mapper.Map<List<BlAppointmentDto>>(appointments);
-        }
-
-        public List<BlAppointmentDto> GetPastAppointments(string patientId)
-        {
-            var appointments = _dal.GetPastAppointments(patientId);
-            return _mapper.Map<List<BlAppointmentDto>>(appointments);
-        }
-
         public BlPatientDto GetPersonalDetails(string patientId)
         {
             var patient = _dal.GetPersonalDetails(patientId);

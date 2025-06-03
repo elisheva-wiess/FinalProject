@@ -9,8 +9,6 @@ namespace Dal.Api
 {
     public interface IPersonalAreaDal
     {
-        List<Appointment> GetFutureAppointments(string patientId);
-        List<Appointment> GetPastAppointments(string patientId);
         Patient GetPersonalDetails(string patientId);
         bool UpdatePersonalDetails(string patientId, Patient updatedDetails);
         List<Appointment> GetVisitSummaries(string patientId);

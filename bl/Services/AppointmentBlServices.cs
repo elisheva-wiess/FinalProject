@@ -60,9 +60,9 @@ namespace Bl.Services
             }
         }
 
-        public List<BlAppointmentRequestDto> GetAppointmentsForPatientFromToday(string idPatient, DateTime currentDate)
+        public List<BlAppointmentRequestDto> GetFutureAppointments(string idPatient, DateTime currentDate)
         {
-            var appointments = appointmentDalServices.GetAppointmentsFromToday(idPatient, currentDate);
+            var appointments = appointmentDalServices.GetFutureAppointments(idPatient, currentDate);
             if (appointments == null || !appointments.Any())
             {
                 throw new InvalidOperationException("No appointments found for the given patient from today onward.");
@@ -71,9 +71,9 @@ namespace Bl.Services
             return mapper.Map<List<BlAppointmentRequestDto>>(appointments);
         }
 
-        public List<BlAppointmentRequestDto> SeeAllMyAppointment(string patientId)
+        public List<BlAppointmentRequestDto> GetPastAppointments(string patientId)
         {
-            var appointments = appointmentDalServices.SeeAllMyAppointment(patientId);
+            var appointments = appointmentDalServices.GetPastAppointments(patientId);
             if (appointments == null || !appointments.Any())
             {
                 throw new InvalidOperationException("No appointments found for the given patient.");

@@ -15,8 +15,8 @@ namespace Server.Controllers
             appointmentBlServices = _appointmentBlServices;
         }
 
-        [HttpGet("GetAvailableAppointments")]
         //חסר!!!!!!!!!!!!!
+        [HttpGet("GetAvailableAppointments")]
         public IActionResult GetAppointmentsByDateRange(string specializationId)
         {
             var currentDate = DateTime.Now;
@@ -51,27 +51,30 @@ namespace Server.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { Message = ex.Message });
             }
         }
-        //לראות את כל התורים שהתקימו
-        [HttpGet("SeeAllMyAppointment")]
-        public IActionResult SeeAllMyAppointment(string patientId)
+
+        //לראות תורים שהמטופל קבע בעבר
+        [HttpGet("GetPastAppointments")]
+        public IActionResult GetPastAppointments(string patientId)
         {
-            var appointments= appointmentBlServices.SeeAllMyAppointment(patientId);
+            var appointments= appointmentBlServices.GetPastAppointments(patientId);
             if (appointments != null)
                 return Ok(appointments);
             return BadRequest("fdhdh");
         }
-        //לראות את כל התורים שקבע ועדיין לא התקיימו
-        [HttpGet("GetAppointmentsForPatientFromToday")]
-        public IActionResult GetAppointmentsForPatientFromToday([FromRoute] string idPatient)
+
+        //לראות תורים עתידיים של מטופל
+        [HttpGet("GetFutureAppointments")]
+        public IActionResult GetFutureAppointments([FromRoute] string idPatient)
         {
             var currentDate = DateTime.Now;
-            var appointments = appointmentBlServices.GetAppointmentsForPatientFromToday(idPatient,
-                                                                                        currentDate);
+            var appointments = appointmentBlServices.GetFutureAppointments(idPatient, currentDate);
+
             if (appointments != null)
                 return Ok(appointments);
             return BadRequest("fdhdh");
         }
-        [HttpDelete]
+
+        [HttpDelete("DeleteAppointment")]
         public IActionResult DeleteAppointment([FromBody] BlAppointmentRequestDto request)
         {
             try
@@ -89,13 +92,12 @@ namespace Server.Controllers
             }
         }
 
-        //פונקציה להביא את כל השעות של מטפל מסוים ביום מסוים
-        //פונקציה לקבוע תור ביום מסוים שעה מסוימת אצל מטפל מסוים
-        //פונקציה לבטל תור שנקבע
-        //פונקציה להציג את כל התורים שלי
-        //פונקציה להציג את כל התורים של מטפל מסוים
-        //פונקציה להציג את כל התורים של מטפל מסוים בטווח תאריכים מסוים
-
-
     }
 }
+
+//פונקציה להביא את כל השעות של מטפל מסוים ביום מסוים
+//פונקציה לקבוע תור ביום מסוים שעה מסוימת אצל מטפל מסוים
+//פונקציה לבטל תור שנקבע
+//פונקציה להציג את כל התורים שלי
+//פונקציה להציג את כל התורים של מטפל מסוים
+//פונקציה להציג את כל התורים של מטפל מסוים בטווח תאריכים מסוים

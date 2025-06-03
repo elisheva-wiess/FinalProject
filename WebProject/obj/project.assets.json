@@ -5209,11 +5209,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\משתמש\\Downloads\\FinalProject\\WebProject\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\Server.csproj",
+      "projectPath": "C:\\Users\\משתמש\\Downloads\\FinalProject\\WebProject\\Server.csproj",
       "packagesPath": "C:\\Users\\משתמש\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\obj\\",
+      "outputPath": "C:\\Users\\משתמש\\Downloads\\FinalProject\\WebProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5234,8 +5234,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\Bl.csproj": {
-              "projectPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\bl\\Bl.csproj"
+            "C:\\Users\\משתמש\\Downloads\\FinalProject\\bl\\Bl.csproj": {
+              "projectPath": "C:\\Users\\משתמש\\Downloads\\FinalProject\\bl\\Bl.csproj"
             }
           }
         }

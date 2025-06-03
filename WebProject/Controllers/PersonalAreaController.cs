@@ -10,57 +10,21 @@ namespace Server.Controllers
     [ApiController]
     public class PersonalAreaController : ControllerBase
     {
-        private readonly IPersonalAreaBl _personalAreaBl;
+        private readonly IPersonalAreaBl personalAreaBl;
 
-        public PersonalAreaController(IPersonalAreaBl personalAreaBl)
+        public PersonalAreaController(IPersonalAreaBl _personalAreaBl)
         {
-            _personalAreaBl = personalAreaBl;
+            personalAreaBl = _personalAreaBl;
         }
 
-        /// <summary>
-        /// מחזיר את התורים העתידיים של המטופל.
-        /// </summary>
-        [HttpGet("FutureAppointments")]
-        public ActionResult<List<BlAppointmentDto>> GetFutureAppointments([FromQuery] string patientId)
-        {
-            if (string.IsNullOrWhiteSpace(patientId))
-                return BadRequest("PatientId is required.");
-
-            var futureAppointments = _personalAreaBl.GetFutureAppointments(patientId);
-
-            if (futureAppointments == null || !futureAppointments.Any())
-                return NotFound("No future appointments found.");
-
-            return Ok(futureAppointments);
-        }
-
-        /// <summary>
-        /// מחזיר את התורים הקודמים של המטופל.
-        /// </summary>
-        [HttpGet("PastAppointments")]
-        public ActionResult<List<BlAppointmentDto>> GetPastAppointments([FromQuery] string patientId)
-        {
-            if (string.IsNullOrWhiteSpace(patientId))
-                return BadRequest("PatientId is required.");
-
-            var pastAppointments = _personalAreaBl.GetPastAppointments(patientId);
-
-            if (pastAppointments == null || !pastAppointments.Any())
-                return NotFound("No past appointments found.");
-
-            return Ok(pastAppointments);
-        }
-
-        /// <summary>
-        /// מחזיר את סיכומי הביקור של המטופל.
-        /// </summary>
+        // מחזיר את סיכומי הביקור של המטופל.
         [HttpGet("VisitSummaries")]
         public ActionResult<List<BlVisitSummaryDto>> GetVisitSummaries([FromQuery] string patientId)
         {
             if (string.IsNullOrWhiteSpace(patientId))
                 return BadRequest("PatientId is required.");
 
-            var summaries = _personalAreaBl.GetVisitSummaries(patientId);
+            var summaries = personalAreaBl.GetVisitSummaries(patientId);
 
             if (summaries == null || !summaries.Any())
                 return NotFound("No visit summaries found.");
@@ -68,16 +32,14 @@ namespace Server.Controllers
             return Ok(summaries);
         }
 
-        /// <summary>
-        /// מחזיר את הפרטים האישיים של המטופל.
-        /// </summary>
+        // מחזיר את הפרטים האישיים של המטופל.
         [HttpGet("PersonalDetails")]
         public ActionResult<BlPatientDto> GetPersonalDetails([FromQuery] string patientId)
         {
             if (string.IsNullOrWhiteSpace(patientId))
                 return BadRequest("PatientId is required.");
 
-            var details = _personalAreaBl.GetPersonalDetails(patientId);
+            var details = personalAreaBl.GetPersonalDetails(patientId);
 
             if (details == null)
                 return NotFound("Patient not found.");
@@ -85,19 +47,17 @@ namespace Server.Controllers
             return Ok(details);
         }
 
-        /// <summary>
-        /// מעדכן את הפרטים האישיים של המטופל.
-        /// </summary>
+        // מעדכן את הפרטים האישיים של המטופל.
         [HttpPut("UpdatePersonalDetails")]
-        public IActionResult UpdatePersonalDetails([FromQuery] string patientId, [FromBody] BlPatientDto updatedDetails)
+        public IActionResult UpdatePersonalDetails([FromBody] BlPatientDto updatedDetails)
         {
-            if (string.IsNullOrWhiteSpace(patientId))
+            if (string.IsNullOrWhiteSpace(updatedDetails.PatientsId))
                 return BadRequest("PatientId is required.");
 
             if (updatedDetails == null)
                 return BadRequest("Updated details are required.");
 
-            var success = _personalAreaBl.UpdatePersonalDetails(patientId, updatedDetails);
+            var success = personalAreaBl.UpdatePersonalDetails(updatedDetails.PatientsId, updatedDetails);
 
             if (!success)
                 return BadRequest("Failed to update personal details.");

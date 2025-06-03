@@ -58,14 +58,14 @@ namespace Dal.Services
             context.SaveChanges();
         }
 
-        public List<Appointment> GetAppointmentsFromToday(string idPatient, DateTime today)
+        public List<Appointment> GetFutureAppointments(string idPatient, DateTime today)
         {
             return context.Appointments
                            .Where(a => a.PatientId == idPatient && a.AppointmentDate >= today)
                            .OrderBy(a => a.AppointmentDate)
                            .ToList();
         }
-        public List<Appointment> SeeAllMyAppointment(string patientId)
+        public List<Appointment> GetPastAppointments(string patientId)
         {
             return context.Appointments.
                 Where(a => a.PatientId == patientId && a.AppointmentDate <= DateTime.Now)
