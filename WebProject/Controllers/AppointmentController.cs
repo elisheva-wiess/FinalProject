@@ -26,14 +26,16 @@ namespace Server.Controllers
                 return Ok(availableAppointments);
             return BadRequest();
         }
-
         [HttpGet("AllHourSpetificalDayAndTherapist")]
-        public IActionResult AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day)
+        public IActionResult AllHourSpetificalDayAndTherapist(string idTherapist, string day)
         {
-            return Ok(appointmentBlServices.AllHourSpetificalDayAndTherapist(idTherapist, day));
+            if (!DateTime.TryParse(day, out var parsedDay))
+            {
+                return BadRequest("Invalid date format. Please use a valid DateTime format, such as 'yyyy-MM-dd'.");
+            }
 
+            return Ok(appointmentBlServices.AllHourSpetificalDayAndTherapist(idTherapist, parsedDay));
         }
-
         [HttpPost("MakingAnAppointment")]
         public IActionResult MakingAnAppointment([FromBody] BlAppointmentRequestDto request)
         {

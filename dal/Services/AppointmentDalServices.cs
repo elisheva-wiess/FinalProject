@@ -23,13 +23,13 @@ namespace Dal.Services
 
         public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate, string specializationId)
         {
-          
+
             var result = (from appointment in context.AvailableAppointments
                           join therapistSpecialty in context.TherapistSpecializations
                           on appointment.TherapistId equals therapistSpecialty.TherapistId
-                            where appointment.AvailableDate >= startDate && appointment.AvailableDate <= endDate
-                           && therapistSpecialty.SpecializationId == int.Parse(specializationId)
-                           select appointment).ToList();
+                          where appointment.AvailableDate >= startDate && appointment.AvailableDate <= endDate
+                         && therapistSpecialty.SpecializationId == int.Parse(specializationId)
+                          select appointment).ToList();
 
             return result;
         }

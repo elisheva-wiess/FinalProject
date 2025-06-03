@@ -1,32 +1,16 @@
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\bin\Debug\net8.0\Bl.deps.json
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\bin\Debug\net8.0\Bl.dll
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\bin\Debug\net8.0\Bl.pdb
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\bin\Debug\net8.0\Dal.dll
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\bin\Debug\net8.0\Dal.pdb
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.AssemblyReference.cache
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\Bl.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\Bl.AssemblyInfoInputs.cache
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\Bl.AssemblyInfo.cs
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.CoreCompileInputs.cache
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\Bl.sourcelink.json
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.Up2Date
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\Bl.dll
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\refint\Bl.dll
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\Bl.pdb
-C:\Users\משתמש\Desktop\EndToEnd Project\FinalProject\bl\obj\Debug\net8.0\ref\Bl.dll
+C:\Users\משתמש\Downloads\FinalProject\bl\bin\Debug\net8.0\Bl.deps.json
+C:\Users\משתמש\Downloads\FinalProject\bl\bin\Debug\net8.0\Bl.dll
+C:\Users\משתמש\Downloads\FinalProject\bl\bin\Debug\net8.0\Bl.pdb
+C:\Users\משתמש\Downloads\FinalProject\bl\bin\Debug\net8.0\Dal.dll
+C:\Users\משתמש\Downloads\FinalProject\bl\bin\Debug\net8.0\Dal.pdb
 C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.AssemblyReference.cache
 C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\Bl.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\Bl.AssemblyInfoInputs.cache
 C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\Bl.AssemblyInfo.cs
 C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.CoreCompileInputs.cache
 C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\Bl.sourcelink.json
+C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.Up2Date
 C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\Bl.dll
 C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\refint\Bl.dll
 C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\Bl.pdb
-C:\Users\משתמש\Downloads\FinalProject\bl\bin\Debug\net8.0\Bl.deps.json
-C:\Users\משתמש\Downloads\FinalProject\bl\bin\Debug\net8.0\Bl.dll
-C:\Users\משתמש\Downloads\FinalProject\bl\bin\Debug\net8.0\Bl.pdb
-C:\Users\משתמש\Downloads\FinalProject\bl\bin\Debug\net8.0\Dal.dll
-C:\Users\משתמש\Downloads\FinalProject\bl\bin\Debug\net8.0\Dal.pdb
-C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.Up2Date
 C:\Users\משתמש\Downloads\FinalProject\bl\obj\Debug\net8.0\ref\Bl.dll
