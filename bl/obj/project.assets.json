@@ -3307,11 +3307,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\bl\\Bl.csproj",
+      "projectUniqueName": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה\\FinalProject\\bl\\Bl.csproj",
       "projectName": "Bl",
-      "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\bl\\Bl.csproj",
+      "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה\\FinalProject\\bl\\Bl.csproj",
       "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
-      "outputPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\bl\\obj\\",
+      "outputPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה\\FinalProject\\bl\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3333,8 +3333,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\Dal.csproj": {
-              "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\Dal.csproj"
+            "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה\\FinalProject\\dal\\Dal.csproj": {
+              "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה\\FinalProject\\dal\\Dal.csproj"
             }
           }
         }

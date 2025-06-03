@@ -28,3 +28,18 @@ H:\הורדות פרוייקט\‏‏תיקיה חדשה (2)\FinalProject\dal\ob
 H:\הורדות פרוייקט\‏‏תיקיה חדשה (2)\FinalProject\dal\obj\Debug\net8.0\Dal.pdb
 H:\הורדות פרוייקט\‏‏תיקיה חדשה (2)\FinalProject\dal\obj\Debug\net8.0\Dal.genruntimeconfig.cache
 H:\הורדות פרוייקט\‏‏תיקיה חדשה (2)\FinalProject\dal\obj\Debug\net8.0\ref\Dal.dll
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\bin\Debug\net8.0\Dal.deps.json
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\bin\Debug\net8.0\Dal.runtimeconfig.json
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\bin\Debug\net8.0\Dal.dll
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\bin\Debug\net8.0\Dal.pdb
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\Dal.csproj.AssemblyReference.cache
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\Dal.GeneratedMSBuildEditorConfig.editorconfig
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\Dal.AssemblyInfoInputs.cache
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\Dal.AssemblyInfo.cs
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\Dal.csproj.CoreCompileInputs.cache
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\Dal.sourcelink.json
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\Dal.dll
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\refint\Dal.dll
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\Dal.pdb
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\Dal.genruntimeconfig.cache
+H:\הורדות פרוייקט\‏‏תיקיה חדשה\FinalProject\dal\obj\Debug\net8.0\ref\Dal.dll

@@ -4741,11 +4741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\Dal.csproj",
+      "projectUniqueName": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה\\FinalProject\\dal\\Dal.csproj",
       "projectName": "Dal",
-      "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\Dal.csproj",
+      "projectPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה\\FinalProject\\dal\\Dal.csproj",
       "packagesPath": "C:\\Users\\ויס אלישבע\\.nuget\\packages\\",
-      "outputPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\obj\\",
+      "outputPath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה\\FinalProject\\dal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -33,6 +33,15 @@ namespace Bl
                                   .Select(ts => ts.Specialization.SpecializationName)
                                   .FirstOrDefault()));
 
+            CreateMap<Appointment, BlAppointmentRequestDto>()
+                .ForMember(dest => dest.IdPatient, opt => opt.MapFrom(src => src.PatientId))
+                .ForMember(dest => dest.IdTherapist, opt => opt.MapFrom(src => src.TherapistId))
+                .ForMember(dest => dest.Day, opt => opt.MapFrom(src => src.AppointmentDate));
+
+
+
         }
+
     }
-}
+    }
+

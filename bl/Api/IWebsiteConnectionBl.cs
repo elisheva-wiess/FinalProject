@@ -10,7 +10,7 @@ namespace Bl.Api
 {
     public interface IWebsiteConnectionBl
     {
-        BlPatient SignUp(Patient patient);
+        Patient SignUp(BlPatientDto patient);
         Patient IsPatient(string id);
         Therapist IsTherapist(string id);
         BlPatientOrTherapist LogIn(string id);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s/Y7QPPRicE=",
+  "dgSpecHash": "IvSWvh6aMtY=",
   "success": true,
-  "projectFilePath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה (2)\\FinalProject\\dal\\Dal.csproj",
+  "projectFilePath": "H:\\הורדות פרוייקט\\‏‏תיקיה חדשה\\FinalProject\\dal\\Dal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ויס אלישבע\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ויס אלישבע\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
