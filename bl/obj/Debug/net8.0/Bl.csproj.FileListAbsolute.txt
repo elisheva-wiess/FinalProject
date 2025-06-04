@@ -1,0 +1,16 @@
+H:\הורדות פרוייקט\FinalProject\bl\bin\Debug\net8.0\Bl.deps.json
+H:\הורדות פרוייקט\FinalProject\bl\bin\Debug\net8.0\Bl.dll
+H:\הורדות פרוייקט\FinalProject\bl\bin\Debug\net8.0\Bl.pdb
+H:\הורדות פרוייקט\FinalProject\bl\bin\Debug\net8.0\Dal.dll
+H:\הורדות פרוייקט\FinalProject\bl\bin\Debug\net8.0\Dal.pdb
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.AssemblyReference.cache
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\Bl.GeneratedMSBuildEditorConfig.editorconfig
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\Bl.AssemblyInfoInputs.cache
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\Bl.AssemblyInfo.cs
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.CoreCompileInputs.cache
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\Bl.sourcelink.json
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\Bl.csproj.Up2Date
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\Bl.dll
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\refint\Bl.dll
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\Bl.pdb
+H:\הורדות פרוייקט\FinalProject\bl\obj\Debug\net8.0\ref\Bl.dll

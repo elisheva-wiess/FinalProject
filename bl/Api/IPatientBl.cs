@@ -10,6 +10,9 @@ namespace Bl.Api
 {
     public interface IPatientBl
     {
-
+        public int GetAgeById(string id);
+        public string GetGenderById(string id);
+        public string GetFullNameById(string id);
+        public string GetHealthInsuranceById(string id);
     }
 }
