@@ -11,5 +11,6 @@ namespace Bl.Api
     {
         List<BlSpecializations> GetAllSpecializations();
         List<BlSpecializationsTherapists> GetTherapistsBySpecializationName(string name);
+        List<BlSpecializations> GetSpecializationsByTherapistId(string therapistId);
     }
 }

@@ -31,17 +31,17 @@ public partial class dbClass : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-
         => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='H:\\הורדות פרוייקט\\FINALPROJECT\\DAL\\DATA\\DATABASE.MDF';Integrated Security=True;Connect Timeout=30");
 
-       
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Appointment>(entity =>
         {
-            entity.HasKey(e => e.AppointmentId).HasName("PK__tmp_ms_x__D06765FED67A6959");
+            entity.HasKey(e => e.AppointmentId).HasName("PK__Appointm__D06765FED85E8D04");
 
-            entity.Property(e => e.AppointmentId).HasColumnName("appointmentId");
+            entity.Property(e => e.AppointmentId)
+                .ValueGeneratedNever()
+                .HasColumnName("appointmentId");
             entity.Property(e => e.AppointmentDate)
                 .HasColumnType("datetime")
                 .HasColumnName("appointmentDate");
@@ -59,19 +59,21 @@ public partial class dbClass : DbContext
             entity.HasOne(d => d.Patient).WithMany(p => p.Appointments)
                 .HasForeignKey(d => d.PatientId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Appointme__patie__42E1EEFE");
+                .HasConstraintName("FK__Appointme__patie__628FA481");
 
             entity.HasOne(d => d.Therapist).WithMany(p => p.Appointments)
                 .HasForeignKey(d => d.TherapistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Appointme__thera__43D61337");
+                .HasConstraintName("FK__Appointme__thera__6383C8BA");
         });
 
         modelBuilder.Entity<AvailableAppointment>(entity =>
         {
-            entity.HasKey(e => e.AvailableId).HasName("PK__tmp_ms_x__23EA899499DB0F53");
+            entity.HasKey(e => e.AvailableId).HasName("PK__Availabl__23EA8994D298EF1E");
 
-            entity.Property(e => e.AvailableId).HasColumnName("availableId");
+            entity.Property(e => e.AvailableId)
+                .ValueGeneratedNever()
+                .HasColumnName("availableId");
             entity.Property(e => e.AvailableDate)
                 .HasColumnType("datetime")
                 .HasColumnName("availableDate");
@@ -87,7 +89,7 @@ public partial class dbClass : DbContext
             entity.HasOne(d => d.Therapist).WithMany(p => p.AvailableAppointments)
                 .HasForeignKey(d => d.TherapistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Available__thera__44CA3770");
+                .HasConstraintName("FK__Available__thera__6477ECF3");
         });
 
         modelBuilder.Entity<Patient>(entity =>

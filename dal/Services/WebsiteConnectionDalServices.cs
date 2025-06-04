@@ -25,19 +25,82 @@ namespace Dal.Services
             context.SaveChanges();
         }
 
-        public void SignOut(string id)
+        /*public void SignOut(string id)
         {
             var patient = context.Patients.FirstOrDefault(s => s.PatientsId == id);
-
-            if (patient == null)
+            var therapist = context.Therapists.FirstOrDefault(s => s.TherapistsId == id);
+            if (patient == null && therapist == null)
             {
-                throw new ArgumentException("Patient not found.", nameof(id)); // Handle not found
+                throw new ArgumentException("User not found.", nameof(id)); // Handle not found
+            }
+            if (patient != null)
+            {
+                context.Patients.Remove(patient);
+                context.SaveChanges();
+            }
+            if (therapist != null)
+            {
+
+                // מחיקת רשומות בטבלת פגישות הקשורות למטפל
+                var therapistAppointments = context.Appointments.Where(a => a.TherapistId == id).ToList();
+                context.Appointments.RemoveRange(therapistAppointments);
+                // מחיקת המטפל
+                context.Therapists.Remove(therapist);
+                var therapistSpecializations = context.TherapistSpecializations.Where(ts => ts.TherapistId == id).ToList();
+                context.TherapistSpecializations.RemoveRange(therapistSpecializations);
+                // מחיקת המטפל
+                context.Therapists.Remove(therapist);
+
+
+
+                context.SaveChanges();
             }
 
-            context.Patients.Remove(patient);
-            context.SaveChanges();
 
-            Console.WriteLine("Patient deleted successfully!");
+            Console.WriteLine("user deleted successfully!");
+        }*/
+        public void SignOut(string id)
+        {
+            using var transaction = context.Database.BeginTransaction(); // התחלת טרנזקציה
+            try
+            {
+                // בדיקת האם המשתמש הוא מטופל
+                var patient = context.Patients.FirstOrDefault(s => s.PatientsId == id);
+                if (patient != null)
+                {
+                    context.Patients.Remove(patient);
+                    context.SaveChanges();
+                }
+
+                // בדיקת האם המשתמש הוא מטפל
+                var therapist = context.Therapists.FirstOrDefault(s => s.TherapistsId == id);
+                if (therapist != null)
+                {
+                    // מחיקת רשומות בטבלת TherapistHours
+                    var therapistHours = context.TherapistHours.Where(th => th.TherapistId == id).ToList();
+                    context.TherapistHours.RemoveRange(therapistHours);
+
+                    // מחיקת רשומות בטבלת פגישות הקשורות למטפל
+                    var therapistAppointments = context.Appointments.Where(a => a.TherapistId == id).ToList();
+                    context.Appointments.RemoveRange(therapistAppointments);
+
+                    // מחיקת רשומות בטבלת TherapistSpecialization
+                    var therapistSpecializations = context.TherapistSpecializations.Where(ts => ts.TherapistId == id).ToList();
+                    context.TherapistSpecializations.RemoveRange(therapistSpecializations);
+
+                    // מחיקת המטפל עצמו
+                    context.Therapists.Remove(therapist);
+                    context.SaveChanges();
+                }
+
+                transaction.Commit(); // סיום טרנזקציה
+                Console.WriteLine("User deleted successfully!");
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback(); // ביטול טרנזקציה במקרה של שגיאה
+                Console.WriteLine($"Error: {ex.Message}");
+            }
         }
 
         public Patient IsPatient(string id)
@@ -60,4 +123,3 @@ namespace Dal.Services
 
     }
 }
-

@@ -37,6 +37,14 @@ namespace Server.Controllers
                 return Ok(specializationsTherapists);
             return BadRequest();
         }
-
+        
+        [HttpGet("GetSpecializationsByTherapistId/{therapistId}")]
+        public IActionResult GetSpecializationsByTherapistId(string therapistId)
+        {
+            var specializations = SpecializationBlServer.GetSpecializationsByTherapistId(therapistId);
+            if (specializations != null && specializations.Any())
+                return Ok(specializations);
+            return NotFound("No specializations found for the given therapist.");
+        }
     }
 }

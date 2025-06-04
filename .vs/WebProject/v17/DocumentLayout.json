@@ -3,6 +3,19 @@
   "WorkspaceRootPath": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\dal\\services\\websiteconnectiondalservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBF5F20E-12C7-4137-A290-7256C5B26A69}|dal\\Dal.csproj|solutionrelative:dal\\services\\websiteconnectiondalservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/H__\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA_\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8_FINALPROJECT_DAL_DATA_DATABASE.MDF/True/SqlTable/dbo.TherapistSpecialization.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/H__\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA_\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8_FINALPROJECT_DAL_DATA_DATABASE.MDF/True/SqlTable/dbo.Therapists.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/H__\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA_\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8_FINALPROJECT_DAL_DATA_DATABASE.MDF/True/SqlTable/dbo.Patients.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\webproject\\controllers\\specializationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\controllers\\specializationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,9 +42,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\webproject\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/H__\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA_\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8_FINALPROJECT_DAL_DATA_DATABASE.MDF/True/SqlTable/dbo.Patients.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E10EDD5A-0829-4582-8B21-47D41C96E035}|bl\\Bl.csproj|h:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\finalproject\\bl\\services\\patientblservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -97,24 +107,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbo.TherapistSpecialization [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/H__\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA_\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8_FINALPROJECT_DAL_DATA_DATABASE.MDF/True/SqlTable/dbo.TherapistSpecialization.sql",
+              "ToolTip": "dbo.TherapistSpecialization [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-06-04T13:33:38.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "WebsiteConnectionDalServices.cs",
+              "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Services\\WebsiteConnectionDalServices.cs",
+              "RelativeDocumentMoniker": "dal\\Services\\WebsiteConnectionDalServices.cs",
+              "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Services\\WebsiteConnectionDalServices.cs*",
+              "RelativeToolTip": "dal\\Services\\WebsiteConnectionDalServices.cs*",
+              "ViewState": "AQIAAD0AAAAAAAAAAAA3wE8AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T13:00:12.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "SpecializationController.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\SpecializationController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\SpecializationController.cs",
               "ToolTip": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\SpecializationController.cs",
               "RelativeToolTip": "WebProject\\Controllers\\SpecializationController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwBIAAAA0AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T12:08:14.8Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "PersonalAreaController.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\PersonalAreaController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\PersonalAreaController.cs",
@@ -126,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "AppointmentController.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\AppointmentController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\AppointmentController.cs",
@@ -138,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "PersonalAreaBlServices.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Services\\PersonalAreaBlServices.cs",
               "RelativeDocumentMoniker": "bl\\Services\\PersonalAreaBlServices.cs",
@@ -150,7 +183,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
+              "Title": "dbo.Patients [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/H__\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA_\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8_FINALPROJECT_DAL_DATA_DATABASE.MDF/True/SqlTable/dbo.Patients.sql",
+              "ToolTip": "dbo.Patients [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-26T12:02:17.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dbo.Therapists [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/H__\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA_\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8_FINALPROJECT_DAL_DATA_DATABASE.MDF/True/SqlTable/dbo.Therapists.sql",
+              "ToolTip": "dbo.Therapists [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-06-04T13:02:27.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "PatientController.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\PatientController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\PatientController.cs",
@@ -162,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Patient.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\Patient.cs",
               "RelativeDocumentMoniker": "dal\\Models\\Patient.cs",
@@ -174,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "IPatientBl.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Api\\IPatientBl.cs",
               "RelativeDocumentMoniker": "bl\\Api\\IPatientBl.cs",
@@ -186,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "TherapistHour.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\TherapistHour.cs",
               "RelativeDocumentMoniker": "dal\\Models\\TherapistHour.cs",
@@ -198,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "TherapistController.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\TherapistController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\TherapistController.cs",
@@ -210,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "WebsiteConnectionController.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\WebProject\\Controllers\\WebsiteConnectionController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\WebsiteConnectionController.cs",
@@ -222,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "PatientDalServices.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Services\\PatientDalServices.cs",
               "RelativeDocumentMoniker": "dal\\Services\\PatientDalServices.cs",
@@ -234,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "PatientBlServices.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Services\\PatientBlServices.cs",
               "RelativeDocumentMoniker": "bl\\Services\\PatientBlServices.cs",
@@ -246,16 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "dbo.Patients [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/H__\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA_\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8_FINALPROJECT_DAL_DATA_DATABASE.MDF/True/SqlTable/dbo.Patients.sql",
-              "ToolTip": "dbo.Patients [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-05-26T12:02:17.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "WebsiteConnectionBlServices.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Services\\WebsiteConnectionBlServices.cs",
               "RelativeDocumentMoniker": "bl\\Services\\WebsiteConnectionBlServices.cs",
@@ -267,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "dbClass.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Models\\dbClass.cs",
               "RelativeDocumentMoniker": "dal\\Models\\dbClass.cs",
@@ -279,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "AppointmentDalServices.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Services\\AppointmentDalServices.cs",
               "RelativeDocumentMoniker": "dal\\Services\\AppointmentDalServices.cs",
@@ -291,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "SpecializationBlServices.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Services\\SpecializationBlServices.cs",
               "RelativeDocumentMoniker": "bl\\Services\\SpecializationBlServices.cs",
@@ -303,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "IPatientDal.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\dal\\Api\\IPatientDal.cs",
               "RelativeDocumentMoniker": "dal\\Api\\IPatientDal.cs",
@@ -315,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "BLPatient.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BLPatient.cs",
               "RelativeDocumentMoniker": "bl\\Models\\BLPatient.cs",
@@ -327,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "BlPatientOrTherapist.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Models\\BlPatientOrTherapist.cs",
               "RelativeDocumentMoniker": "bl\\Models\\BlPatientOrTherapist.cs",
@@ -339,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "AppointmentBlServices.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\Services\\AppointmentBlServices.cs",
               "RelativeDocumentMoniker": "bl\\Services\\AppointmentBlServices.cs",
@@ -351,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "H:\\\u05D4\u05D5\u05E8\u05D3\u05D5\u05EA \u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\FinalProject\\bl\\MappingProfile.cs",
               "RelativeDocumentMoniker": "bl\\MappingProfile.cs",

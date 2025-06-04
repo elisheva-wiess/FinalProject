@@ -39,6 +39,15 @@ namespace Dal.Services
             {
                 return new List<Therapist>();
             }
+            
+        }
+        public List<Specialization> GetSpecializationsByTherapistId(string therapistId)
+        {
+            return context.TherapistSpecializations
+                .Where(ts => ts.TherapistId == therapistId)
+                .Select(ts => ts.Specialization)
+                .Distinct() // מסיר כפילויות
+                .ToList();
         }
     }
 }

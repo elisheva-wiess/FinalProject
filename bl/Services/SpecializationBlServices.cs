@@ -29,5 +29,10 @@ namespace Bl.Services
             var specTherapists = specializationsDal.GetTherapistsBySpecializationName(name);
             return mapper.Map<List<BlSpecializationsTherapists>>(specTherapists);
         }
+        public List<BlSpecializations> GetSpecializationsByTherapistId(string therapistId)
+        {
+            var specializations = specializationsDal.GetSpecializationsByTherapistId(therapistId);
+            return mapper.Map<List<BlSpecializations>>(specializations);
+        }
     }
 }
