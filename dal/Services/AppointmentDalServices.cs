@@ -23,21 +23,22 @@ namespace Dal.Services
 
         public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate, string specializationId)
         {
-          
             var result = (from appointment in context.AvailableAppointments
                           join therapistSpecialty in context.TherapistSpecializations
                           on appointment.TherapistId equals therapistSpecialty.TherapistId
-                            where appointment.AvailableDate >= startDate && appointment.AvailableDate <= endDate
-                           && therapistSpecialty.SpecializationId == int.Parse(specializationId)
-                           select appointment).ToList();
-
+                          where appointment.AvailableDate >= startDate
+                                && appointment.AvailableDate <= endDate
+                                && therapistSpecialty.SpecializationId == int.Parse(specializationId)
+                                && appointment.Status == false
+                          select appointment).ToList();
             return result;
         }
 
         public List<AvailableAppointment> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day)
+
         {
             return context.AvailableAppointments
-                .Where(th => th.TherapistId == idTherapist && th.AvailableDate == day)
+                .Where(th => th.TherapistId == idTherapist && th.AvailableDate.Date == day.Date)
                 .ToList();
         }
         public void MakingAnAppointment(string idPatient, string idTherapist, DateTime day)
@@ -58,14 +59,14 @@ namespace Dal.Services
             context.SaveChanges();
         }
 
-        public List<Appointment> GetAppointmentsFromToday(string idPatient, DateTime today)
+        public List<Appointment> GetFutureAppointments(string idPatient, DateTime today)
         {
             return context.Appointments
                            .Where(a => a.PatientId == idPatient && a.AppointmentDate >= today)
                            .OrderBy(a => a.AppointmentDate)
                            .ToList();
         }
-        public List<Appointment> SeeAllMyAppointment(string patientId)
+        public List<Appointment> GetPastAppointments(string patientId)
         {
             return context.Appointments.
                 Where(a => a.PatientId == patientId && a.AppointmentDate <= DateTime.Now)

@@ -9,5 +9,6 @@ namespace Bl.Api
         ITherapistBl TherapistBl { get; }
         ISpecializationBl SpecializationBl { get; }
         IAppointmentBl AppointmentBl { get; }
+        IPersonalAreaBl PersonalAreaBl { get; }
     }
 }

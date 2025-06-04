@@ -29,6 +29,8 @@ builder.Services.AddScoped<IPatientDal, PatientDalServices>();
 builder.Services.AddScoped<IPatientBl, PatientBlServices>();
 builder.Services.AddScoped<ITherapistBl, TherapistBlServices>();
 builder.Services.AddScoped<ITherapistDal, TherapistDalServices>();
+builder.Services.AddScoped<IPersonalAreaBl, PersonalAreaBlServices>();
+builder.Services.AddScoped<IPersonalAreaDal, PersonalAreaDalServices>();
 builder.Services.AddSingleton<dbClass>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 

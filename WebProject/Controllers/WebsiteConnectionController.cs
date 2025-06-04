@@ -1,4 +1,5 @@
 using Bl.Api;
+using Bl.Models;
 using Dal.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -17,7 +18,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("SignUp")]
-        public IActionResult SignUp([FromBody] Patient patient)
+        public IActionResult SignUp([FromBody] BlPatientDto patient)
         {
             try
             {
@@ -31,7 +32,8 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("SignOut/{id}")]
+
         public IActionResult SignOut([FromRoute] string id)
         {
             websiteConnectionBl.SignOut(id);

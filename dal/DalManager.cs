@@ -11,6 +11,7 @@ namespace Dal
         public ITherapistDal TherapistDal { get; }
         public ISpecializationDal SpecializationDal { get; }
         public IAppointmentDal AppointmentDal { get; }
+        public IPersonalAreaDal PersonalAreaDal { get; }
 
         private readonly dbClass _context;
 
@@ -23,6 +24,7 @@ namespace Dal
             TherapistDal = new TherapistDalServices(_context);
             SpecializationDal = new SpecializationDalServices(_context);
             AppointmentDal = new AppointmentDalServices(_context);
+            PersonalAreaDal = new PersonalAreaDalServices(_context);
         }
     }
 }

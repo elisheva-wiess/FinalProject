@@ -1,6 +1,7 @@
 ﻿using Dal.Models;
 using Microsoft.AspNetCore.Mvc;
 using Bl.Api;
+using Bl.Models;
 
 namespace Server.Controllers
 {
@@ -14,7 +15,7 @@ namespace Server.Controllers
             therapistBlServices = _therapistBlServices;
         }
 
-        [HttpGet]
+        [HttpGet("GetTherapistApointmentsById")]
         public IActionResult GetTherapistApointmentsById(string id)
         {
             var therapistApointments = therapistBlServices.GetTherapistApointmentsById(id);
@@ -23,7 +24,8 @@ namespace Server.Controllers
             return BadRequest();
 
         }
-        [HttpGet("{id}")]
+
+        [HttpGet("GetTherapistWorkingHoursById/{id}")]
         public IActionResult GetTherapistWorkingHoursById([FromRoute] string id)
         {
             var therapistWorkingHours = therapistBlServices.GetTherapistWorkingHoursById(id);
@@ -41,13 +43,43 @@ namespace Server.Controllers
             return BadRequest();
         }
 
-        //[HttpGet("{therapistFirstName} {specializationName}")]
-        //public IActionResult WorkingHoursTherapistByNameAndSpecialization(string therapistFirstName, string specializationName)
-        //{
-        //    var availableAppointment = therapistBlServices.WorkingHoursTherapistByNameAndSpecialization(therapistFirstName, specializationName);
-        //    if (availableAppointment != null)
-        //        return Ok(availableAppointment);
-        //    return BadRequest();
-        //}
+        [HttpPost("AddTherapist")]
+        public IActionResult AddTherapist([FromBody] Therapist newTherapist)
+        {
+            var result = therapistBlServices.AddTherapist(newTherapist);
+            if (result)
+                return Ok("Therapist added successfully");
+            return BadRequest("Failed to add therapist");
+        }
+
+        [HttpPut("UpdateSalary")]
+        public IActionResult UpdateSalary(string therapistId, double newSalary)
+        {
+            var result = therapistBlServices.UpdateSalary(therapistId, newSalary);
+            if (result)
+                return Ok("Salary updated successfully");
+            return NotFound("Therapist not found");
+        }
+
+        [HttpPut("UpdateWorkingHours")]
+        public IActionResult UpdateWorkingHours(string therapistId, List<BlTherapistHourDto> newHours)
+        {
+            var result = therapistBlServices.UpdateWorkingHours(therapistId, newHours);
+            if (result)
+                return Ok("Working hours updated successfully");
+            return NotFound("Therapist not found or update failed");
+        }
+
+        [HttpGet("GetWorkingHoursByTherapistFullNameAndSpecialization/{therapistFullName}/{specializationName}")]
+        public IActionResult GetWorkingHoursByTherapistFullNameAndSpecialization(string therapistFullName, string specializationName)
+        {
+            var availableAppointment = therapistBlServices.GetWorkingHoursByTherapistFullNameAndSpecialization(therapistFullName, specializationName);
+
+            if (availableAppointment != null && availableAppointment.Any())
+                return Ok(availableAppointment);
+
+            return NotFound("לא נמצאו שעות עבודה עבור מטפל זה עם ההתמחות הזו.");
+        }
+
     }
 }

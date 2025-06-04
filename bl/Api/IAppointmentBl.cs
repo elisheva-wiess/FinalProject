@@ -10,11 +10,11 @@ namespace Bl.Api
 {
     public interface IAppointmentBl
     {
-        public List<AppointmentSummary> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate,string specializationId);
-        public List<AppointmentSummary> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day);
-        public void MakingAnAppointment(AppointmentRequestDto appointmentRequestDto);
-        public List<AppointmentRequestDto> GetAppointmentsForPatientFromToday(string idPatient, DateTime currentDate);
-        public List<AppointmentRequestDto> SeeAllMyAppointment(string patientId);
-        public void DeleteAppointment(AppointmentRequestDto request);
+        public List<BlAppointmentSummary> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate,string specializationId);
+        public List<BlAppointmentSummary> AllHourSpetificalDayAndTherapist(string idTherapist, DateTime day);
+        public void MakingAnAppointment(BlAppointmentRequestDto appointmentRequestDto);
+        public List<BlAppointmentRequestDto> GetFutureAppointments(string idPatient, DateTime currentDate);
+        public List<BlAppointmentRequestDto> GetPastAppointments(string patientId);
+        public void DeleteAppointment(BlAppointmentRequestDto request);
     }
 }

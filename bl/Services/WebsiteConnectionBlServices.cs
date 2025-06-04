@@ -18,10 +18,11 @@ namespace Bl.Services
             mapper = _mapper;
         }
 
-        public BlPatient SignUp(Patient patient)
+        public Patient SignUp(BlPatientDto patient)
         {
-            websiteConnectionDalServer.SignUp(patient);
-            return mapper.Map<BlPatient>(patient);
+           var p= mapper.Map<Patient>(patient);
+            websiteConnectionDalServer.SignUp(p);
+            return p;
         }
 
         public void SignOut(string id)
