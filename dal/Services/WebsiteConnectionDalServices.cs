@@ -25,40 +25,6 @@ namespace Dal.Services
             context.SaveChanges();
         }
 
-        /*public void SignOut(string id)
-        {
-            var patient = context.Patients.FirstOrDefault(s => s.PatientsId == id);
-            var therapist = context.Therapists.FirstOrDefault(s => s.TherapistsId == id);
-            if (patient == null && therapist == null)
-            {
-                throw new ArgumentException("User not found.", nameof(id)); // Handle not found
-            }
-            if (patient != null)
-            {
-                context.Patients.Remove(patient);
-                context.SaveChanges();
-            }
-            if (therapist != null)
-            {
-
-                // מחיקת רשומות בטבלת פגישות הקשורות למטפל
-                var therapistAppointments = context.Appointments.Where(a => a.TherapistId == id).ToList();
-                context.Appointments.RemoveRange(therapistAppointments);
-                // מחיקת המטפל
-                context.Therapists.Remove(therapist);
-                var therapistSpecializations = context.TherapistSpecializations.Where(ts => ts.TherapistId == id).ToList();
-                context.TherapistSpecializations.RemoveRange(therapistSpecializations);
-                // מחיקת המטפל
-                context.Therapists.Remove(therapist);
-
-
-
-                context.SaveChanges();
-            }
-
-
-            Console.WriteLine("user deleted successfully!");
-        }*/
         public void SignOut(string id)
         {
             using var transaction = context.Database.BeginTransaction(); // התחלת טרנזקציה
@@ -119,6 +85,12 @@ namespace Dal.Services
             var patient = context.Patients.FirstOrDefault(s => s.PatientsId == id);
             return patient;
 
+        }
+
+        public Manager IsManager(string id)
+        {
+            var manager = context.Managers.FirstOrDefault(m => m.ManagerId == id);
+            return manager;
         }
 
     }

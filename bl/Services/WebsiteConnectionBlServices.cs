@@ -40,24 +40,27 @@ namespace Bl.Services
             return websiteConnectionDalServer.IsTherapist(id);
         }
 
-        public BlPatientOrTherapist LogIn(string id)
+        public Manager IsManager(string id)
         {
-            var patient = IsPatient(id);
-            Console.WriteLine(patient != null ? "Patient found" : "Patient NOT found");
-
-            if (patient != null)
-                return new BlPatientOrTherapist { Patient = mapper.Map<BlPatient>(patient) };
-
-            var therapist = IsTherapist(id);
-            Console.WriteLine(therapist != null ? "Therapist found" : "Therapist NOT found");
-
-            if (therapist != null)
-                return new BlPatientOrTherapist { Therapist = mapper.Map<BlTherapist>(therapist) };
-
-            Console.WriteLine("No user found");
-            return null;
+            return websiteConnectionDalServer.IsManager(id);
         }
 
+        public BlLoggedInUser LogIn(string id)
+        {
+            var patient = IsPatient(id);
+            if (patient != null)
+                return new BlLoggedInUser { Patient = mapper.Map<BlPatient>(patient) };
+
+            var therapist = IsTherapist(id);
+            if (therapist != null)
+                return new BlLoggedInUser { Therapist = mapper.Map<BlTherapist>(therapist) };
+
+            var manager = IsManager(id);
+            if (manager != null)
+                return new BlLoggedInUser { Manager = manager }; 
+
+            return null;
+        }
 
     }
 }

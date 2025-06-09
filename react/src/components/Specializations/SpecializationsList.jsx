@@ -9,6 +9,14 @@ const SpecializationsList = () => {
   const navigate = useNavigate();
   const { user } = useUser();
 
+  // אם המשתמש לא מחובר - ננווט לדף התחברות
+  useEffect(() => {
+    if (!user) {
+      navigate('/login'); // או נתיב אחר לעמוד התחברות
+    }
+  }, [user, navigate]);
+
+  // הבאת ההתמחויות מהשרת
   useEffect(() => {
     api
       .get('/Specialization/GetAllSpecializations')

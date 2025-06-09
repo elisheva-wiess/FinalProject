@@ -10,7 +10,7 @@ const SpecializationDetails = () => {
   const [visible, setVisible] = useState({});
 
   useEffect(() => {
-    api.get(`/Specialization/SpecializationsTherapists?name=${name}`)
+    api.get(`/Specialization/GetTherapistsBySpecializationName?name=${encodeURIComponent(name)}`)
       .then(res => setTherapists(res.data))
       .catch(() => alert('לא נמצאו מטפלים בהתמחות'));
   }, [name]);

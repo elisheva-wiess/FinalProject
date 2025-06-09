@@ -23,7 +23,12 @@ namespace WebApi.Controllers
             try
             {
                 websiteConnectionBl.SignUp(patient);
-                return Ok("נרשמת בהצלחה");
+
+                return Ok(new
+                {
+                    role = "patient",
+                    user = patient
+                });
             }
             catch (Exception ex)
             {
@@ -32,12 +37,13 @@ namespace WebApi.Controllers
             }
         }
 
+
         [HttpDelete("SignOut/{id}")]
 
         public IActionResult SignOut([FromRoute] string id)
         {
             websiteConnectionBl.SignOut(id);
-            return Ok($"you not our patient now");
+            return Ok($"You are no longer our patient");
         }
 
         [HttpGet("isPatient/{id}")]
@@ -80,7 +86,7 @@ namespace WebApi.Controllers
             var result = websiteConnectionBl.LogIn(id);
 
             if (result == null)
-                return NotFound(); 
+                return NotFound();
 
             if (result.Patient != null)
             {
@@ -96,9 +102,17 @@ namespace WebApi.Controllers
                     therapist = result.Therapist
                 });
             }
+            else if (result.Manager != null)
+            {
+                return Ok(new
+                {
+                    manager = result.Manager
+                });
+            }
 
             return NotFound();
         }
+
 
 
         // ? פעולה חדשה - אחת שמחזירה גם תפקיד וגם נתוני משתמש

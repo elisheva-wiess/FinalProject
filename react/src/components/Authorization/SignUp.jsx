@@ -1,36 +1,46 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../Authorization/UserContext';
+import api from '../../services/api';
 import '../../css/SignUp.css';
 
 export default function SignUp() {
-  const [user, setUser] = useState({
+  const [userDetails, setUserDetails] = useState({
+    patientsId: '',           
     firstName: '',
     lastName: '',
-    idNumber: '',
     birthDate: '',
     gender: '',
     email: '',
-    phone: '',
+    phoneNumber: '',         
     address: '',
-    insurance: '',
+    healthInsurance: '',      
   });
 
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  const { setUser } = useUser();
 
-  const requiredFields = ['firstName', 'lastName', 'idNumber', 'birthDate', 'phone', 'insurance'];
+  const requiredFields = [
+    'firstName',
+    'lastName',
+    'patientsId',
+    'birthDate',
+    'phoneNumber',
+    'healthInsurance',
+  ];
 
   const getHebrewLabel = (fieldName) => {
     const labels = {
       firstName: 'שם פרטי',
       lastName: 'שם משפחה',
-      idNumber: 'תעודת זהות',
+      patientsId: 'תעודת זהות',
       birthDate: 'תאריך לידה',
       gender: 'מגדר',
       email: 'אימייל',
-      phone: 'מספר טלפון',
+      phoneNumber: 'מספר טלפון',
       address: 'כתובת',
-      insurance: 'קופת חולים',
+      healthInsurance: 'קופת חולים',
     };
     return labels[fieldName] || fieldName;
   };
@@ -38,14 +48,14 @@ export default function SignUp() {
   const getAutoComplete = (field) => {
     const map = {
       email: 'email',
-      phone: 'tel',
+      phoneNumber: 'tel',
       firstName: 'given-name',
       lastName: 'family-name',
       birthDate: 'bday',
-      idNumber: 'off',
+      patientsId: 'off',
       gender: 'off',
       address: 'street-address',
-      insurance: 'off',
+      healthInsurance: 'off',
     };
     return map[field] || 'off';
   };
@@ -53,7 +63,7 @@ export default function SignUp() {
   const handleRegister = async () => {
     const newErrors = {};
     requiredFields.forEach((field) => {
-      if (!user[field]) {
+      if (!userDetails[field]) {
         newErrors[field] = 'שדה זה חובה';
       }
     });
@@ -62,25 +72,22 @@ export default function SignUp() {
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        const response = await fetch('/api/WebsiteConnection/signup', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(user),
-        });
+        const { data } = await api.post('/WebsiteConnection/signup', userDetails);
 
-        if (!response.ok) {
-          const errorText = await response.text();
-          throw new Error(errorText || 'שגיאה בשרת');
-        }
+        // שמירה גם בקונטקסט וגם ב-localStorage
+        const userWithRole = {
+          role: data.role || 'patient',
+          ...data.user || data
+        };
 
-        const data = await response.json();
-        localStorage.setItem('user', JSON.stringify(data));
+        setUser(userWithRole);
+        localStorage.setItem('user', JSON.stringify(userWithRole));
+
         alert('נרשמת בהצלחה!');
         navigate('/specializations');
       } catch (error) {
-        alert('אירעה שגיאה בעת ההרשמה: ' + error.message);
+        const msg = error.response?.data || error.message || 'שגיאה לא ידועה';
+        alert('אירעה שגיאה בעת ההרשמה: ' + msg);
         console.error('Signup failed:', error);
       }
     }
@@ -90,7 +97,7 @@ export default function SignUp() {
     <div className="register-container">
       <h2 className="register-title">טופס הרשמה</h2>
       <form className="form-grid" onSubmit={(e) => e.preventDefault()}>
-        {Object.entries(user).map(([key, value]) => (
+        {Object.entries(userDetails).map(([key, value]) => (
           <div className="input-group" key={key}>
             <label htmlFor={key}>
               {getHebrewLabel(key)}
@@ -104,10 +111,10 @@ export default function SignUp() {
               type={
                 key === 'birthDate' ? 'date' :
                 key === 'email' ? 'email' :
-                key === 'phone' ? 'tel' :
+                key === 'phoneNumber' ? 'tel' :
                 'text'
               }
-              onChange={(e) => setUser({ ...user, [key]: e.target.value })}
+              onChange={(e) => setUserDetails({ ...userDetails, [key]: e.target.value })}
               className={errors[key] ? 'error-input' : ''}
             />
             {errors[key] && <span className="error-text">{errors[key]}</span>}

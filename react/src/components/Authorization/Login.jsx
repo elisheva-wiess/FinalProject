@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import api from '../../services/api';
-import { UserContext } from '../Authorization/UserContext';
+import { UserContext } from './UserContext';
 import { useNavigate } from 'react-router-dom';
 import '../../css/Login.css';
 
@@ -18,26 +18,24 @@ function Login() {
     api.get(`/WebsiteConnection/Login/${id}`)
       .then(res => {
         const data = res.data;
+        let userData = null;
 
-        if (data.patient) {
-          const userData = {
-            ...data.patient,
-            role: 'patient'
-          };
-          localStorage.setItem('user', JSON.stringify(userData));
-          setUser(userData);
-          navigate('/specializations');
+        if (data.manager) {
+          userData = { ...data.manager, role: 'manager' };
+          navigate('/manager');
         } else if (data.therapist) {
-          const userData = {
-            ...data.therapist,
-            role: 'therapist'
-          };
-          localStorage.setItem('user', JSON.stringify(userData));
-          setUser(userData);
+          userData = { ...data.therapist, role: 'therapist' };
           navigate('/therapist-dashboard');
+        } else if (data.patient) {
+          userData = { ...data.patient, role: 'patient' };
+          navigate('/patient-area');
         } else {
           alert('משתמש לא נמצא');
+          return;
         }
+
+        localStorage.setItem('user', JSON.stringify(userData));
+        setUser(userData);
       })
       .catch(err => {
         console.error('שגיאה בעת התחברות:', err);

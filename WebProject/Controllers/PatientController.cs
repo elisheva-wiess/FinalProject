@@ -35,6 +35,7 @@ namespace Server.Controllers
                 return StatusCode(500, "שגיאה בקבלת גיל מטופל");
             }
         }
+
         [HttpGet("GetGenderById/{id}")]
         public IActionResult GetGenderById(string id)
         {

@@ -19,6 +19,8 @@ public partial class dbClass : DbContext
 
     public virtual DbSet<AvailableAppointment> AvailableAppointments { get; set; }
 
+    public virtual DbSet<Manager> Managers { get; set; }
+
     public virtual DbSet<Patient> Patients { get; set; }
 
     public virtual DbSet<Specialization> Specializations { get; set; }
@@ -31,7 +33,7 @@ public partial class dbClass : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='H:\\הורדות פרוייקט\\FINALPROJECT\\DAL\\DATA\\DATABASE.MDF';Integrated Security=True;Connect Timeout=30");
+        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\USERS\\משתמש\\DESKTOP\\ENDTOEND PROJECT\\FINALPROJECT\\DAL\\DATA\\DATABASE.MDF';Integrated Security=True;Connect Timeout=30");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -90,6 +92,29 @@ public partial class dbClass : DbContext
                 .HasForeignKey(d => d.TherapistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Available__thera__6477ECF3");
+        });
+
+        modelBuilder.Entity<Manager>(entity =>
+        {
+            entity.HasKey(e => e.ManagerId).HasName("PK__Manager__3BA2AAE1E4ACE79D");
+
+            entity.ToTable("Manager");
+
+            entity.Property(e => e.ManagerId)
+                .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+            entity.Property(e => e.Email)
+                .HasMaxLength(100)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+            entity.Property(e => e.FullName)
+                .HasMaxLength(100)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+            entity.Property(e => e.Password)
+                .HasMaxLength(100)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+            entity.Property(e => e.Phone)
+                .HasMaxLength(20)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
         });
 
         modelBuilder.Entity<Patient>(entity =>

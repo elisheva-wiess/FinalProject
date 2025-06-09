@@ -13,7 +13,8 @@ namespace Bl.Api
         Patient SignUp(BlPatientDto patient);
         Patient IsPatient(string id);
         Therapist IsTherapist(string id);
-        BlPatientOrTherapist LogIn(string id);
+        Manager IsManager(string id);
+        BlLoggedInUser LogIn(string id);
         public void SignOut(string id);
     }
 }

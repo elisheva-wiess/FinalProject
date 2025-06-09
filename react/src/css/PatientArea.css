@@ -1,0 +1,33 @@
+/* PatientArea.css */
+.patient-area {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.patient-area h1 {
+  text-align: center;
+  color: #2a7ae2;
+}
+
+.patient-area section {
+  margin-top: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.patient-area ul {
+  list-style: none;
+  padding: 0;
+}
+
+.patient-area li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}

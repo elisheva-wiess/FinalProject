@@ -7,12 +7,24 @@ using Dal.Api;
 using Dal.Models;
 using Dal.Services;
 using AutoMapper;
+using System.Text.Json;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<dbClass>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
 // הוספת שירותים למיכל התלויות
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    });
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -31,10 +43,7 @@ builder.Services.AddScoped<ITherapistBl, TherapistBlServices>();
 builder.Services.AddScoped<ITherapistDal, TherapistDalServices>();
 builder.Services.AddScoped<IPersonalAreaBl, PersonalAreaBlServices>();
 builder.Services.AddScoped<IPersonalAreaDal, PersonalAreaDalServices>();
-builder.Services.AddSingleton<dbClass>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
-
-
 
 builder.Services.AddCors(options =>
 {
@@ -54,10 +63,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection(); 
+app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("AllowReactApp");
-app.UseAuthorization();   
+app.UseAuthorization();
 
 app.MapControllers();
 

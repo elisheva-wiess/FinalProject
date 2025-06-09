@@ -12,6 +12,7 @@ namespace Dal.Api
         public void SignUp(Patient patient);
         Patient IsPatient(string id);
         Therapist IsTherapist(string id);
+        Manager IsManager(string id);
         public Patient LogIn(string id);
         public void SignOut(string id);
     }
