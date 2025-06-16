@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Noto Sans Hebrew', sans-serif;
+    direction: rtl;
+    --background: 35 89% 97%;
+    /* חום/שמנת */
+    --foreground: 25 20% 15%;
+    --primary: 30 35% 45%;
+    /* חום כהה */
+    --secondary: 45 32% 67%;
+    /* חום-צהוב */
+    --accent: 37 76% 87%;
+    /* חום בהיר */
+    --muted: 35 33% 92%;
+    /* אוף וויט */
+    --card: 35 78% 98%;
+    --border: 36 29% 85%;
+    --radius: 0.6rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-hebrew;
+    direction: rtl;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}

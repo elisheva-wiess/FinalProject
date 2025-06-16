@@ -1,0 +1,84 @@
+
+import React, { useState } from "react";
+import { User } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import TherapistDialog from "./TherapistDialog";
+
+interface SpecializationCardProps {
+  specialization: {
+    specializationName: string;
+    description: string;
+    image?: string;
+    therapists?: TherapistType[];
+  };
+}
+
+export type TherapistType = {
+  id: number;
+  name: string;
+  avatar?: string;
+  details?: string;
+  workHours?: string[];
+};
+
+const defaultImages = [
+  "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+];
+
+const badgeColors = [
+  "bg-accent/60 text-primary border-primary",
+  "bg-muted text-primary border-accent",
+  "bg-accent/80 text-primary border-primary/80",
+  "bg-muted/80 text-primary border-primary/30"
+];
+
+const SpecializationCard: React.FC<SpecializationCardProps> = ({ specialization }) => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const imageSrc =
+    specialization.image ||
+    defaultImages[Math.floor(Math.random() * defaultImages.length)];
+  const badgeColor = badgeColors[Math.floor(Math.random() * badgeColors.length)];
+  return (
+    <>
+      <Card className="overflow-hidden shadow-xl hover:scale-105 hover:border-primary transition-all border bg-white flex flex-col animate-fade-in max-w-sm mx-auto">
+        <div className="h-44 w-full bg-accent/80">
+          <img
+            src={imageSrc}
+            alt={specialization.specializationName}
+            className="object-cover w-full h-full"
+            loading="lazy"
+          />
+        </div>
+        <CardHeader>
+          <CardTitle className="text-primary flex items-center gap-2 text-xl">
+            <span className={`px-2 py-1 rounded-lg border font-bold mr-1 text-base ${badgeColor}`}>
+              <User className="inline-block w-6 h-6 ml-2 text-primary align-middle" />
+              {specialization.specializationName}
+            </span>
+          </CardTitle>
+          <CardDescription className="text-muted-foreground text-right">
+            {specialization.description}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="mt-auto pt-0">
+          <button
+            className="w-full py-2 mt-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/80 transition"
+            onClick={() => setDialogOpen(true)}
+          >
+            קבע תור
+          </button>
+        </CardContent>
+      </Card>
+      <TherapistDialog
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        specialization={specialization}
+      />
+    </>
+  );
+};
+
+export default SpecializationCard;
