@@ -49,5 +49,20 @@ namespace Dal.Services
                 .Distinct() // מסיר כפילויות
                 .ToList();
         }
+
+        public bool AddSpecialization(Specialization specialization)
+        {
+            try
+            {
+                context.Specializations.Add(specialization);
+                context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

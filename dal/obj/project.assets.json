@@ -4741,11 +4741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\משתמש\\Downloads\\קורות חיים לשליחה\\FinalProject\\dal\\Dal.csproj",
+      "projectUniqueName": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\Dal.csproj",
       "projectName": "Dal",
-      "projectPath": "C:\\Users\\משתמש\\Downloads\\קורות חיים לשליחה\\FinalProject\\dal\\Dal.csproj",
+      "projectPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\Dal.csproj",
       "packagesPath": "C:\\Users\\משתמש\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\משתמש\\Downloads\\קורות חיים לשליחה\\FinalProject\\dal\\obj\\",
+      "outputPath": "C:\\Users\\משתמש\\Desktop\\EndToEnd Project\\FinalProject\\dal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4824,5 +4824,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

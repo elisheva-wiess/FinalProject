@@ -21,5 +21,6 @@ namespace Bl.Models
 
         public int? YearsOfExperience { get; set; }
 
+        public double Salary { get; set; }
     }
 }

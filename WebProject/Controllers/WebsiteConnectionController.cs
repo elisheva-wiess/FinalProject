@@ -46,40 +46,6 @@ namespace WebApi.Controllers
             return Ok($"You are no longer our patient");
         }
 
-        [HttpGet("isPatient/{id}")]
-        public IActionResult IsPatient(string id)
-        {
-            try
-            {
-                var patient = websiteConnectionBl.IsPatient(id);
-                if (patient != null)
-                    return Ok(patient);
-                return NotFound("לא נמצא מטופל עם תעודת זהות זו");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"שגיאה בבדיקת מטופל: {ex.Message}");
-                return StatusCode(500, "שגיאה בבדיקת מטופל");
-            }
-        }
-
-        [HttpGet("isTherapist/{id}")]
-        public IActionResult IsTherapist(string id)
-        {
-            try
-            {
-                var therapist = websiteConnectionBl.IsTherapist(id);
-                if (therapist != null)
-                    return Ok(therapist);
-                return NotFound("לא נמצא מטפל עם תעודת זהות זו");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"שגיאה בבדיקת מטפל: {ex.Message}");
-                return StatusCode(500, "שגיאה בבדיקת מטפל");
-            }
-        }
-
         [HttpGet("Login/{id}")]
         public IActionResult Login(string id)
         {
@@ -138,6 +104,16 @@ namespace WebApi.Controllers
                     {
                         role = "therapist",
                         user = therapist
+                    });
+                }
+
+                var manager = websiteConnectionBl.IsManager(id);
+                if (manager != null)
+                {
+                    return Ok(new
+                    {
+                        role = "manager",
+                        user = manager
                     });
                 }
 

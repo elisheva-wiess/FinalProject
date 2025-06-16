@@ -80,13 +80,6 @@ namespace Dal.Services
             return therapist;
         }
 
-        public Patient LogIn(string id)
-        {
-            var patient = context.Patients.FirstOrDefault(s => s.PatientsId == id);
-            return patient;
-
-        }
-
         public Manager IsManager(string id)
         {
             var manager = context.Managers.FirstOrDefault(m => m.ManagerId == id);

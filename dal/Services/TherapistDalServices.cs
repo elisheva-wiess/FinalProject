@@ -67,14 +67,21 @@ namespace Dal.Services
 
         public bool UpdateWorkingHours(string therapistId, List<TherapistHour> newHours)
         {
-            var existingHours = context.TherapistHours.Where(h => h.TherapistId == therapistId).ToList();
+            var existingHours = context.TherapistHours
+                .Where(h => h.TherapistId == therapistId)
+                .ToList();
 
             if (!existingHours.Any())
                 return false;
 
             context.TherapistHours.RemoveRange(existingHours);
-            context.TherapistHours.AddRange(newHours);
 
+            foreach (var hour in newHours)
+            {
+                hour.TherapistId = therapistId;
+            }
+
+            context.TherapistHours.AddRange(newHours);
             return context.SaveChanges() > 0;
         }
 
@@ -111,6 +118,20 @@ namespace Dal.Services
                 .Include(th => th.Therapist.TherapistSpecializations)
                     .ThenInclude(ts => ts.Specialization)
                 .ToList();
+        }
+
+        public bool AddVisitSummary(Appointment summary)
+        {
+            try
+            {
+                context.Appointments.Add(summary);
+                context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }

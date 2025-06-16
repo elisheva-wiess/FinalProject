@@ -25,10 +25,10 @@ namespace Bl.Services
             return mapper.Map<List<BlAppointment>>(appointments);
         }
 
-        public List<BlWorkingHours> GetTherapistWorkingHoursById(string id)
+        public List<BlTherapistHourDto> GetTherapistWorkingHoursById(string id)
         {
             var dalHours = therapistDal.GetTherapistWorkingHoursById(id); 
-            return mapper.Map<List<BlWorkingHours>>(dalHours);
+            return mapper.Map<List<BlTherapistHourDto>>(dalHours);
         }
 
         public BlTherapistSalary GetTherapistSalaryById(string id)
@@ -40,11 +40,10 @@ namespace Bl.Services
             return therapist == null ? null : mapper.Map<BlTherapistSalary>(therapist);
         }
 
-        public bool AddTherapist(Therapist newTherapist)
+        public bool AddTherapist(BlTherapist newTherapist)
         {
             if (newTherapist == null)
                 return false;
-
             var therapistEntity = mapper.Map<Therapist>(newTherapist);
             return therapistDal.AddTherapist(therapistEntity);
         }
@@ -67,10 +66,25 @@ namespace Bl.Services
         }
 
 
-        public List<BlWorkingHours> GetWorkingHoursByTherapistFullNameAndSpecialization(string therapistFullName, string specializationName)
+        public List<BlTherapistHourDto> GetWorkingHoursByTherapistFullNameAndSpecialization(string therapistFullName, string specializationName)
         {
             var availableAppoints = therapistDal.GetWorkingHoursByTherapistFullNameAndSpecialization(therapistFullName, specializationName);
-            return mapper.Map<List<BlWorkingHours>>(availableAppoints); 
+            return mapper.Map<List<BlTherapistHourDto>>(availableAppoints); 
         }
+        
+
+        public bool AddVisitSummary(BlVisitSummaryDto summaryDto)
+        {
+            try
+            {
+                var entity = mapper.Map<Appointment>(summaryDto);
+                return therapistDal.AddVisitSummary(entity);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

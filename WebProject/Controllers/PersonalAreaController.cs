@@ -33,7 +33,7 @@ namespace Server.Controllers
         }
 
         // מחזיר את הפרטים האישיים של המטופל.
-        [HttpGet("PersonalDetails")]
+        [HttpGet("GetPersonalDetails")]
         public ActionResult<BlPatientDto> GetPersonalDetails([FromQuery] string patientId)
         {
             if (string.IsNullOrWhiteSpace(patientId))

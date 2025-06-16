@@ -11,14 +11,15 @@ namespace Bl
 
             CreateMap<Patient, BlPatient>().ReverseMap();
             CreateMap<Therapist, BlTherapist>().ReverseMap();
-            CreateMap<Specialization, BlSpecializations>().ReverseMap();
+            CreateMap<Specialization, BlSpecializationDto>().ReverseMap();
+            CreateMap<BlVisitSummaryDto, Appointment>().ReverseMap();
+            CreateMap<BlSpecializationDto, Specialization>().ReverseMap();
             CreateMap<AvailableAppointment, BlAppointmentSummary>()
                  .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.AvailableDate))
                  .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTimeSlot))
                  .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTimeSlot))
                  .ReverseMap();
             CreateMap<Appointment, BlAppointment>().ReverseMap();
-            CreateMap<BlTherapistHourDto, Therapist>().ReverseMap();
             CreateMap<Therapist, BlSpecializationsTherapists>();
             CreateMap<Patient, BlPatientDto>().ReverseMap();
             CreateMap<Appointment, BlVisitSummaryDto>()
@@ -35,7 +36,7 @@ namespace Bl
                 .ForMember(dest => dest.TherapistId, opt => opt.MapFrom(src => src.TherapistsId))
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FirstName + " " + src.LastName))
                 .ForMember(dest => dest.Salary, opt => opt.MapFrom(src => src.Salary));
-            CreateMap<TherapistHour, BlWorkingHours>()
+            CreateMap<TherapistHour, BlTherapistHourDto>()
                 .ForMember(dest => dest.DayOfWeek, opt => opt.MapFrom(src => src.DayOfWeek.ToString()))
                 .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTime))
                 .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTime))

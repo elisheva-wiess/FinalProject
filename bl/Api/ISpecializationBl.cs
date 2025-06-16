@@ -9,8 +9,9 @@ namespace Bl.Api
 {
     public interface ISpecializationBl
     {
-        List<BlSpecializations> GetAllSpecializations();
+        List<BlSpecializationDto> GetAllSpecializations();
         List<BlSpecializationsTherapists> GetTherapistsBySpecializationName(string name);
-        List<BlSpecializations> GetSpecializationsByTherapistId(string therapistId);
+        List<BlSpecializationDto> GetSpecializationsByTherapistId(string therapistId);
+        bool AddSpecialization(BlSpecializationDto specializationDto);
     }
 }

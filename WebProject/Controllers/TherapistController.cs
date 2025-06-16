@@ -44,7 +44,7 @@ namespace Server.Controllers
         }
 
         [HttpPost("AddTherapist")]
-        public IActionResult AddTherapist([FromBody] Therapist newTherapist)
+        public IActionResult AddTherapist([FromBody] BlTherapist newTherapist)
         {
             var result = therapistBlServices.AddTherapist(newTherapist);
             if (result)
@@ -79,6 +79,20 @@ namespace Server.Controllers
                 return Ok(availableAppointment);
 
             return NotFound("לא נמצאו שעות עבודה עבור מטפל זה עם ההתמחות הזו.");
+        }
+
+        [HttpPost("AddVisitSummary")]
+        public IActionResult AddVisitSummary([FromBody] BlVisitSummaryDto summaryDto)
+        {
+            if (summaryDto == null)
+                return BadRequest("Visit summary is required.");
+
+            var success = therapistBlServices.AddVisitSummary(summaryDto);
+
+            if (!success)
+                return BadRequest("Failed to add visit summary.");
+
+            return Ok("Visit summary added successfully.");
         }
 
     }

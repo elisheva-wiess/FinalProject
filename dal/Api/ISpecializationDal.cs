@@ -12,5 +12,6 @@ namespace Dal.Api
         List<Specialization> GetAllSpecializations();
         List<Therapist> GetTherapistsBySpecializationName(string name);
         List<Specialization> GetSpecializationsByTherapistId(string therapistId);
+        bool AddSpecialization(Specialization specialization);
     }
 }

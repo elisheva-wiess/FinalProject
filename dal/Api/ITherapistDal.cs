@@ -16,5 +16,6 @@ namespace Dal.Api
         bool UpdateSalary(string therapistId, double newSalary);
         bool UpdateWorkingHours(string therapistId, List<TherapistHour> newHours);
         List<TherapistHour> GetWorkingHoursByTherapistFullNameAndSpecialization(string therapistFullName, string specializationName);
+        bool AddVisitSummary(Appointment summary);
     }
 }

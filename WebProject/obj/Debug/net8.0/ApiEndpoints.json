@@ -167,7 +167,7 @@
   {
     "ContainingType": "Server.Controllers.PersonalAreaController",
     "Method": "GetPersonalDetails",
-    "RelativePath": "api/PersonalArea/PersonalDetails",
+    "RelativePath": "api/PersonalArea/GetPersonalDetails",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -234,6 +234,22 @@
   },
   {
     "ContainingType": "Server.Controllers.SpecializationController",
+    "Method": "AddSpecialization",
+    "RelativePath": "api/Specialization/AddSpecialization",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "specializationDto",
+        "Type": "Bl.Models.BlSpecializationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.SpecializationController",
     "Method": "GetAllSpecializations",
     "RelativePath": "api/Specialization/GetAllSpecializations",
     "HttpMethod": "GET",
@@ -284,7 +300,23 @@
     "Parameters": [
       {
         "Name": "newTherapist",
-        "Type": "Dal.Models.Therapist",
+        "Type": "Bl.Models.BlTherapist",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.TherapistController",
+    "Method": "AddVisitSummary",
+    "RelativePath": "api/Therapist/AddVisitSummary",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "summaryDto",
+        "Type": "Bl.Models.BlVisitSummaryDto",
         "IsRequired": true
       }
     ],
@@ -405,38 +437,6 @@
     "ContainingType": "WebApi.Controllers.WebsiteConnectionController",
     "Method": "GetUser",
     "RelativePath": "api/WebsiteConnection/getUser/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApi.Controllers.WebsiteConnectionController",
-    "Method": "IsPatient",
-    "RelativePath": "api/WebsiteConnection/isPatient/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApi.Controllers.WebsiteConnectionController",
-    "Method": "IsTherapist",
-    "RelativePath": "api/WebsiteConnection/isTherapist/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

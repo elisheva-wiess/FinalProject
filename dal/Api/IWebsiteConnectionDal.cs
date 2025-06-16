@@ -9,11 +9,10 @@ namespace Dal.Api
 {
     public interface IWebsiteConnectionDal
     {
-        public void SignUp(Patient patient);
+        void SignUp(Patient patient);
         Patient IsPatient(string id);
         Therapist IsTherapist(string id);
         Manager IsManager(string id);
-        public Patient LogIn(string id);
-        public void SignOut(string id);
+        void SignOut(string id);
     }
 }

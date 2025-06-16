@@ -18,10 +18,10 @@ namespace Bl.Services
             mapper = _mapper;
         }
 
-        public List<BlSpecializations> GetAllSpecializations()
+        public List<BlSpecializationDto> GetAllSpecializations()
         {
             var allSpecializations = specializationsDal.GetAllSpecializations();
-            return mapper.Map<List<BlSpecializations>>(allSpecializations);
+            return mapper.Map<List<BlSpecializationDto>>(allSpecializations);
         }
 
         public List<BlSpecializationsTherapists> GetTherapistsBySpecializationName(string name)
@@ -29,10 +29,24 @@ namespace Bl.Services
             var specTherapists = specializationsDal.GetTherapistsBySpecializationName(name);
             return mapper.Map<List<BlSpecializationsTherapists>>(specTherapists);
         }
-        public List<BlSpecializations> GetSpecializationsByTherapistId(string therapistId)
+        public List<BlSpecializationDto> GetSpecializationsByTherapistId(string therapistId)
         {
             var specializations = specializationsDal.GetSpecializationsByTherapistId(therapistId);
-            return mapper.Map<List<BlSpecializations>>(specializations);
+            return mapper.Map<List<BlSpecializationDto>>(specializations);
         }
+
+        public bool AddSpecialization(BlSpecializationDto specializationDto)
+        {
+            try
+            {
+                var specialization = mapper.Map<Specialization>(specializationDto);
+                return specializationsDal.AddSpecialization(specialization);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
