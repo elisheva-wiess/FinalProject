@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "@/store/authSlice";
 import { Button } from "@/components/ui/button";
-import { WebsiteConnection } from "@/api/controllersApi";
+import { WebsiteConnection } from "@/api/api";
 
 const Signup = () => {
   const [userDetails, setUserDetails] = useState({
@@ -20,8 +20,7 @@ const Signup = () => {
 
   type Errors = {
     general?: string;
-    email?: string;
-    password?: string;
+    [key: string]: string | undefined; // תיקון לטיפוס דינמי עבור כל שדה
   };
 
   const [errors, setErrors] = useState<Errors>({});
@@ -38,8 +37,8 @@ const Signup = () => {
     'healthInsurance',
   ];
 
-  const getHebrewLabel = (fieldName) => {
-    const labels = {
+  const getHebrewLabel = (fieldName: string) => {
+    const labels: { [key: string]: string } = {
       firstName: 'שם פרטי',
       lastName: 'שם משפחה',
       patientsId: 'תעודת זהות',
@@ -53,8 +52,8 @@ const Signup = () => {
     return labels[fieldName] || fieldName;
   };
 
-  const getAutoComplete = (field) => {
-    const map = {
+  const getAutoComplete = (field: string) => {
+    const map: { [key: string]: string } = {
       email: 'email',
       phoneNumber: 'tel',
       firstName: 'given-name',
@@ -68,18 +67,18 @@ const Signup = () => {
     return map[field] || 'off';
   };
 
-  function handleChange(e) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setUserDetails({
       ...userDetails,
       [e.target.name]: e.target.value,
     });
-  }
+  };
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    const newErrors = {};
+    const newErrors: Errors = {};
     requiredFields.forEach((field) => {
       if (!userDetails[field]) {
         newErrors[field] = 'שדה זה חובה';
@@ -93,7 +92,6 @@ const Signup = () => {
         const response = await WebsiteConnection.signUp(userDetails);
         const data = response.data;
 
-        // שמירה ב-Redux
         const userWithRole = {
           role: data.role || 'patient',
           ...data.user || data
@@ -102,14 +100,13 @@ const Signup = () => {
         dispatch(login({
           user: userWithRole,
           role: userWithRole.role,
-          firstName: userDetails.firstName
+          firstName: userDetails.firstName,
+          lastName: userDetails.lastName
         }));
 
-        // שמירה ב-localStorage
         localStorage.setItem('user', JSON.stringify(userWithRole));
-
         navigate("/specializations");
-      } catch (error) {
+      } catch (error: any) {
         const msg = error.response?.data || error.message || 'שגיאה לא ידועה';
         console.error('Signup failed:', error);
         setErrors({ general: 'אירעה שגיאה בעת ההרשמה: ' + msg });
@@ -117,7 +114,7 @@ const Signup = () => {
     }
 
     setLoading(false);
-  }
+  };
 
   return (
     <main className="flex flex-col items-center justify-center min-h-[70vh] px-4">
@@ -130,60 +127,72 @@ const Signup = () => {
         )}
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {Object.entries(userDetails).map(([key, value]) => (
-            <div key={key} className={key === 'address' ? 'md:col-span-2' : ''}>
-              <label className="block mb-1 font-semibold">
-                {getHebrewLabel(key)}
-                {requiredFields.includes(key) && <span className="text-red-500"> *</span>}
-              </label>
-              {key === 'gender' ? (
-                <select
-                  name={key}
-                  value={value}
-                  onChange={handleChange}
-                  className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors[key] ? 'border-red-500' : ''
-                    }`}
-                  autoComplete={getAutoComplete(key)}
-                >
-                  <option value="">בחר מגדר</option>
-                  <option value="male">זכר</option>
-                  <option value="female">נקבה</option>
-                </select>
-              ) : key === 'healthInsurance' ? (
-                <select
-                  name={key}
-                  value={value}
-                  onChange={handleChange}
-                  className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors[key] ? 'border-red-500' : ''
-                    }`}
-                  autoComplete={getAutoComplete(key)}
-                >
-                  <option value="">בחר קופת חולים</option>
-                  <option value="clalit">כללית</option>
-                  <option value="maccabi">מכבי</option>
-                  <option value="meuhedet">מאוחדת</option>
-                  <option value="leumit">לאומית</option>
-                </select>
-              ) : (
-                <input
-                  name={key}
-                  type={
-                    key === 'birthDate' ? 'date' :
-                      key === 'email' ? 'email' :
-                        key === 'phoneNumber' ? 'tel' :
-                          'text'
-                  }
-                  required={requiredFields.includes(key)}
-                  className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors[key] ? 'border-red-500' : ''
-                    }`}
-                  value={value}
-                  onChange={handleChange}
-                  autoComplete={getAutoComplete(key)}
-                />
-              )}
-              {errors[key] && <span className="text-red-500 text-sm">{errors[key]}</span>}
-            </div>
-          ))}
+
+          {/* שדות חוץ מכתובת */}
+          {['firstName', 'lastName', 'patientsId', 'birthDate', 'email', 'phoneNumber', 'healthInsurance', 'gender']
+            .map((key) => (
+              <div key={key}>
+                <label className="block mb-1 font-semibold">
+                  {getHebrewLabel(key)}
+                  {requiredFields.includes(key) && <span className="text-red-500"> *</span>}
+                </label>
+                {key === 'gender' || key === 'healthInsurance' ? (
+                  <select
+                    name={key}
+                    value={userDetails[key as keyof typeof userDetails]}
+                    onChange={handleChange}
+                    className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors[key] ? 'border-red-500' : ''}`}
+                    autoComplete={getAutoComplete(key)}
+                  >
+                    <option value="">{key === 'gender' ? 'בחר מגדר' : 'בחר קופת חולים'}</option>
+                    {key === 'gender' ? (
+                      <>
+                        <option value="זכר">זכר</option>
+                        <option value="נקבה">נקבה</option>
+                      </>
+                    ) : (
+                      <>
+                        <option value="כללית">כללית</option>
+                        <option value="מכבי">מכבי</option>
+                        <option value="מאוחדת">מאוחדת</option>
+                        <option value="לאומית">לאומית</option>
+                      </>
+                    )}
+                  </select>
+                ) : (
+                  <input
+                    name={key}
+                    type={
+                      key === 'birthDate' ? 'date' :
+                        key === 'email' ? 'email' :
+                          key === 'phoneNumber' ? 'tel' : 'text'
+                    }
+                    required={requiredFields.includes(key)}
+                    className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors[key] ? 'border-red-500' : ''}`}
+                    value={userDetails[key as keyof typeof userDetails]}
+                    onChange={handleChange}
+                    autoComplete={getAutoComplete(key)}
+                  />
+                )}
+                {errors[key] && <span className="text-red-500 text-sm">{errors[key]}</span>}
+              </div>
+            ))}
+
+          {/* שדה כתובת למטה לפני הכפתור */}
+          <div className="md:col-span-2">
+            <label className="block mb-1 font-semibold">
+              {getHebrewLabel('address')}
+            </label>
+            <input
+              name="address"
+              type="text"
+              className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors['address'] ? 'border-red-500' : ''}`}
+              value={userDetails.address}
+              onChange={handleChange}
+              autoComplete={getAutoComplete('address')}
+            />
+            {errors['address'] && <span className="text-red-500 text-sm">{errors['address']}</span>}
+          </div>
 
           <div className="md:col-span-2">
             <Button type="submit" className="w-full" disabled={loading}>
@@ -201,3 +210,5 @@ const Signup = () => {
 };
 
 export default Signup;
+
+

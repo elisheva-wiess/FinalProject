@@ -21,16 +21,27 @@ namespace Dal.Services
             context = _context;
         }
 
-        public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate, string specializationId)
+        public List<AvailableAppointment> GetAppointmentsByDateRange(DateTime startDate, DateTime endDate, string specializationName)
         {
+            // שליפת ההתמחות לפי שם
+            var specialization = context.Specializations
+                .FirstOrDefault(s => s.SpecializationName == specializationName);
+
+            if (specialization == null)
+                throw new ArgumentException("Invalid specialization name");
+
+            int specId = specialization.Id;
+
+            // שליפת פגישות פנויות לפי טווח תאריכים והתמחות
             var result = (from appointment in context.AvailableAppointments
                           join therapistSpecialty in context.TherapistSpecializations
-                          on appointment.TherapistId equals therapistSpecialty.TherapistId
+                              on appointment.TherapistId equals therapistSpecialty.TherapistId
                           where appointment.AvailableDate >= startDate
                                 && appointment.AvailableDate <= endDate
-                                && therapistSpecialty.SpecializationId == int.Parse(specializationId)
+                                && therapistSpecialty.SpecializationId == specId
                                 && appointment.Status == false
                           select appointment).ToList();
+
             return result;
         }
 

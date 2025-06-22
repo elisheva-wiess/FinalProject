@@ -11,6 +11,7 @@ namespace Bl.Api
 {
     public interface ITherapistBl
     {
+        List<BlTherapistDto> GetAllTherapists();
         List<BlAppointment> GetTherapistApointmentsById(string id);
         List<BlTherapistHourDto> GetTherapistWorkingHoursById(string id);
         BlTherapistSalary GetTherapistSalaryById(string id);

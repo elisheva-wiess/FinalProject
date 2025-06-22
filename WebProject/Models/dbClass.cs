@@ -21,8 +21,6 @@ public partial class dbClass : DbContext
 
     public virtual DbSet<Manager> Managers { get; set; }
 
-    public virtual DbSet<Manager1> Managers1 { get; set; }
-
     public virtual DbSet<Patient> Patients { get; set; }
 
     public virtual DbSet<Specialization> Specializations { get; set; }
@@ -101,29 +99,6 @@ public partial class dbClass : DbContext
             entity.HasKey(e => e.ManagerId).HasName("PK__Manager__3BA2AAE13FC24B07");
 
             entity.ToTable("Manager");
-
-            entity.Property(e => e.ManagerId)
-                .HasMaxLength(50)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
-            entity.Property(e => e.Email)
-                .HasMaxLength(100)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
-            entity.Property(e => e.FullName)
-                .HasMaxLength(100)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
-            entity.Property(e => e.Password)
-                .HasMaxLength(100)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
-            entity.Property(e => e.Phone)
-                .HasMaxLength(20)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
-        });
-
-        modelBuilder.Entity<Manager1>(entity =>
-        {
-            entity.HasKey(e => e.ManagerId).HasName("PK__Managers__3BA2AAE1F74498F9");
-
-            entity.ToTable("Managers");
 
             entity.Property(e => e.ManagerId)
                 .HasMaxLength(50)

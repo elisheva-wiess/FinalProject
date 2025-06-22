@@ -1,31 +1,27 @@
-
 import React, { useState } from "react";
 import { User } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import TherapistDialog from "./TherapistDialog";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent
+} from "@/components/ui/card";
+import AppointmentDialog from "./AppointmentDialog";
+import { SpecializationCardProps } from "@/types";
 
-interface SpecializationCardProps {
-  specialization: {
-    specializationName: string;
-    description: string;
-    image?: string;
-    therapists?: TherapistType[];
-  };
-}
-
-export type TherapistType = {
-  id: number;
-  name: string;
-  avatar?: string;
-  details?: string;
-  workHours?: string[];
+const specializationImages: Record<string, string> = {
+  "קלינאות תקשורת": "https://images.unsplash.com/photo-1581091012184-7b61c1bf26a7",
+  "טיפול רגשי": "https://images.unsplash.com/photo-1607746882042-944635dfe10e",
+  "ריפוי בעיסוק": "https://images.unsplash.com/photo-1588776814546-ec6c2aeb0c94",
+  "אבחון דידקטי": "https://images.unsplash.com/photo-1554731617-fa6478214b1b",
+  "אבחון פסיכולוגי": "https://images.unsplash.com/photo-1588774069262-dbd8d1a736a4"
 };
 
 const defaultImages = [
   "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
   "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
 ];
 
 const badgeColors = [
@@ -37,10 +33,15 @@ const badgeColors = [
 
 const SpecializationCard: React.FC<SpecializationCardProps> = ({ specialization }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
+
   const imageSrc =
     specialization.image ||
+    specializationImages[specialization.specializationName] ||
     defaultImages[Math.floor(Math.random() * defaultImages.length)];
-  const badgeColor = badgeColors[Math.floor(Math.random() * badgeColors.length)];
+
+  const badgeColor =
+    badgeColors[Math.floor(Math.random() * badgeColors.length)];
+
   return (
     <>
       <Card className="overflow-hidden shadow-xl hover:scale-105 hover:border-primary transition-all border bg-white flex flex-col animate-fade-in max-w-sm mx-auto">
@@ -72,10 +73,16 @@ const SpecializationCard: React.FC<SpecializationCardProps> = ({ specialization 
           </button>
         </CardContent>
       </Card>
-      <TherapistDialog
+
+      {/* דיאלוג אחיד לקביעת תור לפי התמחות */}
+      <AppointmentDialog
         open={dialogOpen}
         onOpenChange={setDialogOpen}
-        specialization={specialization}
+        specialization={{
+          specializationId: specialization.specializationId,
+          specializationName: specialization.specializationName,
+          description: specialization.description
+        }}
       />
     </>
   );

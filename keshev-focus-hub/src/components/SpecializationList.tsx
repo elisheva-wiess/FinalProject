@@ -1,17 +1,10 @@
-
 import React from "react";
 import SpecializationCard from "./SpecializationCard";
+import { SpecializationType } from "@/types";
 
-type Specialization = {
-  specializationName: string;
-  description: string;
-  image?: string;
-  therapists?: any[];
+type Props = {
+  specializations: SpecializationType[];
 };
-
-interface Props {
-  specializations: Specialization[];
-}
 
 const SpecializationList: React.FC<Props> = ({ specializations }) => {
   if (!specializations.length)
@@ -20,10 +13,11 @@ const SpecializationList: React.FC<Props> = ({ specializations }) => {
         לא נמצאו התמחויות להצגה.
       </div>
     );
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
-      {specializations.map((item, i) => (
-        <SpecializationCard key={i} specialization={item} />
+      {specializations.map((item) => (
+        <SpecializationCard key={item.specializationId} specialization={item} />
       ))}
     </div>
   );

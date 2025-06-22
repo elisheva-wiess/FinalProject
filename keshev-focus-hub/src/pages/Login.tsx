@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { login } from "@/store/authSlice";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
-import { WebsiteConnection } from "@/api/controllersApi";
+import { WebsiteConnection } from "@/api/api";
 
 const Login = () => {
   const [idNumber, setIdNumber] = useState("");
@@ -18,30 +18,58 @@ const Login = () => {
     setErrorMsg("");
 
     try {
-      // שולח רק את תעודת הזהות לשרת ומקבל פרטי משתמש
       const response = await WebsiteConnection.login(idNumber);
+      const data = response.data;
 
-      const user = response.data;
-console.log("Login response data:", response.data);
-      if (!user) {
-        setErrorMsg("תעודת זהות לא נמצאה במערכת.");
+      let userData = null;
+
+      if (data.manager) {
+        userData = { ...data.manager, role: "manager" };
+      } else if (data.therapist) {
+        userData = { ...data.therapist, role: "therapist" };
+      } else if (data.patient) {
+        userData = { ...data.patient, id: idNumber, role: "patient" };
+      }
+
+      // בדיקה אם אין משתמש תואם
+      if (!userData) {
+        setErrorMsg("תעודת הזהות שהוזנה אינה קיימת במערכת.");
         setLoading(false);
         return;
       }
 
+      // שמירת המשתמש ב-localStorage
+      localStorage.setItem("user", JSON.stringify(userData));
+
       // שמירת פרטי המשתמש ב-Redux
       dispatch(
         login({
-          user: user.idNumber,
-          role: user.role,
-          firstName: user.firstName,
+          user: userData,
+          role: userData.role,
+          firstName: userData.firstName || "מנהל" || "",
+          lastName: userData.lastName || "",
         })
       );
 
-      navigate("/specializations");
-    } catch (error) {
+      // ניווט לפי תפקיד
+      if (userData.role === "manager") {
+        navigate("/");
+      } else if (userData.role === "therapist") {
+        navigate("/");
+      } else if (userData.role === "patient") {
+        navigate("/specializations");
+      } else {
+        navigate("/");
+      }
+    } catch (error: any) {
       console.error("שגיאה בשרת:", error);
-      setErrorMsg("אירעה שגיאה בשרת. נסה שנית.");
+
+      // בדיקה אם השרת החזיר 404 - לא נמצא
+      if (error.response && error.response.status === 404) {
+        setErrorMsg("תעודת הזהות שהוזנה אינה קיימת במערכת.");
+      } else {
+        setErrorMsg("אירעה שגיאה בשרת. נסה שנית.");
+      }
     } finally {
       setLoading(false);
     }

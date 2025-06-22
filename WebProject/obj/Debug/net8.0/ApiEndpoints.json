@@ -324,6 +324,16 @@
   },
   {
     "ContainingType": "Server.Controllers.TherapistController",
+    "Method": "GetAllTherapists",
+    "RelativePath": "api/Therapist/GetAllTherapists",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.TherapistController",
     "Method": "GetTherapistApointmentsById",
     "RelativePath": "api/Therapist/GetTherapistApointmentsById",
     "HttpMethod": "GET",

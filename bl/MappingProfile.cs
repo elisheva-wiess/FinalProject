@@ -8,9 +8,14 @@ namespace Bl
     {
         public MappingProfile()
         {
-
             CreateMap<Patient, BlPatient>().ReverseMap();
             CreateMap<Therapist, BlTherapist>().ReverseMap();
+            CreateMap<Therapist, BlTherapistDto>()
+                .ForMember(dest => dest.Specializations, opt => opt.MapFrom(src =>
+                    src.TherapistSpecializations
+                        .Select(ts => ts.Specialization.SpecializationName)
+                        .Distinct())) 
+                .ReverseMap();
             CreateMap<Specialization, BlSpecializationDto>().ReverseMap();
             CreateMap<BlVisitSummaryDto, Appointment>().ReverseMap();
             CreateMap<BlSpecializationDto, Specialization>().ReverseMap();

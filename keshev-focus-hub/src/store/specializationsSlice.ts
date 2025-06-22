@@ -1,14 +1,13 @@
-
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchSpecializations } from "@/api/api";
+import { Specialization } from "@/api/api";  
 
-export type Specialization = {
+export type SpecializationType = {
   specializationName: string;
   description: string;
 };
 
 interface SpecializationsState {
-  items: Specialization[];
+  items: SpecializationType[];
   loading: boolean;
   error: string | null;
 }
@@ -18,6 +17,11 @@ const initialState: SpecializationsState = {
   loading: false,
   error: null,
 };
+
+async function fetchSpecializations(): Promise<SpecializationType[]> {
+  const res = await Specialization.getAll();
+  return res.data;
+}
 
 // thunk לקריאת ההתמחויות מהשרת
 export const getSpecializations = createAsyncThunk(
@@ -41,7 +45,7 @@ const specializationsSlice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(getSpecializations.fulfilled, (state, action: PayloadAction<Specialization[]>) => {
+      .addCase(getSpecializations.fulfilled, (state, action: PayloadAction<SpecializationType[]>) => {
         state.loading = false;
         state.items = action.payload;
         state.error = null;

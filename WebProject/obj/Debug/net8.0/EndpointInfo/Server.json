@@ -449,6 +449,18 @@
         }
       }
     },
+    "/api/Therapist/GetAllTherapists": {
+      "get": {
+        "tags": [
+          "Therapist"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Therapist/GetTherapistApointmentsById": {
       "get": {
         "tags": [

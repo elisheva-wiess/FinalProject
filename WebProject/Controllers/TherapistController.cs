@@ -15,6 +15,18 @@ namespace Server.Controllers
             therapistBlServices = _therapistBlServices;
         }
 
+        [HttpGet("GetAllTherapists")]
+        public IActionResult GetAllTherapists()
+        {
+            var AlltherapistsTherapists = therapistBlServices.GetAllTherapists();
+
+            if (AlltherapistsTherapists != null && AlltherapistsTherapists.Any())
+
+                return Ok(AlltherapistsTherapists);
+
+            return NotFound("No therapists found.");
+        }
+
         [HttpGet("GetTherapistApointmentsById")]
         public IActionResult GetTherapistApointmentsById(string id)
         {

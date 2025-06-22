@@ -3,6 +3,7 @@ using Bl.Api;
 using Bl.Models;
 using Dal.Api;
 using Dal.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
@@ -17,6 +18,12 @@ namespace Bl.Services
         {
             therapistDal = _therapistDal;
             mapper = _mapper;
+        }
+
+        public List<BlTherapistDto> GetAllTherapists()
+        {
+            var allTherapists = therapistDal.GetAllTherapists();
+            return mapper.Map<List<BlTherapistDto>>(allTherapists);
         }
 
         public List<BlAppointment> GetTherapistApointmentsById(string id)

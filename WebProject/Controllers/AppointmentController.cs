@@ -15,17 +15,23 @@ namespace Server.Controllers
             appointmentBlServices = _appointmentBlServices;
         }
 
-        //חסר!!!!!!!!!!!!!
         [HttpGet("GetAvailableAppointments")]
         public IActionResult GetAppointmentsByDateRange(string specializationId)
         {
+            if (string.IsNullOrEmpty(specializationId))
+            {
+                return BadRequest("Missing specializationId parameter.");
+            }
+
             var currentDate = DateTime.Now;
             var endDate = currentDate.AddMonths(1);
             var availableAppointments = appointmentBlServices.GetAppointmentsByDateRange(currentDate, endDate, specializationId);
             if (availableAppointments != null)
                 return Ok(availableAppointments);
-            return BadRequest();
+            return BadRequest("No available appointments found.");
         }
+
+
         [HttpGet("AllHourSpetificalDayAndTherapist")]
         public IActionResult AllHourSpetificalDayAndTherapist(string idTherapist, string day)
         {

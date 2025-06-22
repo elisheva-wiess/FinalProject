@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace Dal.Services
 {
     public class TherapistDalServices : ITherapistDal
@@ -15,6 +16,14 @@ namespace Dal.Services
         public TherapistDalServices(dbClass _context)
         {
             context = _context;
+        }
+
+        public List<Therapist> GetAllTherapists()
+        {
+            return context.Therapists
+                .Include(t => t.TherapistSpecializations)
+                    .ThenInclude(ts => ts.Specialization)
+                .ToList();
         }
 
         public List<Appointment> GetTherapistApointmentsById(string id)
