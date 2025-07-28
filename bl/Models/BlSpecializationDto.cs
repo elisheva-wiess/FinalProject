@@ -8,6 +8,8 @@ namespace Bl.Models
 {
     public class BlSpecializationDto
     {
+        public int Id { get; set; }
+
         public string SpecializationName { get; set; } = null!;
 
         public string? Description { get; set; }

@@ -54,21 +54,51 @@ namespace Dal.Services
         }
         public void MakingAnAppointment(string idPatient, string idTherapist, DateTime day)
         {
-            var existingAppointment = context.AvailableAppointments
-                .FirstOrDefault(a => a.TherapistId == idTherapist && a.AvailableDate == day);
-            if (existingAppointment == null)
+            if (string.IsNullOrWhiteSpace(idPatient) || string.IsNullOrWhiteSpace(idTherapist))
+                throw new ArgumentException("Invalid patient or therapist ID.");
+
+            using var transaction = context.Database.BeginTransaction();
+
+            try
             {
-                throw new InvalidOperationException("The selected appointment slot is not available.");
+                string trimmedPatientId = idPatient.Trim();
+                string trimmedTherapistId = idTherapist.Trim();
+                DateTime datePart = day.Date;
+                TimeOnly timePart = TimeOnly.FromDateTime(day);
+
+                var existingAppointment = context.AvailableAppointments
+                    .FirstOrDefault(a =>
+                        a.TherapistId.Trim() == trimmedTherapistId &&
+                        a.AvailableDate.Date == datePart &&
+                        a.StartTimeSlot.Hour == timePart.Hour &&
+                        a.StartTimeSlot.Minute == timePart.Minute &&
+                        a.Status == true
+                    );
+
+                if (existingAppointment == null)
+                    throw new InvalidOperationException("The selected appointment slot is not available.");
+
+                existingAppointment.Status = false;
+
+                var newAppointment = new Appointment
+                {
+                    PatientId = trimmedPatientId,
+                    TherapistId = trimmedTherapistId,
+                    AppointmentDate = day
+                };
+
+                context.Appointments.Add(newAppointment);
+                context.SaveChanges();
+                transaction.Commit();
             }
-            var newAppointment = new Appointment
+            catch (Exception ex)
             {
-                PatientId = idPatient,
-                TherapistId = idTherapist,
-                AppointmentDate = day
-            };
-            context.Appointments.Add(newAppointment);
-            context.SaveChanges();
+                transaction.Rollback();
+                Console.WriteLine($"Error making appointment: {ex}");
+                throw;
+            }
         }
+
 
         public List<Appointment> GetFutureAppointments(string idPatient, DateTime today)
         {

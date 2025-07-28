@@ -9,7 +9,7 @@ export type TherapistType = {
 };
 
 export type SpecializationType = {
-  specializationId: string;
+  id: string;
   specializationName: string;
   description: string;
   image?: string;
@@ -46,7 +46,7 @@ export interface AppointmentDialogProps {
     specializationName: string;
     description: string;
   };
-  preselectedTherapist?: TherapistType | null; // מתווסף
+  preselectedTherapist?: TherapistType | null; 
 }
 
 export type AvailableHour = {

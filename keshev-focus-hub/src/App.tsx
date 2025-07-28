@@ -49,7 +49,7 @@ const App = () => {
               <Route path="/" element={<MainLayout />}>
                 <Route index element={<Index />} />
                 <Route path="about" element={<About />} />
-                <Route path="specializations" element={<SpecializationsPage />} />
+                <Route path="specializations" element={<SpecializationsPage />} /> 
                 <Route path="specializations/:name" element={<SpecializationDetailPage />} />
                 <Route path="therapists" element={<TherapistDetailPage />} />
                 <Route path="contact" element={<Contact />} />

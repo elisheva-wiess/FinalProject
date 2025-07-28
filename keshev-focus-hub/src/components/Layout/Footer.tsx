@@ -9,7 +9,6 @@ export const Footer = () => {
   return (
     <footer className="w-full bg-gradient-to-t from-primary/10 via-white to-white shadow-inner border-t border-border pt-10 pb-6 mt-16">
       <div className="container flex flex-col md:flex-row items-center justify-between gap-10">
-        {/* שמאל */}
         <div className="flex flex-col items-start gap-3 mb-5 md:mb-0">
           <Link
             to="/contact"
@@ -29,7 +28,6 @@ export const Footer = () => {
           </span>
         </div>
 
-        {/* ימין */}
         <div className="flex flex-col items-center gap-2">
           <span className="text-primary text-lg font-bold flex items-center gap-1">
             <Heart className="w-6 h-6 animate-pulse text-primary/60" />

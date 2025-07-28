@@ -7,7 +7,7 @@ export const heTranslations = {
   "signup": "הרשמה",
   "login": "התחברות",
   "logout": "התנתקות",
-  "specializations": "תחומי התמחות",
+  "specializations": "תחומי התמחויות",
   "appointments": "תורים",
   "makeAppointment": "קבע תור",
   "availableAppointments": "תורים פנויים",

@@ -27,7 +27,7 @@ const TherapistListPage = () => {
         onClick={() => navigate("/specializations")}
         className="mb-6 text-orange-600 hover:text-orange-800 font-semibold underline"
       >
-        ← לקביעת תורים 
+        ← להתמחויות
       </button>
 
       <h2 className="text-3xl text-center font-extrabold text-amber-800 mb-8 underline decoration-amber-600">

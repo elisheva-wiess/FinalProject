@@ -1,90 +1,58 @@
-import React, { useState } from "react";
-import { User } from "lucide-react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent
-} from "@/components/ui/card";
-import AppointmentDialog from "./AppointmentDialog";
-import { SpecializationCardProps } from "@/types";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { SpecializationType } from "@/types";
 
-const specializationImages: Record<string, string> = {
-  "קלינאות תקשורת": "https://images.unsplash.com/photo-1581091012184-7b61c1bf26a7",
-  "טיפול רגשי": "https://images.unsplash.com/photo-1607746882042-944635dfe10e",
-  "ריפוי בעיסוק": "https://images.unsplash.com/photo-1588776814546-ec6c2aeb0c94",
-  "אבחון דידקטי": "https://images.unsplash.com/photo-1554731617-fa6478214b1b",
-  "אבחון פסיכולוגי": "https://images.unsplash.com/photo-1588774069262-dbd8d1a736a4"
+type Props = {
+  specialization: SpecializationType;
 };
 
-const defaultImages = [
-  "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-];
+const imageMap: { [key: string]: string } = {
+  "1": "/specializationsImages/adhd.jpg",
+  "2": "/specializationsImages/therapy-sport.jpg",
+  "3": "/specializationsImages/neurology.jpg",
+  "6": "/specializationsImages/horse-therapy.jpg",
+  "7": "/specializationsImages/parent-guidance.jpg",
+  "8": "/specializationsImages/counseling.jpg",
+  "9": "/specializationsImages/occupational-therapy.jpg",
+  "10": "/specializationsImages/adhd-diagnosis.jpg",
+  "11": "/specializationsImages/cbt.jpg",
+  "12": "/specializationsImages/learning-emotion.jpg",
+  "13": "/specializationsImages/psychiatry.jpg",
+  "14": "/specializationsImages/support-groups.jpg",
+  "15": "/specializationsImages/sensory-emotional.jpg",
+  "16": "/specializationsImages/emotional-kids.jpg",
+  "17": "/specializationsImages/parent-training.jpg",
+};
 
-const badgeColors = [
-  "bg-accent/60 text-primary border-primary",
-  "bg-muted text-primary border-accent",
-  "bg-accent/80 text-primary border-primary/80",
-  "bg-muted/80 text-primary border-primary/30"
-];
-
-const SpecializationCard: React.FC<SpecializationCardProps> = ({ specialization }) => {
-  const [dialogOpen, setDialogOpen] = useState(false);
-
-  const imageSrc =
-    specialization.image ||
-    specializationImages[specialization.specializationName] ||
-    defaultImages[Math.floor(Math.random() * defaultImages.length)];
-
-  const badgeColor =
-    badgeColors[Math.floor(Math.random() * badgeColors.length)];
+const SpecializationCard: React.FC<Props> = ({ specialization }) => {
+  const navigate = useNavigate();
+  const imageSrc = imageMap[String(specialization.id)] || "/specializationsImages/default.jpg";
 
   return (
-    <>
-      <Card className="overflow-hidden shadow-xl hover:scale-105 hover:border-primary transition-all border bg-white flex flex-col animate-fade-in max-w-sm mx-auto">
-        <div className="h-44 w-full bg-accent/80">
-          <img
-            src={imageSrc}
-            alt={specialization.specializationName}
-            className="object-cover w-full h-full"
-            loading="lazy"
-          />
-        </div>
-        <CardHeader>
-          <CardTitle className="text-primary flex items-center gap-2 text-xl">
-            <span className={`px-2 py-1 rounded-lg border font-bold mr-1 text-base ${badgeColor}`}>
-              <User className="inline-block w-6 h-6 ml-2 text-primary align-middle" />
-              {specialization.specializationName}
-            </span>
-          </CardTitle>
-          <CardDescription className="text-muted-foreground text-right">
-            {specialization.description}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="mt-auto pt-0">
-          <button
-            className="w-full py-2 mt-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/80 transition"
-            onClick={() => setDialogOpen(true)}
-          >
-            קבע תור
-          </button>
-        </CardContent>
-      </Card>
-
-      {/* דיאלוג אחיד לקביעת תור לפי התמחות */}
-      <AppointmentDialog
-        open={dialogOpen}
-        onOpenChange={setDialogOpen}
-        specialization={{
-          specializationId: specialization.specializationId,
-          specializationName: specialization.specializationName,
-          description: specialization.description
-        }}
+    <div
+      className="relative bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 cursor-default overflow-hidden"
+    >
+      <img
+        src={imageSrc}
+        alt={specialization.specializationName}
+        className="w-full h-56 object-cover object-top"
       />
-    </>
+
+      <div className="p-6 pb-12">
+        <h2 className="text-2xl font-semibold mb-2">{specialization.specializationName}</h2>
+        <p className="text-gray-600 line-clamp-3">{specialization.description}</p>
+      </div>
+      <div className="absolute bottom-4 right-4 z-10">
+        <span
+          className="inline-block bg-primary text-white px-4 py-1 rounded-full text-sm cursor-pointer"
+          onClick={() =>
+            navigate(`/specializations/${encodeURIComponent(specialization.specializationName)}`)
+          }
+        >
+          לפרטים
+        </span>
+      </div>
+    </div>
   );
 };
 

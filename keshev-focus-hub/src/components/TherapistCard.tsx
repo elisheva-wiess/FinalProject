@@ -60,14 +60,13 @@ export const TherapistCard: React.FC<TherapistCardProps> = ({ therapist, onSelec
           />
         ) : (
           <div className="w-24 h-24 rounded-full bg-gray-200 mb-4 flex items-center justify-center text-gray-500">
-            ללא תמונה
+            <img src="../Therapist.jpg" alt="" />
           </div>
         )}
         <h2 className="text-3xl text-center font-extrabold text-amber-800 mb-8 underline decoration-amber-600">{therapist.name}</h2>
         <div className="w-full">{renderWorkHours()}</div>
       </div>
 
-      {/* כפתור קבע תור יופיע רק אם המשתמש מחובר וגם מטופל */}
       {isLoggedIn && role === "patient" && (
         <Button
           onClick={() => onSelect(therapist)}

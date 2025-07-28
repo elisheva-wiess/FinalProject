@@ -45,7 +45,6 @@ export const Header = () => {
       ]),
   ];
 
-  // החזרת הקישור לאזור האישי לפי התפקיד
   const getPersonalAreaLink = () => {
     switch (role) {
       case "manager":
@@ -68,7 +67,6 @@ export const Header = () => {
   useEffect(() => {
     document.dir = i18n.language === "he" ? "rtl" : "ltr";
   }, [i18n.language]);
-  console.log("isLoggedIn:", isLoggedIn, "firstName:", firstName, "role:", role);
 
   return (
     <>
@@ -102,13 +100,6 @@ export const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          {/* <button
-            onClick={toggleLanguage}
-            className="px-3 py-1 rounded border border-primary text-primary font-semibold hover:bg-primary hover:text-white transition"
-            aria-label="Change Language"
-          >
-            🌐{t("language")}
-          </button> */}
 
           <button
             onClick={toggleLanguage}
@@ -118,7 +109,6 @@ export const Header = () => {
             <span className="underline underline-offset-4">{t("language")}</span>
           </button>
 
-          {/* כפתור שם המשתמש כניווט לאזור האישי */}
           {isLoggedIn && getPersonalAreaLink() && (
             <NavLink
               to={getPersonalAreaLink()}

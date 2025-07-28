@@ -42,11 +42,13 @@ namespace Server.Controllers
 
             return Ok(appointmentBlServices.AllHourSpetificalDayAndTherapist(idTherapist, parsedDay));
         }
+
         [HttpPost("MakingAnAppointment")]
         public IActionResult MakingAnAppointment([FromBody] BlAppointmentRequestDto request)
         {
             try
             {
+                Console.WriteLine($"Received request: IdPatient={request.IdPatient}, IdTherapist={request.IdTherapist}, Day={request.Day}");
                 appointmentBlServices.MakingAnAppointment(request);
                 return Ok("Appointment successfully created.");
             }
@@ -56,6 +58,7 @@ namespace Server.Controllers
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 return StatusCode(StatusCodes.Status500InternalServerError, new { Message = ex.Message });
             }
         }
@@ -64,7 +67,7 @@ namespace Server.Controllers
         [HttpGet("GetPastAppointments")]
         public IActionResult GetPastAppointments(string patientId)
         {
-            var appointments= appointmentBlServices.GetPastAppointments(patientId);
+            var appointments = appointmentBlServices.GetPastAppointments(patientId);
             if (appointments != null)
                 return Ok(appointments);
             return BadRequest("fdhdh");

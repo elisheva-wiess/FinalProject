@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Appointment } from "@/api/api";
 import { AppointmentDialogProps } from "@/types";
 import { useAppointmentDialog } from "@/hooks/useAppointmentDialog";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { RefreshCcw } from "lucide-react";
@@ -20,6 +20,8 @@ const AppointmentDialog: React.FC<AppointmentDialogProps> = ({
   specialization,
   preselectedTherapist,
 }) => {
+  const [refreshHours, setRefreshHours] = useState(0);
+
   const {
     selectedDate,
     setSelectedDate,
@@ -27,73 +29,100 @@ const AppointmentDialog: React.FC<AppointmentDialogProps> = ({
     setSelectedHour,
     availableHours,
     loadingHours,
-  } = useAppointmentDialog(preselectedTherapist);
+  } = useAppointmentDialog(preselectedTherapist, refreshHours);
 
   const user = useSelector((state: RootState) => state.auth.user);
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
+
+  const [hoursModalOpen, setHoursModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (!open) {
       setSelectedDate(null);
       setSelectedHour(null);
+      setHoursModalOpen(false);
+      setIsSubmitting(false);
     }
   }, [open]);
 
   const isDateDisabled = (date: Date) => {
     const today = new Date();
+    const dateWithoutTime = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    const todayWithoutTime = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     return (
-      date < today ||
+      dateWithoutTime < todayWithoutTime ||
       date.getMonth() !== today.getMonth() ||
       date.getFullYear() !== today.getFullYear()
     );
   };
 
-  const handleSetAppointment = () => {
+  const handleSetAppointment = async () => {
     if (!isLoggedIn || !user) {
       alert("עליך להתחבר למערכת כדי לקבוע תור.");
       return;
     }
 
-    const patientId = user?.id;
-    if (!patientId) {
-      console.warn("User object:", user); // לבדיקה אם צריך
-      alert("שגיאה בזיהוי המשתמש. אנא התחבר מחדש.");
-      return;
-    }
-
-    if (!preselectedTherapist || !selectedDate || !selectedHour || !specialization) {
+    if (!preselectedTherapist || !selectedDate || !selectedHour) {
       alert("חסרים נתונים לקביעת התור.");
       return;
     }
 
-    const request = {
-      idPatient: patientId,
-      idTherapist: preselectedTherapist.id,
-      day: selectedHour.date
-    };
+    setIsSubmitting(true);
 
-    Appointment.makeAppointment(request)
-      .then(() => {
+    try {
+      const [hour, minute] = selectedHour.startTime.split(":").map(Number);
+      const localDateTime = new Date(
+        selectedDate.getFullYear(),
+        selectedDate.getMonth(),
+        selectedDate.getDate(),
+        hour,
+        minute,
+        0
+      );
+
+      if (isNaN(localDateTime.getTime())) {
+        alert("שגיאה בעיבוד מועד התור. נסה לבחור שעה מחדש.");
+        return;
+      }
+
+      const isoLocalDateTime = localDateTime.toISOString();
+
+      const request = {
+        IdPatient: user.id,
+        IdTherapist: preselectedTherapist.id.trim(),
+        Day: isoLocalDateTime,
+      };
+
+      console.log("Request to send:", request);
+
+      const response = await Appointment.makeAppointment(request);
+
+      if (response.status >= 200 && response.status < 300) {
         alert("התור נקבע בהצלחה!");
         onOpenChange(false);
-      })
-      .catch((err) => {
-        console.error("Appointment error:", err);
-        alert("שגיאה בקביעת התור");
-      });
+        setHoursModalOpen(false);
+        setRefreshHours((prev) => prev + 1);
+        setSelectedDate(null);
+        setSelectedHour(null);
+      } else {
+        alert("שגיאה בקביעת התור. נסה שוב מאוחר יותר.");
+      }
+    } catch (err: any) {
+      console.error("Appointment error:", err);
+      if (err.response?.data?.message) {
+        alert("שגיאה בקביעת התור: " + err.response.data.message);
+      } else {
+        alert("שגיאה בלתי צפויה בקביעת התור.");
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  if (!preselectedTherapist) {
-    return (
-      <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent aria-describedby="appointment-dialog-description">
-          <p id="appointment-dialog-description" className="text-center text-red-500">
-            אין מטפל נבחר.
-          </p>
-        </DialogContent>
-      </Dialog>
-    );
-  }
+  const uniqueHours = Array.from(
+    new Map(availableHours.map((h) => [`${h.date}-${h.startTime}`, h])).values()
+  );
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -103,7 +132,9 @@ const AppointmentDialog: React.FC<AppointmentDialogProps> = ({
       >
         <DialogHeader>
           <DialogTitle className="text-center text-2xl font-extrabold bg-gradient-to-r from-amber-700 via-orange-500 to-yellow-400 bg-clip-text text-transparent">
-            {specialization ? `קביעת תור: ${specialization.specializationName}` : "קביעת תור"}
+            {specialization
+              ? `קביעת תור: ${specialization.specializationName}`
+              : "קביעת תור"}
           </DialogTitle>
         </DialogHeader>
 
@@ -118,7 +149,10 @@ const AppointmentDialog: React.FC<AppointmentDialogProps> = ({
             onClick={() => {
               setSelectedDate(null);
               setSelectedHour(null);
+              setHoursModalOpen(false);
+              setRefreshHours((prev) => prev + 1);
             }}
+            disabled={isSubmitting}
           >
             <RefreshCcw className="w-5 h-5" />
           </Button>
@@ -128,22 +162,37 @@ const AppointmentDialog: React.FC<AppointmentDialogProps> = ({
           <Calendar
             mode="single"
             selected={selectedDate ?? undefined}
-            onSelect={setSelectedDate}
+            onSelect={(date) => {
+              setSelectedDate(date);
+              setSelectedHour(null);
+              if (date) setHoursModalOpen(true);
+            }}
             disabled={isDateDisabled}
           />
         </div>
 
-        <div className="flex flex-col items-center gap-3 mt-4">
-          {selectedDate && (
-            loadingHours ? (
+        <Dialog open={hoursModalOpen} onOpenChange={setHoursModalOpen}>
+          <DialogContent className="max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-center text-xl font-bold">
+                שעות זמינות לתאריך {selectedDate?.toLocaleDateString()}
+              </DialogTitle>
+            </DialogHeader>
+
+            {loadingHours ? (
               <p>טוען שעות זמינות...</p>
-            ) : availableHours.length > 0 ? (
+            ) : uniqueHours.length > 0 ? (
               <div className="grid grid-cols-2 gap-2 w-full text-right">
-                {availableHours.map((h) => (
+                {uniqueHours.map((h) => (
                   <Button
                     key={`${h.date}-${h.startTime}`}
-                    variant={selectedHour?.startTime === h.startTime ? "default" : "outline"}
+                    variant={
+                      selectedHour?.startTime === h.startTime
+                        ? "default"
+                        : "outline"
+                    }
                     onClick={() => setSelectedHour(h)}
+                    disabled={isSubmitting}
                   >
                     {`${h.startTime} - ${h.endTime}`}
                   </Button>
@@ -151,205 +200,20 @@ const AppointmentDialog: React.FC<AppointmentDialogProps> = ({
               </div>
             ) : (
               <p>אין שעות זמינות ביום זה.</p>
-            )
-          )}
-        </div>
+            )}
 
-        <Button
-          disabled={!selectedHour}
-          onClick={handleSetAppointment}
-          className="mt-4 w-full"
-        >
-          קבע תור
-        </Button>
+            <Button
+              disabled={!selectedHour || isSubmitting}
+              onClick={handleSetAppointment}
+              className="mt-4 w-full"
+            >
+              {isSubmitting ? "שולח..." : "קבע תור"}
+            </Button>
+          </DialogContent>
+        </Dialog>
       </DialogContent>
     </Dialog>
   );
 };
 
 export default AppointmentDialog;
-
-
-
-// import {
-//   Dialog,
-//   DialogContent,
-//   DialogHeader,
-//   DialogTitle,
-// } from "@/components/ui/dialog";
-// import { Calendar } from "@/components/ui/calendar";
-// import { Button } from "@/components/ui/button";
-// import { Appointment } from "@/api/api";
-// import { AppointmentDialogProps } from "@/types";
-// import { useAppointmentDialog } from "@/hooks/useAppointmentDialog";
-// import { useEffect } from "react";
-// import { useSelector } from "react-redux";
-// import { RootState } from "@/store/store";
-// import { RefreshCcw } from "lucide-react";
-
-// const AppointmentDialog: React.FC<AppointmentDialogProps> = ({
-//   open,
-//   onOpenChange,
-//   specialization,
-//   preselectedTherapist,
-// }) => {
-//   const {
-//     selectedDate,
-//     setSelectedDate,
-//     selectedHour,
-//     setSelectedHour,
-//     availableHours,
-//     setAvailableHours, // חשוב
-//     loadingHours,
-//   } = useAppointmentDialog(preselectedTherapist);
-
-//   const user = useSelector((state: RootState) => state.auth.user);
-//   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
-
-//   useEffect(() => {
-//     if (!open) {
-//       setSelectedDate(null);
-//       setSelectedHour(null);
-//     }
-//   }, [open]);
-
-//   const isDateDisabled = (date: Date) => {
-//     const today = new Date();
-//     return (
-//       date < today ||
-//       date.getMonth() !== today.getMonth() ||
-//       date.getFullYear() !== today.getFullYear()
-//     );
-//   };
-
-//   const handleSetAppointment = () => {
-//     if (!isLoggedIn || !user) {
-//       alert("עליך להתחבר למערכת כדי לקבוע תור.");
-//       return;
-//     }
-
-//     const patientId = user?.id;
-//     if (!patientId) {
-//       console.warn("User object:", user);
-//       alert("שגיאה בזיהוי המשתמש. אנא התחבר מחדש.");
-//       return;
-//     }
-
-//     if (!preselectedTherapist || !selectedDate || !selectedHour || !specialization) {
-//       alert("חסרים נתונים לקביעת התור.");
-//       return;
-//     }
-
-//     const request = {
-//       idPatient: patientId,
-//       idTherapist: preselectedTherapist.id,
-//       day: selectedHour.date,
-//     };
-
-//     Appointment.makeAppointment(request)
-//       .then(() => {
-//         alert("התור נקבע בהצלחה!");
-
-//         // מחיקת התור מה־availableHours
-//         const updatedHours = availableHours.filter(
-//           (h) => !(h.date === selectedHour.date && h.startTime === selectedHour.startTime)
-//         );
-//         setAvailableHours(updatedHours);
-
-//         // איפוס הבחירה
-//         setSelectedHour(null);
-//         setSelectedDate(null);
-
-//         onOpenChange(false); // סגירת המודאל
-//       })
-//       .catch((err) => {
-//         console.error("Appointment error:", err);
-//         alert("שגיאה בקביעת התור");
-//       });
-//   };
-
-//   if (!preselectedTherapist) {
-//     return (
-//       <Dialog open={open} onOpenChange={onOpenChange}>
-//         <DialogContent aria-describedby="appointment-dialog-description">
-//           <p id="appointment-dialog-description" className="text-center text-red-500">
-//             אין מטפל נבחר.
-//           </p>
-//         </DialogContent>
-//       </Dialog>
-//     );
-//   }
-
-//   return (
-//     <Dialog open={open} onOpenChange={onOpenChange}>
-//       <DialogContent
-//         className="max-w-lg min-h-[400px] max-h-[90vh] overflow-y-auto mt-8"
-//         aria-describedby="appointment-dialog-description"
-//       >
-//         <DialogHeader>
-//           <DialogTitle className="text-center text-2xl font-extrabold bg-gradient-to-r from-amber-700 via-orange-500 to-yellow-400 bg-clip-text text-transparent">
-//             {specialization ? `קביעת תור: ${specialization.specializationName}` : "קביעת תור"}
-//           </DialogTitle>
-//         </DialogHeader>
-
-//         <p id="appointment-dialog-description" className="sr-only">
-//           בחר תאריך ושעה לקביעת תור.
-//         </p>
-
-//         <div className="flex justify-end w-full">
-//           <Button
-//             variant="outline"
-//             size="icon"
-//             onClick={() => {
-//               setSelectedDate(null);
-//               setSelectedHour(null);
-//             }}
-//           >
-//             <RefreshCcw className="w-5 h-5" />
-//           </Button>
-//         </div>
-
-//         <div className="flex flex-col items-center gap-4">
-//           <Calendar
-//             mode="single"
-//             selected={selectedDate ?? undefined}
-//             onSelect={setSelectedDate}
-//             disabled={isDateDisabled}
-//           />
-//         </div>
-
-//         <div className="flex flex-col items-center gap-3 mt-4">
-//           {selectedDate && (
-//             loadingHours ? (
-//               <p>טוען שעות זמינות...</p>
-//             ) : availableHours.length > 0 ? (
-//               <div className="grid grid-cols-2 gap-2 w-full text-right">
-//                 {availableHours.map((h) => (
-//                   <Button
-//                     key={`${h.date}-${h.startTime}`}
-//                     variant={selectedHour?.startTime === h.startTime ? "default" : "outline"}
-//                     onClick={() => setSelectedHour(h)}
-//                   >
-//                     {`${h.startTime} - ${h.endTime}`}
-//                   </Button>
-//                 ))}
-//               </div>
-//             ) : (
-//               <p>אין שעות זמינות ביום זה.</p>
-//             )
-//           )}
-//         </div>
-
-//         <Button
-//           disabled={!selectedHour}
-//           onClick={handleSetAppointment}
-//           className="mt-4 w-full"
-//         >
-//           קבע תור
-//         </Button>
-//       </DialogContent>
-//     </Dialog>
-//   );
-// };
-
-// export default AppointmentDialog;

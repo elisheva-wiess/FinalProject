@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 
-const SCROLL_TRIGGER = 200; // px
+const SCROLL_TRIGGER = 200; 
 
 const ScrollToTopButton = () => {
   const [show, setShow] = useState(false);

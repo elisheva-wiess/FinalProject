@@ -77,9 +77,12 @@ const SpecializationDetailPage = () => {
         </div>
       )}
 
-      <h2 className="text-2xl text-center font-semibold text-brown-700 mb-6 underline decoration-brown-400">
+      <h2 className="text-2xl text-center font-semibold text-[#8B4513] mb-6 underline decoration-[#8B4513]">
         מטפלים בתחום
       </h2>
+      <h3 className="text-xl text-center font-semibold text-[#8B4513] mb-6 underline decoration-[#8B4513]">
+        לקביעת תורים יש להתחבר למערכת
+      </h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {therapists.map((t) => (
@@ -87,7 +90,7 @@ const SpecializationDetailPage = () => {
             key={t.id}
             therapist={t}
             onSelect={canBookAppointment ? () => setSelectedTherapist(t) : undefined}
-            showBookButton={canBookAppointment} // מוסר ל-TherapistCard אם להציג כפתור
+            showBookButton={canBookAppointment} 
           />
         ))}
       </div>
@@ -99,11 +102,11 @@ const SpecializationDetailPage = () => {
             if (!val) setSelectedTherapist(null);
           }}
           specialization={{
-            specializationId: specialization.specializationId,
+            specializationId: specialization.id,
             specializationName: specialization.specializationName,
             description: specialization.description,
           }}
-          preselectedTherapist={selectedTherapist} 
+          preselectedTherapist={selectedTherapist}
         />
       )}
     </div>

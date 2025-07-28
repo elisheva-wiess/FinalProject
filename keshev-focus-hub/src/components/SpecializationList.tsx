@@ -17,7 +17,7 @@ const SpecializationList: React.FC<Props> = ({ specializations }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
       {specializations.map((item) => (
-        <SpecializationCard key={item.specializationId} specialization={item} />
+        <SpecializationCard key={item.id} specialization={item} />
       ))}
     </div>
   );

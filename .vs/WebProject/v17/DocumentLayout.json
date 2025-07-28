@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\EndToEnd Project\\FinalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\endtoend project\\finalproject\\webproject\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\endtoend project\\finalproject\\webproject\\controllers\\specializationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB2E11E-4C4E-4F2A-85CC-45A7460C2D47}|WebProject\\Server.csproj|solutionrelative:webproject\\controllers\\specializationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AppointmentController.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\Controllers\\AppointmentController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\AppointmentController.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\Controllers\\AppointmentController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\AppointmentController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
+              "Title": "SpecializationController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\Controllers\\SpecializationController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\SpecializationController.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\EndToEnd Project\\FinalProject\\WebProject\\Controllers\\SpecializationController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\SpecializationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T13:53:07.914Z",
+              "WhenOpened": "2025-07-28T15:21:34.523Z",
               "EditorCaption": ""
             }
           ]
