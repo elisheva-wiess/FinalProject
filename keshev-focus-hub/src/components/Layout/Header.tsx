@@ -10,17 +10,21 @@ import {
   BookOpen,
   FileText,
   UserCog,
-  LogOut,
 } from "lucide-react";
 import { logout } from "@/store/authSlice";
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import PatientArea from "@/components/PersonalAreas/PatientArea";
+import TherapistArea from "@/components/PersonalAreas/TherapistArea";
+import ManagerArea from "@/components/PersonalAreas/AdminArea";
 
 export const Header = () => {
-  const { isLoggedIn, firstName, role, lastName } = useSelector((state: RootState) => state.auth);
+  const { isLoggedIn, firstName, lastName, role } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
+  const [open, setOpen] = useState(false);
+  const [personalAreaComponent, setPersonalAreaComponent] = useState(null);
 
   const toggleLanguage = () => {
     const newLang = i18n.language === "he" ? "en" : "he";
@@ -45,24 +49,34 @@ export const Header = () => {
       ]),
   ];
 
-  const getPersonalAreaLink = () => {
-    switch (role) {
-      case "manager":
-        return "/admin";
-      case "therapist":
-        return "/therapist";
-      case "patient":
-        return "/patient";
-      default:
-        return null;
-    }
-  };
-
   const handleLogout = () => {
     dispatch(logout());
     localStorage.removeItem("user");
     navigate("/");
   };
+
+ const handlePersonalAreaNavigation = () => {
+  setOpen(prev => {
+    const newOpenState = !prev; // הפוך את מצב ה-open
+    if (newOpenState) { // אם הוא הולך להיפתח
+      if (role === "therapist") {
+        setPersonalAreaComponent(<TherapistArea open={newOpenState} setOpen={setOpen} />);
+      } else if (role === "manager") {
+        setPersonalAreaComponent(<ManagerArea open={newOpenState} setOpen={setOpen} />);
+      } else if (role === "patient") {
+        setPersonalAreaComponent(<PatientArea open={newOpenState} setOpen={setOpen} />);
+      }
+    }
+    return newOpenState; // החזר את מצב ה-open החדש
+  });
+};
+
+
+  useEffect(() => {
+    if (!open) {
+      setPersonalAreaComponent(null); // לנקות את הקומפוננטה כאשר היא נסגרת
+    }
+  }, [open]);
 
   useEffect(() => {
     document.dir = i18n.language === "he" ? "rtl" : "ltr";
@@ -72,6 +86,15 @@ export const Header = () => {
     <>
       <header className="fixed top-0 left-0 right-0 w-full flex items-center px-6 py-3 bg-accent/80 shadow-lg justify-between z-[9999] border-b border-border backdrop-blur-lg">
         <nav className="flex gap-1 md:gap-3 items-center">
+          {isLoggedIn && (
+            <button onClick={handlePersonalAreaNavigation}>
+              <span className="flex items-center gap-2 px-3 py-1 rounded border border-primary text-primary font-semibold hover:bg-primary hover:text-white transition">
+                <UserCog className="w-5 h-5" />
+                {`${firstName} ${lastName}`}
+              </span>
+            </button>
+          )}
+
           {navItems.map((item) => (
             <NavLink
               key={item.to}
@@ -87,20 +110,9 @@ export const Header = () => {
               <span className="hidden sm:inline">{item.name}</span>
             </NavLink>
           ))}
-
-          {isLoggedIn && (
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-1 px-2 md:px-3 py-1.5 rounded hover:bg-red-100 text-red-600 font-bold transition"
-            >
-              <LogOut className="h-5 w-5" />
-              <span className="hidden sm:inline">{t("logout")}</span>
-            </button>
-          )}
         </nav>
 
         <div className="flex items-center gap-4">
-
           <button
             onClick={toggleLanguage}
             className="flex items-center gap-1 text-primary font-semibold hover:text-orange-500 transition transform hover:scale-105"
@@ -108,16 +120,6 @@ export const Header = () => {
           >
             <span className="underline underline-offset-4">{t("language")}</span>
           </button>
-
-          {isLoggedIn && getPersonalAreaLink() && (
-            <NavLink
-              to={getPersonalAreaLink()}
-              className="flex items-center gap-2 px-3 py-1 rounded border border-primary text-primary font-semibold hover:bg-primary hover:text-white transition"
-            >
-              <UserCog className="w-5 h-5" />
-              {firstName} {lastName}
-            </NavLink>
-          )}
 
           <span
             className="text-lg md:text-2xl font-extrabold select-none text-primary drop-shadow-sm tracking-tight cursor-pointer"
@@ -128,6 +130,7 @@ export const Header = () => {
         </div>
       </header>
       <div style={{ height: 70 }} />
+      {personalAreaComponent}
     </>
   );
 };
